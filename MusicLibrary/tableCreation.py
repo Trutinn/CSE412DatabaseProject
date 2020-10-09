@@ -4,13 +4,24 @@
 
 import psycopg2
 
-
-
-conn = psycopg2.connect(database="musiclibrary", user = "USERNAME", password = "PASSWORD", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="YOURDB", user = "YOURUSERNAME", password = "YOURPASSWORD", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
 cur = conn.cursor()
+
+cur.execute("DROP TABLE album CASCADE;")
+cur.execute("DROP TABLE song CASCADE;")
+cur.execute("DROP TABLE contains;")
+
+cur.execute("DROP TABLE name CASCADE;")
+cur.execute("DROP TABLE producer;")
+cur.execute("DROP TABLE writer;")
+cur.execute("DROP TABLE artist;")
+cur.execute("DROP TABLE featuredIn;")
+cur.execute("DROP TABLE writtenBy;")
+cur.execute("DROP TABLE producedBy;")
+cur.execute("DROP TABLE performedBy;")
 
 # Creating album table
 cur.execute('''CREATE TABLE album
@@ -29,7 +40,7 @@ cur.execute('''CREATE TABLE song
 cur.execute('''CREATE TABLE contains
         (songUID INT NOT NULL,
         albumUID INT NOT NULL,
-        PRIMARY KEY(songUID, albumUID),
+        PRIMARY KEY(songUID),
         FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
         FOREIGN KEY(albumUID) REFERENCES album ON DELETE NO ACTION);''')
 
@@ -89,4 +100,5 @@ cur.execute('''CREATE TABLE performedBy
          FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
 
 conn.commit()
+print("Tables created successfully")
 cur.close()

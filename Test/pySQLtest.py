@@ -2,7 +2,7 @@
 
 import psycopg2
 
-conn = psycopg2.connect(database="testdb", user = "USERNAME", password = "PASSWORD", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="YOURDB", user = "YOURUSERNAME", password = "YOURPASSWORD", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
@@ -23,7 +23,7 @@ cur.execute("DROP TABLE producedBy;")
 cur.execute("DROP TABLE performedBy;")
 
 
-# CREATING TABLES
+# CREATING TABLE
 # Creating album table
 cur.execute('''CREATE TABLE album
         (albumUID INT PRIMARY KEY NOT NULL,
@@ -41,7 +41,7 @@ cur.execute('''CREATE TABLE song
 cur.execute('''CREATE TABLE contains
         (songUID INT NOT NULL,
         albumUID INT NOT NULL,
-        PRIMARY KEY(songUID, albumUID),
+        PRIMARY KEY(songUID),
         FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
         FOREIGN KEY(albumUID) REFERENCES album ON DELETE NO ACTION);''')
 
