@@ -1,0 +1,1764 @@
+{
+    "musicData": [
+        {
+            "albumID": "6n9DKpOxwifT5hOXtgLZSL",
+            "albumTitle": "Legends Never Die",
+            "artistID": "4MCBfE4596Uoi2O4DtmEMz",
+            "artistName": "Juice WRLD",
+            "albumDuration": 3528.04,
+            "albumReleaseDate": "2020-07-10",
+            "songs": [
+                {
+                    "id": "02XcRGWPkvomFvzTamEKHg",
+                    "name": "Anxiety - Intro",
+                    "duration": 70.394,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4K06PO78fW4mnBVenxGNob",
+                    "name": "Conversations",
+                    "duration": 181.661,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1YM6c2sxbf2Jacl9IFgn4I",
+                    "name": "Titanic",
+                    "duration": 176.649,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7d94IqWX2UmSKMGUYSGFJG",
+                    "name": "Bad Energy",
+                    "duration": 186.749,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5dOxHHMOFAbG3VH23t0xNm",
+                    "name": "Righteous",
+                    "duration": 242.18,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0fCwrjKfWxF3xQhZrYUw4T",
+                    "name": "Blood On My Jeans",
+                    "duration": 154.767,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6wQlQrTY5mVS8EGaFZVwVF",
+                    "name": "Smile (with The Weeknd)",
+                    "duration": 196.18,
+                    "featuredIn": {
+                        "id": [
+                            "1Xyo4u8uXC1ZmMpatF05PJ"
+                        ],
+                        "name": [
+                            "The Weeknd"
+                        ]
+                    }
+                },
+                {
+                    "id": "5JAYDuLRkODlVt6dgoalKk",
+                    "name": "Tell Me U Luv Me (with Trippie Redd)",
+                    "duration": 180.129,
+                    "featuredIn": {
+                        "id": [
+                            "6Xgp2XMz1fhVYe7i6yNAax"
+                        ],
+                        "name": [
+                            "Trippie Redd"
+                        ]
+                    }
+                },
+                {
+                    "id": "0ada5XsQGLPUVbmTCkAP49",
+                    "name": "Hate The Other Side (with Marshmello & The Kid Laroi)",
+                    "duration": 160.212,
+                    "featuredIn": {
+                        "id": [
+                            "64KEffDW9EtZ1y2vBYgq8T",
+                            "2tIP7SsRs7vjIcLrU85W8J",
+                            "6AgTAQt8XS6jRWi4sX7w49"
+                        ],
+                        "name": [
+                            "Marshmello",
+                            "The Kid LAROI",
+                            "Polo G"
+                        ]
+                    }
+                },
+                {
+                    "id": "2wg81gBz6PZSwbZrXObeW4",
+                    "name": "Get Through It - Interlude",
+                    "duration": 20.929,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5wWAwzGp2OaaoIkwcz6wZs",
+                    "name": "Life's A Mess (feat. Halsey)",
+                    "duration": 202.193,
+                    "featuredIn": {
+                        "id": [
+                            "26VFTg2z8YR0cCuwLzESi2"
+                        ],
+                        "name": [
+                            "Halsey"
+                        ]
+                    }
+                },
+                {
+                    "id": "2Y0wPrPQBrGhoLn14xRYCG",
+                    "name": "Come & Go (with Marshmello)",
+                    "duration": 205.484,
+                    "featuredIn": {
+                        "id": [
+                            "64KEffDW9EtZ1y2vBYgq8T"
+                        ],
+                        "name": [
+                            "Marshmello"
+                        ]
+                    }
+                },
+                {
+                    "id": "2SVx3uds6jTWALFxevIWMA",
+                    "name": "I Want It",
+                    "duration": 173.113,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0440JCJyIAmINA8KcYgFb5",
+                    "name": "Fighting Demons",
+                    "duration": 200.628,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2U5WueTLIK5WJLD7mvDODv",
+                    "name": "Wishing Well",
+                    "duration": 194.621,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4F6YLjakjqWFTgC5qfEwPQ",
+                    "name": "Screw Juice",
+                    "duration": 179.464,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7pbg3ABlAZv2NiIdKbBBFm",
+                    "name": "Up Up And Away",
+                    "duration": 147.547,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4sjdZEEQvR1sXrRNSuBfbA",
+                    "name": "The Man, The Myth, The Legend - Interlude",
+                    "duration": 136.544,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "21CkzgKCBCq5V4XKjiGSIj",
+                    "name": "Stay High",
+                    "duration": 168.684,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4PPLJAEYBSOcnzr9TZoqf9",
+                    "name": "Can't Die",
+                    "duration": 182.922,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7AvprzMsRJpybaalckaT8c",
+                    "name": "Man Of The Year",
+                    "duration": 136.408,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1OjiYjgPZyxS0AiXiSnuYI",
+                    "name": "Juice WRLD Speaks From Heaven - Outro",
+                    "duration": 30.582,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "7e7t0MCrNDcJZsPwUKjmOc",
+            "albumTitle": "Shoot For The Stars Aim For The Moon",
+            "artistID": "0eDvMgVFoNV3TpwtrVCoTj",
+            "artistName": "Pop Smoke",
+            "albumDuration": 3401.218,
+            "albumReleaseDate": "2020-07-03",
+            "songs": [
+                {
+                    "id": "4OGIeHtYhRTJ8iW21UUyZW",
+                    "name": "Bad Bitch From Tokyo (Intro)",
+                    "duration": 48.0,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6O7fPYTsb2mY0PiFt2ymDB",
+                    "name": "Aim For The Moon (feat. Quavo)",
+                    "duration": 175.756,
+                    "featuredIn": {
+                        "id": [
+                            "0VRj0yCOv2FXJNP47XQnx5"
+                        ],
+                        "name": [
+                            "Quavo"
+                        ]
+                    }
+                },
+                {
+                    "id": "0PvFJmanyNQMseIFrU708S",
+                    "name": "For The Night (feat. Lil Baby & DaBaby)",
+                    "duration": 190.476,
+                    "featuredIn": {
+                        "id": [
+                            "5f7VJjfbwm532GiveGC0ZK",
+                            "4r63FhuTkUYltbVAg5TQnk"
+                        ],
+                        "name": [
+                            "Lil Baby",
+                            "DaBaby"
+                        ]
+                    }
+                },
+                {
+                    "id": "7sjFIZ1g5QLJLGja3k592K",
+                    "name": "44 BullDog",
+                    "duration": 150.857,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1hg3RlqFZXJb5YgRoK9qmF",
+                    "name": "Gangstas",
+                    "duration": 160.0,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0bjgQ24UZGwKikldIyEOgf",
+                    "name": "Yea Yea",
+                    "duration": 185.803,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "3eV2WT9YhfzkxbufnBF8wK",
+                    "name": "Creature (feat. Swae Lee)",
+                    "duration": 202.815,
+                    "featuredIn": {
+                        "id": [
+                            "1zNqQNIdeOUZHb8zbZRFMX"
+                        ],
+                        "name": [
+                            "Swae Lee"
+                        ]
+                    }
+                },
+                {
+                    "id": "2FhEj9lvEIaJihjFprRrGt",
+                    "name": "Snitching (feat. Quavo & Future)",
+                    "duration": 259.346,
+                    "featuredIn": {
+                        "id": [
+                            "0VRj0yCOv2FXJNP47XQnx5",
+                            "1RyvyyTE3xzB2ZywiAwp0i"
+                        ],
+                        "name": [
+                            "Quavo",
+                            "Future"
+                        ]
+                    }
+                },
+                {
+                    "id": "71d7LaAgPcNcUopu3OzmP7",
+                    "name": "Make It Rain (feat. Rowdy Rebel)",
+                    "duration": 202.443,
+                    "featuredIn": {
+                        "id": [
+                            "6LXRvV2OAtXF7685fzh3mj"
+                        ],
+                        "name": [
+                            "Rowdy Rebel"
+                        ]
+                    }
+                },
+                {
+                    "id": "1H7KnK26kc1YyellpbINEn",
+                    "name": "The Woo (feat. 50 Cent & Roddy Ricch)",
+                    "duration": 201.6,
+                    "featuredIn": {
+                        "id": [
+                            "3q7HBObVc0L8jNeTe5Gofh",
+                            "757aE44tKEUQEqRuT6GnEB"
+                        ],
+                        "name": [
+                            "50 Cent",
+                            "Roddy Ricch"
+                        ]
+                    }
+                },
+                {
+                    "id": "1JDhNQ0oOT7XpclZn3aQ8F",
+                    "name": "West Coast Shit (feat. Tyga & Quavo)",
+                    "duration": 192.0,
+                    "featuredIn": {
+                        "id": [
+                            "5LHRHt1k9lMyONurDHEdrp",
+                            "0VRj0yCOv2FXJNP47XQnx5"
+                        ],
+                        "name": [
+                            "Tyga",
+                            "Quavo"
+                        ]
+                    }
+                },
+                {
+                    "id": "3NWrHCwvyII4fTx05PN3IO",
+                    "name": "Enjoy Yourself (feat. Karol G)",
+                    "duration": 197.938,
+                    "featuredIn": {
+                        "id": [
+                            "790FomKkXshlbRYZFtlgla"
+                        ],
+                        "name": [
+                            "KAROL G"
+                        ]
+                    }
+                },
+                {
+                    "id": "5rZlwNFl01HqLWBQGryKSm",
+                    "name": "Mood Swings (feat. Lil Tjay)",
+                    "duration": 213.333,
+                    "featuredIn": {
+                        "id": [
+                            "6jGMq4yGs7aQzuGsMgVgZR"
+                        ],
+                        "name": [
+                            "Lil Tjay"
+                        ]
+                    }
+                },
+                {
+                    "id": "5kkaSMcf4BFlhRRICCKZb6",
+                    "name": "Something Special",
+                    "duration": 158.466,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1tkg4EHVoqnhR6iFEXb60y",
+                    "name": "What You Know Bout Love",
+                    "duration": 160.0,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4Tc9PHEoeP17PQj3OOKXPu",
+                    "name": "Diana (feat. King Combs)",
+                    "duration": 188.976,
+                    "featuredIn": {
+                        "id": [
+                            "41I5xI04kixwmonDBl0Sda"
+                        ],
+                        "name": [
+                            "King Combs"
+                        ]
+                    }
+                },
+                {
+                    "id": "25zlnOAzbVoOzIeXSvQFf1",
+                    "name": "Got It On Me",
+                    "duration": 164.579,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2SxR5RitJdsG6wINvJLBSD",
+                    "name": "Tunnel Vision (Outro)",
+                    "duration": 132.587,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6PnTgx9lyvLGIcPnroCvc2",
+                    "name": "Dior - Bonus",
+                    "duration": 216.243,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "6wTyGUWGCilBFZ837k5aRi",
+            "albumTitle": "SAVAGE MODE II",
+            "artistID": "1URnnhqYAYcrqrcwql10ft",
+            "artistName": "21 Savage",
+            "albumDuration": 2640.6510000000003,
+            "albumReleaseDate": "2020-10-02",
+            "songs": [
+                {
+                    "id": "5UpXJ75CXod4PCoBQP6MAP",
+                    "name": "Intro",
+                    "duration": 70.044,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "5SWnsxjhdcEDc7LJjq9UHk",
+                    "name": "Runnin",
+                    "duration": 195.906,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "6pcywuOeGGWeOQzdUyti6k",
+                    "name": "Glock In My Lap",
+                    "duration": 193.591,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "4Q34FP1AT7GEl9oLgNtiWj",
+                    "name": "Mr. Right Now (feat. Drake)",
+                    "duration": 193.838,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp",
+                            "3TVXtAsR1Inumwj472S9r4"
+                        ],
+                        "name": [
+                            "Metro Boomin",
+                            "Drake"
+                        ]
+                    }
+                },
+                {
+                    "id": "3ruoIF2UnoXdzK8mR61ebq",
+                    "name": "Rich Nigga Shit (feat. Young Thug)",
+                    "duration": 190.331,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp",
+                            "50co4Is1HCEo8bhOyUWKpn"
+                        ],
+                        "name": [
+                            "Metro Boomin",
+                            "Young Thug"
+                        ]
+                    }
+                },
+                {
+                    "id": "7fxSLnklnayJNBIKntXedZ",
+                    "name": "Slidin",
+                    "duration": 185.036,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "3CDVMejYHnB1SkEEx0T1N4",
+                    "name": "Many Men",
+                    "duration": 201.856,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "2y3mrzWEWaAFqb2jf5fED8",
+                    "name": "Snitches & Rats (Interlude)",
+                    "duration": 57.073,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "3WaDoMDQRqDdgtCDLxanpN",
+                    "name": "Snitches & Rats (feat. Young Nudy)",
+                    "duration": 187.772,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp",
+                            "5yPzzu25VzEk8qrGTLIrE1"
+                        ],
+                        "name": [
+                            "Metro Boomin",
+                            "Young Nudy"
+                        ]
+                    }
+                },
+                {
+                    "id": "42Tohunwlh34o0mgxYx5iq",
+                    "name": "My Dawg",
+                    "duration": 181.715,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "7FtZFla3ZH6PqsAJ9MvVCM",
+                    "name": "Steppin On Niggas",
+                    "duration": 140.832,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "4V9ynsDPwHtdItksqjuRu0",
+                    "name": "Brand New Draco",
+                    "duration": 202.42,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "50I7FNN2rl2rWiNwGxS146",
+                    "name": "No Opp Left Behind",
+                    "duration": 194.214,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "1wGnp7ejkCuXRsehXx0PNP",
+                    "name": "RIP Luv",
+                    "duration": 214.192,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                },
+                {
+                    "id": "11XegnWeJHBDtj9IsNwngu",
+                    "name": "Said N Done",
+                    "duration": 231.831,
+                    "featuredIn": {
+                        "id": [
+                            "0iEtIxbK0KxaSlF7G42ZOp"
+                        ],
+                        "name": [
+                            "Metro Boomin"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "2fenSS68JI1h4Fo296JfGr",
+            "albumTitle": "folklore",
+            "artistID": "06HL4z0CvFAxyc27GXpf02",
+            "artistName": "Taylor Swift",
+            "albumDuration": 3816.5870000000004,
+            "albumReleaseDate": "2020-07-24",
+            "songs": [
+                {
+                    "id": "0Jlcvv8IykzHaSmj49uNW8",
+                    "name": "the 1",
+                    "duration": 210.251,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4R2kfaDFhslZEMJqAFNpdd",
+                    "name": "cardigan",
+                    "duration": 239.56,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2Eeur20xVqfUoM3Q7EFPFt",
+                    "name": "the last great american dynasty",
+                    "duration": 230.999,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4pvb0WLRcMtbPGmtejJJ6y",
+                    "name": "exile (feat. Bon Iver)",
+                    "duration": 285.634,
+                    "featuredIn": {
+                        "id": [
+                            "4LEiUm1SRbFMgfqnQTwUbQ"
+                        ],
+                        "name": [
+                            "Bon Iver"
+                        ]
+                    }
+                },
+                {
+                    "id": "1MgV7FIyNxIG7WzMRJV5HC",
+                    "name": "my tears ricochet",
+                    "duration": 255.893,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0ZNU020wNYvgW84iljPkPP",
+                    "name": "mirrorball",
+                    "duration": 208.977,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6KJqZcs9XDgVck7Lg9QOTC",
+                    "name": "seven",
+                    "duration": 208.906,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "3hUxzQpSfdDqwM3ZTFQY0K",
+                    "name": "august",
+                    "duration": 261.922,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7kt9e9LFSpN1zQtYEl19o1",
+                    "name": "this is me trying",
+                    "duration": 195.097,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2NmsngXHeC1GQ9wWrzhOMf",
+                    "name": "illicit affairs",
+                    "duration": 190.898,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6VsvKPJ4xjVNKpI8VVZ3SV",
+                    "name": "invisible string",
+                    "duration": 252.88,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2QDyYdZyhlP2fp79KZX8Bi",
+                    "name": "mad woman",
+                    "duration": 237.258,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "08fa9LFcFBTcilB3iq2e2A",
+                    "name": "epiphany",
+                    "duration": 289.749,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5kI4eCXXzyuIUXjQra0Cxi",
+                    "name": "betty",
+                    "duration": 294.521,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7MbT4I8qGntX4fMdqMQgke",
+                    "name": "peace",
+                    "duration": 234.0,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6MWoRt97mnSTXZhu3ggi9C",
+                    "name": "hoax",
+                    "duration": 220.042,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "39xhYyNNDatQtgKw2KdXMz",
+            "albumTitle": "THE GOAT",
+            "artistID": "6AgTAQt8XS6jRWi4sX7w49",
+            "artistName": "Polo G",
+            "albumDuration": 2830.134,
+            "albumReleaseDate": "2020-05-15",
+            "songs": [
+                {
+                    "id": "3TciLI5wo7RddPtAFhiU9V",
+                    "name": "Don't Believe The Hype",
+                    "duration": 174.968,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2iP3unJbxZvRuqyrS0ocZy",
+                    "name": "Heartless (feat. Mustard)",
+                    "duration": 204.0,
+                    "featuredIn": {
+                        "id": [
+                            "0YinUQ50QDB7ZxSCLyQ40k"
+                        ],
+                        "name": [
+                            "Mustard"
+                        ]
+                    }
+                },
+                {
+                    "id": "1VLtjHwRWOVJiE5Py7JxoQ",
+                    "name": "Martin & Gina",
+                    "duration": 132.832,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2QqJTIlGKRLJC3onkavYEz",
+                    "name": "Flex (feat. Juice WRLD)",
+                    "duration": 163.902,
+                    "featuredIn": {
+                        "id": [
+                            "4MCBfE4596Uoi2O4DtmEMz"
+                        ],
+                        "name": [
+                            "Juice WRLD"
+                        ]
+                    }
+                },
+                {
+                    "id": "4PklAHGXT5ityno3IA8SKd",
+                    "name": "Go Stupid",
+                    "duration": 165.726,
+                    "featuredIn": {
+                        "id": [
+                            "44IvvHRk2XF243QLA2VOa8",
+                            "0ErzCpIMyLcjPiwT4elrtZ",
+                            "0NWbwDZY1VkRqFafuQm6wk"
+                        ],
+                        "name": [
+                            "Stunna 4 Vegas",
+                            "NLE Choppa",
+                            "Mike WiLL Made-It"
+                        ]
+                    }
+                },
+                {
+                    "id": "3JKgcAa7r07ocVWcV8bS0H",
+                    "name": "21",
+                    "duration": 163.797,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2iW6Hb6kfrz2K7EhPibFiq",
+                    "name": "33",
+                    "duration": 170.057,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "40j4RoqmLiivqzRObbQ4BF",
+                    "name": "I Know",
+                    "duration": 176.574,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4SIB2yxKoFOrbkjA4zfQbB",
+                    "name": "Beautiful Pain (Losin My Mind)",
+                    "duration": 171.441,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4dKe8YJZg545pXqWBksYIe",
+                    "name": "No Matter What",
+                    "duration": 199.458,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "65jw6GhwQW3Db55PxlPEpS",
+                    "name": "Be Something (feat. Lil Baby)",
+                    "duration": 194.117,
+                    "featuredIn": {
+                        "id": [
+                            "5f7VJjfbwm532GiveGC0ZK"
+                        ],
+                        "name": [
+                            "Lil Baby"
+                        ]
+                    }
+                },
+                {
+                    "id": "1F8yKtk5CQBptos4kM7aO7",
+                    "name": "Relentless",
+                    "duration": 199.549,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "58GJNfq2m0Qr5nIUCDbXVQ",
+                    "name": "DND",
+                    "duration": 180.058,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4XLCFFvRG1qQ8kT4uzwYZC",
+                    "name": "Chinatown",
+                    "duration": 172.669,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6V1Jx3o0S2MtBI9yIDXsJS",
+                    "name": "Trials & Tribulations",
+                    "duration": 176.542,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "192RjH0gN6en7nE6ElN96T",
+                    "name": "Wishing For A Hero (feat. BJ The Chicago Kid)",
+                    "duration": 184.444,
+                    "featuredIn": {
+                        "id": [
+                            "07d5etnpjriczFBB8pxmRe"
+                        ],
+                        "name": [
+                            "BJ The Chicago Kid"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "5EzDhyNZuO7kuaABHwbBKX",
+            "albumTitle": "Nectar",
+            "artistID": "3MZsBdqDrRTJihTHQrO6Dq",
+            "artistName": "Joji",
+            "albumDuration": 3194.37,
+            "albumReleaseDate": "2020-09-25",
+            "songs": [
+                {
+                    "id": "7xcUWyLh6fIMsYjoVI7NnZ",
+                    "name": "Ew",
+                    "duration": 207.71,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5SjtAe7xzUgHDtNTmt8zS7",
+                    "name": "MODUS",
+                    "duration": 207.265,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5E7p95xh9Ul4vZp4LEoJwi",
+                    "name": "Tick Tock",
+                    "duration": 132.215,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6Ww8GHdPCl8MqZBhPn4LKd",
+                    "name": "Daylight",
+                    "duration": 163.905,
+                    "featuredIn": {
+                        "id": [
+                            "5fMUXHkw8R8eOP2RNVYEZX"
+                        ],
+                        "name": [
+                            "Diplo"
+                        ]
+                    }
+                },
+                {
+                    "id": "5xNNJKrjobta5ksOpMLYd1",
+                    "name": "Upgrade",
+                    "duration": 89.917,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0HItcI6qN6Dr4MC3CZryQh",
+                    "name": "Gimme Love",
+                    "duration": 214.557,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "3AkdSFo7quCZ781KCqNK0T",
+                    "name": "Run",
+                    "duration": 195.0,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0rOLFkjY5DSIViVBNnzOuK",
+                    "name": "Sanctuary",
+                    "duration": 180.018,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5dl8x4xLEzZC0f927WBTUG",
+                    "name": "High Hopes (feat. Omar Apollo)",
+                    "duration": 182.4,
+                    "featuredIn": {
+                        "id": [
+                            "5FxD8fkQZ6KcsSYupDVoSO"
+                        ],
+                        "name": [
+                            "Omar Apollo"
+                        ]
+                    }
+                },
+                {
+                    "id": "1RTYj0DKungYDHtgFQRtmx",
+                    "name": "NITROUS",
+                    "duration": 131.718,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0f1G5SHFoFC9lO03gHCGVS",
+                    "name": "Pretty Boy (feat. Lil Yachty)",
+                    "duration": 156.759,
+                    "featuredIn": {
+                        "id": [
+                            "6icQOAFXDZKsumw3YXyusw"
+                        ],
+                        "name": [
+                            "Lil Yachty"
+                        ]
+                    }
+                },
+                {
+                    "id": "4UiogCfzKQW98U1GTCivsn",
+                    "name": "Normal People (feat. rei brown)",
+                    "duration": 166.883,
+                    "featuredIn": {
+                        "id": [
+                            "4N7IToHBlPXqlrXiv1Nij6"
+                        ],
+                        "name": [
+                            "rei brown"
+                        ]
+                    }
+                },
+                {
+                    "id": "6zvqq50PL7io0rprbkrYc9",
+                    "name": "Afterthought",
+                    "duration": 194.871,
+                    "featuredIn": {
+                        "id": [
+                            "0Cp8WN4V8Tu4QJQwCN5Md4"
+                        ],
+                        "name": [
+                            "BENEE"
+                        ]
+                    }
+                },
+                {
+                    "id": "4OxQ9sBdJCndBzQNuGorr7",
+                    "name": "Mr. Hollywood",
+                    "duration": 202.072,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6H167kbd8gY2Eewzf14YjD",
+                    "name": "777",
+                    "duration": 181.772,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "75sIBYeVmCTdKEsAZdGKqM",
+                    "name": "Reanimator (feat. Yves Tumor)",
+                    "duration": 183.256,
+                    "featuredIn": {
+                        "id": [
+                            "0qu422H5MOoQxGjd4IzHbS"
+                        ],
+                        "name": [
+                            "Yves Tumor"
+                        ]
+                    }
+                },
+                {
+                    "id": "1MONUudxAjEk76FJvzGhuD",
+                    "name": "Like You Do",
+                    "duration": 240.294,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5sbZj8hcae2ebXVBonKQ6g",
+                    "name": "Your Man",
+                    "duration": 163.758,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "57lgFncHBYu5E3igZnuCJK",
+            "albumTitle": "Tickets To My Downfall",
+            "artistID": "6TIYQ3jFPwQSRmorSezPxX",
+            "artistName": "Machine Gun Kelly",
+            "albumDuration": 2169.913,
+            "albumReleaseDate": "2020-09-25",
+            "songs": [
+                {
+                    "id": "4kDgnKgZTX6puRz9EoNjle",
+                    "name": "title track",
+                    "duration": 165.967,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "69LvvkHnFFnX3d5eNObtMo",
+                    "name": "kiss kiss",
+                    "duration": 138.097,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "3k0YJnqMKRZb8swo86vCkq",
+                    "name": "drunk face",
+                    "duration": 143.9,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6mADjHs6FXdroPzEGW6KVJ",
+                    "name": "bloody valentine",
+                    "duration": 205.158,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1VSuFS7PahCN3SWbOcQ98m",
+                    "name": "forget me too (feat. Halsey)",
+                    "duration": 171.62,
+                    "featuredIn": {
+                        "id": [
+                            "26VFTg2z8YR0cCuwLzESi2"
+                        ],
+                        "name": [
+                            "Halsey"
+                        ]
+                    }
+                },
+                {
+                    "id": "1vuUbnY82fCNjfzqjLmblw",
+                    "name": "all I know (feat. Trippie Redd)",
+                    "duration": 129.142,
+                    "featuredIn": {
+                        "id": [
+                            "6Xgp2XMz1fhVYe7i6yNAax"
+                        ],
+                        "name": [
+                            "Trippie Redd"
+                        ]
+                    }
+                },
+                {
+                    "id": "6EPxapAlha7pEyn5kXgW3R",
+                    "name": "lonely",
+                    "duration": 190.142,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "41ltleYVuvEjnqiygy2rQ3",
+                    "name": "WWIII",
+                    "duration": 59.739,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7Ct4wK3Fpp8vvZGcWy4NCP",
+                    "name": "kevin and barracuda - interlude",
+                    "duration": 83.297,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7os53rdrgA0OU6xC5xJruX",
+                    "name": "concert for aliens",
+                    "duration": 160.222,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7kDUspsoYfLkWnZR7qwHZl",
+                    "name": "my ex's best friend (with blackbear)",
+                    "duration": 139.46,
+                    "featuredIn": {
+                        "id": [
+                            "2cFrymmkijnjDg9SS92EPM"
+                        ],
+                        "name": [
+                            "blackbear"
+                        ]
+                    }
+                },
+                {
+                    "id": "2iVsPIS2yjS4xhs5Rdy65O",
+                    "name": "jawbreaker",
+                    "duration": 117.579,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1eTdTVIxLlhHwwA50vEzZa",
+                    "name": "nothing inside (feat. iann dior)",
+                    "duration": 172.234,
+                    "featuredIn": {
+                        "id": [
+                            "6ASri4ePR7RlsvIQgWPJpS"
+                        ],
+                        "name": [
+                            "iann dior"
+                        ]
+                    }
+                },
+                {
+                    "id": "5rGUAs7Oamox7PY4P42Qzv",
+                    "name": "banyan tree - interlude",
+                    "duration": 91.143,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0RFgKcpWImLWmK9WSSHAiC",
+                    "name": "play this when i'm gone",
+                    "duration": 202.213,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "5lJqux7orBlA1QzyiBGti1",
+            "albumTitle": "YHLQMDLG",
+            "artistID": "4q3ewBCX7sLwd24euuV69X",
+            "artistName": "Bad Bunny",
+            "albumDuration": 3958.0299999999997,
+            "albumReleaseDate": "2020-02-28",
+            "songs": [
+                {
+                    "id": "41wtwzCZkXwpnakmwJ239F",
+                    "name": "Si Veo a Tu Mam\u00e1",
+                    "duration": 170.971,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6NfrH0ANGmgBXyxgV2PeXt",
+                    "name": "La Dif\u00edcil",
+                    "duration": 163.084,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "75pQqzwgCjUOSSy5CpmAjy",
+                    "name": "Pero Ya No",
+                    "duration": 160.638,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "69vlMrzHwATKzupwNcUPyK",
+                    "name": "La Santa",
+                    "duration": 206.42,
+                    "featuredIn": {
+                        "id": [
+                            "4VMYDCV2IEDYJArk749S6m"
+                        ],
+                        "name": [
+                            "Daddy Yankee"
+                        ]
+                    }
+                },
+                {
+                    "id": "0SqqAgdovOE24BzxIClpjw",
+                    "name": "Yo Perreo Sola",
+                    "duration": 172.127,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4j4w4CXm6BSr0s25wAWrrX",
+                    "name": "Bichiyal",
+                    "duration": 196.5,
+                    "featuredIn": {
+                        "id": [
+                            "0Y30TbA4p8SAfCzy2AFBa8"
+                        ],
+                        "name": [
+                            "Yaviah"
+                        ]
+                    }
+                },
+                {
+                    "id": "7sOfmPd18RWp3FoCzpa7Kw",
+                    "name": "Soli\u00e1",
+                    "duration": 159.282,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5kqNIqFjijuzvVLhuY9B8j",
+                    "name": "La Zona",
+                    "duration": 136.892,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "53v2u51nq3CxiKUNphRzP1",
+                    "name": "Que Malo",
+                    "duration": 167.975,
+                    "featuredIn": {
+                        "id": [
+                            "12vb80Km0Ew53ABfJOepVz"
+                        ],
+                        "name": [
+                            "\u00d1engo Flow"
+                        ]
+                    }
+                },
+                {
+                    "id": "2n7ohqg1s68ToAHh4u9mcW",
+                    "name": "Vete",
+                    "duration": 192.024,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "38RIEav39FGi86jppxO0du",
+                    "name": "Ignorantes",
+                    "duration": 210.606,
+                    "featuredIn": {
+                        "id": [
+                            "77ziqFxp5gaInVrF2lj4ht"
+                        ],
+                        "name": [
+                            "Sech"
+                        ]
+                    }
+                },
+                {
+                    "id": "4r9jkMEnArtWGH2rL2FZl0",
+                    "name": "A Tu Merced",
+                    "duration": 175.918,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5J7teKIJGtqVypgYI6sqXj",
+                    "name": "Una Vez",
+                    "duration": 232.496,
+                    "featuredIn": {
+                        "id": [
+                            "0Q8NcsJwoCbZOHHW63su5S"
+                        ],
+                        "name": [
+                            "Mora"
+                        ]
+                    }
+                },
+                {
+                    "id": "2DEZmgHKAvm41k4J3R2E9Y",
+                    "name": "Safaera",
+                    "duration": 295.176,
+                    "featuredIn": {
+                        "id": [
+                            "4IMAo2UQchVFyPH24PAjUs",
+                            "12vb80Km0Ew53ABfJOepVz"
+                        ],
+                        "name": [
+                            "Jowell & Randy",
+                            "\u00d1engo Flow"
+                        ]
+                    }
+                },
+                {
+                    "id": "4NqQaovM14WR2hNPMFxgjb",
+                    "name": "25/8",
+                    "duration": 243.275,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4saHEjXw7O1NXJOzBkUKKG",
+                    "name": "Est\u00e1 Cabr\u00f3n Ser Yo",
+                    "duration": 227.939,
+                    "featuredIn": {
+                        "id": [
+                            "2R21vXR83lH98kGeO99Y66"
+                        ],
+                        "name": [
+                            "Anuel AA"
+                        ]
+                    }
+                },
+                {
+                    "id": "5gCg2qMPzKkW4jS4dBKdDs",
+                    "name": "Puesto Pa' Guerrial",
+                    "duration": 190.207,
+                    "featuredIn": {
+                        "id": [
+                            "7iK8PXO48WeuP03g8YR51W"
+                        ],
+                        "name": [
+                            "Myke Towers"
+                        ]
+                    }
+                },
+                {
+                    "id": "0fgsKar6uBO08vzHXkTjWi",
+                    "name": "P FKN R",
+                    "duration": 258.28,
+                    "featuredIn": {
+                        "id": [
+                            "1WMwuNKzEFtU6pPkdtryYS",
+                            "4SsVbpTthjScTS7U2hmr1X"
+                        ],
+                        "name": [
+                            "Kendo Kaponi",
+                            "Arcangel"
+                        ]
+                    }
+                },
+                {
+                    "id": "1V8XneTrX6kKeoxYbk4x6h",
+                    "name": "Hablamos Ma\u00f1ana",
+                    "duration": 240.253,
+                    "featuredIn": {
+                        "id": [
+                            "1bAftSH8umNcGZ0uyV7LMg",
+                            "2XcZshqzPKm3iZcmt73R8D"
+                        ],
+                        "name": [
+                            "Duki",
+                            "Pablo Chill-E"
+                        ]
+                    }
+                },
+                {
+                    "id": "4MZSqgwlE71CWZ6qQ3gkKm",
+                    "name": "<3",
+                    "duration": 157.967,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "4yP0hdKOZPNshxUOjY0cZj",
+            "albumTitle": "After Hours",
+            "artistID": "1Xyo4u8uXC1ZmMpatF05PJ",
+            "artistName": "The Weeknd",
+            "albumDuration": 3377.568,
+            "albumReleaseDate": "2020-03-20",
+            "songs": [
+                {
+                    "id": "6b5P51m8xx2XA6U7sdNZ5E",
+                    "name": "Alone Again",
+                    "duration": 250.053,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2K9Ovn1o2bTGqbsABGC6m3",
+                    "name": "Too Late",
+                    "duration": 239.973,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6kWxIqQDsKFYCJGbU4AjCX",
+                    "name": "Hardest To Love",
+                    "duration": 211.4,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "4BGZF4oLbTL0pWm7C18pbv",
+                    "name": "Scared To Live",
+                    "duration": 191.306,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "3WlbeuhfRSqU7ylK2Ui5U7",
+                    "name": "Snowchild",
+                    "duration": 247.186,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "1sOW4PuG5X3Ie3EXUhAopJ",
+                    "name": "Escape From LA",
+                    "duration": 355.96,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "6bnF93Rx87YqUBLSgjiMU8",
+                    "name": "Heartless",
+                    "duration": 198.266,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "3orEOtd8CPL8GFlpRpKuoE",
+                    "name": "Faith",
+                    "duration": 283.226,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "0VjIjW4GlUZAMYd2vXMi3b",
+                    "name": "Blinding Lights",
+                    "duration": 200.04,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "7szuecWAPwGoV1e5vGu8tl",
+                    "name": "In Your Eyes",
+                    "duration": 237.52,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "5QO79kh1waicV47BqGRL3g",
+                    "name": "Save Your Tears",
+                    "duration": 215.626,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "40U8d12pC5UHqmHwXjHjjl",
+                    "name": "Repeat After Me (Interlude)",
+                    "duration": 195.813,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2p8IUWQDrpjuFltbdgLOag",
+                    "name": "After Hours",
+                    "duration": 361.026,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                },
+                {
+                    "id": "2BcnxwxBuar5wjCaLqm5N3",
+                    "name": "Until I Bleed Out",
+                    "duration": 190.173,
+                    "featuredIn": {
+                        "id": [],
+                        "name": []
+                    }
+                }
+            ]
+        },
+        {
+            "albumID": "2ogiazbrNEx0kQHGl5ZBTQ",
+            "albumTitle": "WAP (feat. Megan Thee Stallion)",
+            "artistID": "4kYSro6naA4h99UJvo89HB",
+            "artistName": "Cardi B",
+            "albumDuration": 187.541,
+            "albumReleaseDate": "2020-08-07",
+            "songs": [
+                {
+                    "id": "4Oun2ylbjFKMPTiaSbbCih",
+                    "name": "WAP (feat. Megan Thee Stallion)",
+                    "duration": 187.541,
+                    "featuredIn": {
+                        "id": [
+                            "181bsRPaVXVlUKXrxwZfHK"
+                        ],
+                        "name": [
+                            "Megan Thee Stallion"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
