@@ -3,7 +3,7 @@
 import psycopg2
 import json
 
-conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="YOURDB", user = "YOURUSERNAME", password = "YOURPW", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
@@ -102,6 +102,7 @@ def tableCreation():
             FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
 
    print("Table created successfully")
+   conn.commit()
 
 def testInserts():
    # Creating data for the table
@@ -139,43 +140,58 @@ def dataInsertion():
       albumInsert = """INSERT INTO album (albumUID, albumTitle, duration, releaseDate) VALUES (%s, %s, %s, %s)"""
       albumData = (t['albumID'], t['albumTitle'], float(t['albumDuration']), t['albumReleaseDate'])
       cur.execute(albumInsert, albumData)
-      print(t['albumID'])
-      print(t['albumTitle'])
-      print(t['albumDuration'])
-      print(t['albumReleaseDate'])
 
       # Create name
-      print(t['artistID'])
-      print(t['artistName'])  # nameString
-      print(t['artistName'])  # knownAs
+      nameInsert = """INSERT INTO name (nameUID, nameString, knownAs) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING"""
+      nameData = (t['artistID'], t['artistName'], t['artistName'])
+      cur.execute(nameInsert, nameData)
 
       # Create artist
-      print(t['artistID'])
+      artistInsert = """INSERT INTO artist (nameUID) VALUES (%s) ON CONFLICT DO NOTHING"""
+      artistData = (t['artistID'])
+      cur.execute(artistInsert, [artistData])
 
       # Iterate through all songs in the album
       for y, s in enumerate(t['songs']):
          # Create all songs
-         print(s['id'])
-         print(s['name'])
+         songInsert = """INSERT INTO song (songUID, genre, songTitle) VALUES (%s, NULL, %s)"""
+         songData = (s['id'], s['name'])
+         cur.execute(songInsert, songData)
          # MUST MANUALLY ADD GENRE
 
          # Create all contains 
-         print(s['id'])
-         print(t['albumID'])
+         containsInsert = """INSERT INTO contains (songUID, albumUID) VALUES (%s, %s)"""
+         containsData = (s['id'], t['albumID'])
+         cur.execute(containsInsert, containsData)
 
          # Create all performedBy
-         print(s['id'])
-         print(t['albumID'])
-         print(t['artistID'])
+         performedByInsert = """INSERT INTO performedBy (songUID, albumUID, nameUID) VALUES (%s, %s, %s)"""
+         performedByData = (s['id'], t['albumID'], t['artistID'])
+         cur.execute(performedByInsert, performedByData)
 
          for z, a in enumerate(s['featuredIn']):
+            # Creating names of featuredIn
+            featuredInNameInsert = """INSERT INTO name (nameUID, nameString, knownAs) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING"""
+            featuredInNameData = (a['id'], a['name'], a['name'])
+            cur.execute(featuredInNameInsert, featuredInNameData)
+
+            # Creating artist of featuredIn
+            featuredInArtistInsert = """INSERT INTO artist (nameUID) VALUES (%s) ON CONFLICT DO NOTHING"""
+            featuredInArtistData = (a['id'])
+            cur.execute(featuredInArtistInsert, [featuredInArtistData])
             # Creating all featuredIn
-            print(s['id'])
-            print(a['id'])
+            featuredInInsert = """INSERT INTO featuredIn (songUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING"""
+            featuredInData = (s['id'],a['id'])
+            cur.execute(featuredInInsert, featuredInData)
+   conn.commit()
 
 tableCreation()
 dataInsertion()
 
-conn.commit()
+cur.execute("SELECT *  from ALBUM")
+rows = cur.fetchall()
+for row in rows:
+   print (row)
+
 cur.close()
 conn.close()
