@@ -1,0 +1,52 @@
+CREATE FUNCTION INSERTOrFindInName(TEXT, TEXT, TEXT) RETURNS INTEGER AS $$ /*Stand alone INSERT INTO name table. Doubt really need the RETURN value*/
+DECLARE
+    nuidFROMUser ALIAS FOR $1;
+    nameFROMUser ALIAS FOR $2;
+    kFROMUser ALIAS FOR $3;
+BEGIN
+	IF (EXISTS (SELECT name.nameuid FROM name WHERE name.nameuid = nuidFROMUser)) THEN /*Check IF exists*/
+    	RETURN 0; /*Preexisting so no INSERT*/
+    ELSE
+        INSERT INTO name VALUES (nuidFROMUser, nameFROMUser, kFROMUser);
+    	RETURN 1;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+/*Probably the best bet:*/
+CREATE FUNCTION iofInArea(TEXT, text, Text, text) RETURNS INTEGER AS $$
+DECLARE
+    nuidFROMUser ALIAS FOR $1;
+    nameFROMUser ALIAS FOR $2;
+    kFROMUser ALIAS FOR $3;
+    WHEREToINSERT ALIAS FOR $4;
+    throwAwayFORNow INTEGER;
+BEGIN
+	SELECT INSERTorfindinname(nuidFROMUser, nameFROMUser, kFROMUser) INTO throwAwayFORNow;
+    IF (WHEREToINSERT = 'Artist') THEN
+      IF (EXISTs (SELECT artist.nameuid FROM artist WHERE artist.nameuid = nuidFROMUser)) THEN
+      ELSE
+          INSERT INTO artist VALUES (nuidFROMUser);
+          RETURN 1;
+      END IF;
+    ELSIF (WHEREToINSERT = 'Writer') THEN
+    	IF (EXISTS (SELECT writer.nameuid FROM writer WHERE writer.nameuid = nuidFROMUser)) THEN
+      ELSE
+          INSERT INTO writer VALUES (nuidFROMUser);
+          RETURN 1;
+      END IF;
+    ELSIF (WHEREToINSERT = 'Producer') THEN
+    	IF (EXISTs (SELECT producer.nameuid FROM producer WHERE producer.nameuid = nuidFROMUser)) THEN
+      ELSE
+          INSERT INTO producer VALUES (nuidFROMUser);
+          RETURN 1;
+      END IF;
+    END IF;
+	RETURN 0;
+END;
+$$ LANGUAGE plpgsql;
+
+Used like this:
+SELECT iofinarea($$aa$$, $$hello$$, $$hello2$$, $$Artist$$);

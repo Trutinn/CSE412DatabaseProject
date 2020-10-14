@@ -1,0 +1,17 @@
+CREATE FUNCTION insertToFeaturedIn(TEXT, TEXT) RETURNS INTEGER AS $$ /*Stand alone insert into name table. Doubt really need the return value*/
+DECLARE
+	suid ALIAS FOR $1;
+    nuid ALIAS FOR $2;
+BEGIN
+
+	IF (EXISTS (SELECT featuredin.songuid FROM featuredin WHERE featuredin.songuid = suid AND featuredin.nameuid = nuid)) THEN /*Check if exists. Only need to check song as one performer per song*/
+    ELSE
+    	INSERT INTO featuredin VALUES (suid, nuid);
+    END If;
+    
+    RETURN 1;
+END;
+$$ LANGUAGE plpgsql;
+
+Example:
+SELECT inserttofeaturedin($$ree$$, $$a$$);
