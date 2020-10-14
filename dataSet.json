@@ -7,40 +7,59 @@
             "artistName": "Juice WRLD",
             "albumDuration": 3528.04,
             "albumReleaseDate": "2020-07-10",
+            "producedBy": [
+                {
+                    "id": "3VRFuvKNWqUMGFalqsFt7k",
+                    "name": "Ronny J"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "AMcHTd4MrNF0vyc3RffyYI",
+                    "name": "Jarad Higgins"
+                }
+            ],
             "songs": [
                 {
                     "id": "02XcRGWPkvomFvzTamEKHg",
                     "name": "Anxiety - Intro",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4K06PO78fW4mnBVenxGNob",
                     "name": "Conversations",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1YM6c2sxbf2Jacl9IFgn4I",
                     "name": "Titanic",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7d94IqWX2UmSKMGUYSGFJG",
                     "name": "Bad Energy",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "5dOxHHMOFAbG3VH23t0xNm",
                     "name": "Righteous",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "0fCwrjKfWxF3xQhZrYUw4T",
                     "name": "Blood On My Jeans",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6wQlQrTY5mVS8EGaFZVwVF",
                     "name": "Smile (with The Weeknd)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "1Xyo4u8uXC1ZmMpatF05PJ",
@@ -51,6 +70,7 @@
                 {
                     "id": "5JAYDuLRkODlVt6dgoalKk",
                     "name": "Tell Me U Luv Me (with Trippie Redd)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "6Xgp2XMz1fhVYe7i6yNAax",
@@ -61,6 +81,7 @@
                 {
                     "id": "0ada5XsQGLPUVbmTCkAP49",
                     "name": "Hate The Other Side (with Marshmello & The Kid Laroi)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "64KEffDW9EtZ1y2vBYgq8T",
@@ -79,11 +100,13 @@
                 {
                     "id": "2wg81gBz6PZSwbZrXObeW4",
                     "name": "Get Through It - Interlude",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "5wWAwzGp2OaaoIkwcz6wZs",
                     "name": "Life's A Mess (feat. Halsey)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "26VFTg2z8YR0cCuwLzESi2",
@@ -94,6 +117,7 @@
                 {
                     "id": "2Y0wPrPQBrGhoLn14xRYCG",
                     "name": "Come & Go (with Marshmello)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "64KEffDW9EtZ1y2vBYgq8T",
@@ -104,51 +128,61 @@
                 {
                     "id": "2SVx3uds6jTWALFxevIWMA",
                     "name": "I Want It",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "0440JCJyIAmINA8KcYgFb5",
                     "name": "Fighting Demons",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2U5WueTLIK5WJLD7mvDODv",
                     "name": "Wishing Well",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4F6YLjakjqWFTgC5qfEwPQ",
                     "name": "Screw Juice",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7pbg3ABlAZv2NiIdKbBBFm",
                     "name": "Up Up And Away",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4sjdZEEQvR1sXrRNSuBfbA",
                     "name": "The Man, The Myth, The Legend - Interlude",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "21CkzgKCBCq5V4XKjiGSIj",
                     "name": "Stay High",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4PPLJAEYBSOcnzr9TZoqf9",
                     "name": "Can't Die",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7AvprzMsRJpybaalckaT8c",
                     "name": "Man Of The Year",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1OjiYjgPZyxS0AiXiSnuYI",
                     "name": "Juice WRLD Speaks From Heaven - Outro",
+                    "genre": "Rap",
                     "featuredIn": []
                 }
             ]
@@ -160,15 +194,29 @@
             "artistName": "Pop Smoke",
             "albumDuration": 3401.218,
             "albumReleaseDate": "2020-07-03",
+            "producedBy": [
+                {
+                    "id": "iOlxdkmniWoAzln6CD9ozp",
+                    "name":"Andre Loblack"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "ZMXJyOZAJIAZUXNUVA0Pdw",
+                    "name":"808Melo"
+                }
+            ],
             "songs": [
                 {
                     "id": "4OGIeHtYhRTJ8iW21UUyZW",
                     "name": "Bad Bitch From Tokyo (Intro)",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6O7fPYTsb2mY0PiFt2ymDB",
                     "name": "Aim For The Moon (feat. Quavo)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0VRj0yCOv2FXJNP47XQnx5",
@@ -179,6 +227,7 @@
                 {
                     "id": "0PvFJmanyNQMseIFrU708S",
                     "name": "For The Night (feat. Lil Baby & DaBaby)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "5f7VJjfbwm532GiveGC0ZK",
@@ -193,21 +242,25 @@
                 {
                     "id": "7sjFIZ1g5QLJLGja3k592K",
                     "name": "44 BullDog",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1hg3RlqFZXJb5YgRoK9qmF",
                     "name": "Gangstas",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "0bjgQ24UZGwKikldIyEOgf",
                     "name": "Yea Yea",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "3eV2WT9YhfzkxbufnBF8wK",
                     "name": "Creature (feat. Swae Lee)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "1zNqQNIdeOUZHb8zbZRFMX",
@@ -218,6 +271,7 @@
                 {
                     "id": "2FhEj9lvEIaJihjFprRrGt",
                     "name": "Snitching (feat. Quavo & Future)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0VRj0yCOv2FXJNP47XQnx5",
@@ -232,6 +286,7 @@
                 {
                     "id": "71d7LaAgPcNcUopu3OzmP7",
                     "name": "Make It Rain (feat. Rowdy Rebel)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "6LXRvV2OAtXF7685fzh3mj",
@@ -242,6 +297,7 @@
                 {
                     "id": "1H7KnK26kc1YyellpbINEn",
                     "name": "The Woo (feat. 50 Cent & Roddy Ricch)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "3q7HBObVc0L8jNeTe5Gofh",
@@ -256,6 +312,7 @@
                 {
                     "id": "1JDhNQ0oOT7XpclZn3aQ8F",
                     "name": "West Coast Shit (feat. Tyga & Quavo)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "5LHRHt1k9lMyONurDHEdrp",
@@ -270,6 +327,7 @@
                 {
                     "id": "3NWrHCwvyII4fTx05PN3IO",
                     "name": "Enjoy Yourself (feat. Karol G)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "790FomKkXshlbRYZFtlgla",
@@ -280,6 +338,7 @@
                 {
                     "id": "5rZlwNFl01HqLWBQGryKSm",
                     "name": "Mood Swings (feat. Lil Tjay)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "6jGMq4yGs7aQzuGsMgVgZR",
@@ -290,16 +349,19 @@
                 {
                     "id": "5kkaSMcf4BFlhRRICCKZb6",
                     "name": "Something Special",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1tkg4EHVoqnhR6iFEXb60y",
                     "name": "What You Know Bout Love",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4Tc9PHEoeP17PQj3OOKXPu",
                     "name": "Diana (feat. King Combs)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "41I5xI04kixwmonDBl0Sda",
@@ -310,16 +372,19 @@
                 {
                     "id": "25zlnOAzbVoOzIeXSvQFf1",
                     "name": "Got It On Me",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2SxR5RitJdsG6wINvJLBSD",
                     "name": "Tunnel Vision (Outro)",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6PnTgx9lyvLGIcPnroCvc2",
                     "name": "Dior - Bonus",
+                    "genre": "Rap",
                     "featuredIn": []
                 }
             ]
@@ -331,10 +396,23 @@
             "artistName": "21 Savage",
             "albumDuration": 2640.6510000000003,
             "albumReleaseDate": "2020-10-02",
+            "producedBy": [
+                {
+                    "id": "8fXzeTCQsZUuVjvcKazgmi",
+                    "name":"Metro Boomin"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "lzB9Z60NwbmP3G4babQJnM",
+                    "name":"D. Mackay"
+                }
+            ],
             "songs": [
                 {
                     "id": "5UpXJ75CXod4PCoBQP6MAP",
                     "name": "Intro",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -345,6 +423,7 @@
                 {
                     "id": "5SWnsxjhdcEDc7LJjq9UHk",
                     "name": "Runnin",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -355,6 +434,7 @@
                 {
                     "id": "6pcywuOeGGWeOQzdUyti6k",
                     "name": "Glock In My Lap",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -365,6 +445,7 @@
                 {
                     "id": "4Q34FP1AT7GEl9oLgNtiWj",
                     "name": "Mr. Right Now (feat. Drake)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -379,6 +460,7 @@
                 {
                     "id": "3ruoIF2UnoXdzK8mR61ebq",
                     "name": "Rich Nigga Shit (feat. Young Thug)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -393,6 +475,7 @@
                 {
                     "id": "7fxSLnklnayJNBIKntXedZ",
                     "name": "Slidin",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -403,6 +486,7 @@
                 {
                     "id": "3CDVMejYHnB1SkEEx0T1N4",
                     "name": "Many Men",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -413,6 +497,7 @@
                 {
                     "id": "2y3mrzWEWaAFqb2jf5fED8",
                     "name": "Snitches & Rats (Interlude)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -423,6 +508,7 @@
                 {
                     "id": "3WaDoMDQRqDdgtCDLxanpN",
                     "name": "Snitches & Rats (feat. Young Nudy)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -437,6 +523,7 @@
                 {
                     "id": "42Tohunwlh34o0mgxYx5iq",
                     "name": "My Dawg",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -447,6 +534,7 @@
                 {
                     "id": "7FtZFla3ZH6PqsAJ9MvVCM",
                     "name": "Steppin On Niggas",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -457,6 +545,7 @@
                 {
                     "id": "4V9ynsDPwHtdItksqjuRu0",
                     "name": "Brand New Draco",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -467,6 +556,7 @@
                 {
                     "id": "50I7FNN2rl2rWiNwGxS146",
                     "name": "No Opp Left Behind",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -477,6 +567,7 @@
                 {
                     "id": "1wGnp7ejkCuXRsehXx0PNP",
                     "name": "RIP Luv",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -487,6 +578,7 @@
                 {
                     "id": "11XegnWeJHBDtj9IsNwngu",
                     "name": "Said N Done",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -503,25 +595,41 @@
             "artistName": "Taylor Swift",
             "albumDuration": 3816.5870000000004,
             "albumReleaseDate": "2020-07-24",
+            "producedBy": [
+                {
+                    "id": "kC4rYMrHsQB5szaSVHhPxc",
+                    "name":"Aaron Dessner"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "xn4SZFiGBYpsxpf3J8d6oN",
+                    "name":"Aaron Dessner"
+                }
+            ],
             "songs": [
                 {
                     "id": "0Jlcvv8IykzHaSmj49uNW8",
                     "name": "the 1",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "4R2kfaDFhslZEMJqAFNpdd",
                     "name": "cardigan",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "2Eeur20xVqfUoM3Q7EFPFt",
                     "name": "the last great american dynasty",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "4pvb0WLRcMtbPGmtejJJ6y",
                     "name": "exile (feat. Bon Iver)",
+                    "genre": "Alternative",
                     "featuredIn": [
                         {
                             "id": "4LEiUm1SRbFMgfqnQTwUbQ",
@@ -532,61 +640,73 @@
                 {
                     "id": "1MgV7FIyNxIG7WzMRJV5HC",
                     "name": "my tears ricochet",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "0ZNU020wNYvgW84iljPkPP",
                     "name": "mirrorball",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "6KJqZcs9XDgVck7Lg9QOTC",
                     "name": "seven",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "3hUxzQpSfdDqwM3ZTFQY0K",
                     "name": "august",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "7kt9e9LFSpN1zQtYEl19o1",
                     "name": "this is me trying",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "2NmsngXHeC1GQ9wWrzhOMf",
                     "name": "illicit affairs",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "6VsvKPJ4xjVNKpI8VVZ3SV",
                     "name": "invisible string",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "2QDyYdZyhlP2fp79KZX8Bi",
                     "name": "mad woman",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "08fa9LFcFBTcilB3iq2e2A",
                     "name": "epiphany",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "5kI4eCXXzyuIUXjQra0Cxi",
                     "name": "betty",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "7MbT4I8qGntX4fMdqMQgke",
                     "name": "peace",
+                    "genre": "Alternative",
                     "featuredIn": []
                 },
                 {
                     "id": "6MWoRt97mnSTXZhu3ggi9C",
                     "name": "hoax",
+                    "genre": "Alternative",
                     "featuredIn": []
                 }
             ]
@@ -598,15 +718,29 @@
             "artistName": "Polo G",
             "albumDuration": 2830.134,
             "albumReleaseDate": "2020-05-15",
+            "producedBy": [
+                {
+                    "id": "HyMuXdG585Q3I0QhtiHl9t",
+                    "name":"1040 Beats"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "oJn8QYdMy7IB3svkuHbmIV",
+                    "name":"Angelo Callari"
+                }
+            ],
             "songs": [
                 {
                     "id": "3TciLI5wo7RddPtAFhiU9V",
                     "name": "Don't Believe The Hype",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2iP3unJbxZvRuqyrS0ocZy",
                     "name": "Heartless (feat. Mustard)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0YinUQ50QDB7ZxSCLyQ40k",
@@ -617,11 +751,13 @@
                 {
                     "id": "1VLtjHwRWOVJiE5Py7JxoQ",
                     "name": "Martin & Gina",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2QqJTIlGKRLJC3onkavYEz",
                     "name": "Flex (feat. Juice WRLD)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "4MCBfE4596Uoi2O4DtmEMz",
@@ -632,6 +768,7 @@
                 {
                     "id": "4PklAHGXT5ityno3IA8SKd",
                     "name": "Go Stupid",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "44IvvHRk2XF243QLA2VOa8",
@@ -650,31 +787,37 @@
                 {
                     "id": "3JKgcAa7r07ocVWcV8bS0H",
                     "name": "21",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2iW6Hb6kfrz2K7EhPibFiq",
                     "name": "33",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "40j4RoqmLiivqzRObbQ4BF",
                     "name": "I Know",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4SIB2yxKoFOrbkjA4zfQbB",
                     "name": "Beautiful Pain (Losin My Mind)",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4dKe8YJZg545pXqWBksYIe",
                     "name": "No Matter What",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "65jw6GhwQW3Db55PxlPEpS",
                     "name": "Be Something (feat. Lil Baby)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "5f7VJjfbwm532GiveGC0ZK",
@@ -685,26 +828,31 @@
                 {
                     "id": "1F8yKtk5CQBptos4kM7aO7",
                     "name": "Relentless",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "58GJNfq2m0Qr5nIUCDbXVQ",
                     "name": "DND",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4XLCFFvRG1qQ8kT4uzwYZC",
                     "name": "Chinatown",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6V1Jx3o0S2MtBI9yIDXsJS",
                     "name": "Trials & Tribulations",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "192RjH0gN6en7nE6ElN96T",
                     "name": "Wishing For A Hero (feat. BJ The Chicago Kid)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "07d5etnpjriczFBB8pxmRe",
@@ -721,25 +869,41 @@
             "artistName": "Joji",
             "albumDuration": 3194.37,
             "albumReleaseDate": "2020-09-25",
+            "producedBy": [
+                {
+                    "id": "T5O3KB8ai3YgRtoIFfdciS",
+                    "name":"Bekon"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "bIdFfiDAF7uRZlfdT8bJ3P",
+                    "name":"Antoine Norwood"
+                }
+            ],
             "songs": [
                 {
                     "id": "7xcUWyLh6fIMsYjoVI7NnZ",
                     "name": "Ew",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "5SjtAe7xzUgHDtNTmt8zS7",
                     "name": "MODUS",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "5E7p95xh9Ul4vZp4LEoJwi",
                     "name": "Tick Tock",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "6Ww8GHdPCl8MqZBhPn4LKd",
                     "name": "Daylight",
+                    "genre": "R&B",
                     "featuredIn": [
                         {
                             "id": "5fMUXHkw8R8eOP2RNVYEZX",
@@ -750,26 +914,31 @@
                 {
                     "id": "5xNNJKrjobta5ksOpMLYd1",
                     "name": "Upgrade",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "0HItcI6qN6Dr4MC3CZryQh",
                     "name": "Gimme Love",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "3AkdSFo7quCZ781KCqNK0T",
                     "name": "Run",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "0rOLFkjY5DSIViVBNnzOuK",
                     "name": "Sanctuary",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "5dl8x4xLEzZC0f927WBTUG",
                     "name": "High Hopes (feat. Omar Apollo)",
+                    "genre": "R&B",
                     "featuredIn": [
                         {
                             "id": "5FxD8fkQZ6KcsSYupDVoSO",
@@ -780,11 +949,13 @@
                 {
                     "id": "1RTYj0DKungYDHtgFQRtmx",
                     "name": "NITROUS",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "0f1G5SHFoFC9lO03gHCGVS",
                     "name": "Pretty Boy (feat. Lil Yachty)",
+                    "genre": "R&B",
                     "featuredIn": [
                         {
                             "id": "6icQOAFXDZKsumw3YXyusw",
@@ -795,6 +966,7 @@
                 {
                     "id": "4UiogCfzKQW98U1GTCivsn",
                     "name": "Normal People (feat. rei brown)",
+                    "genre": "R&B",
                     "featuredIn": [
                         {
                             "id": "4N7IToHBlPXqlrXiv1Nij6",
@@ -805,6 +977,7 @@
                 {
                     "id": "6zvqq50PL7io0rprbkrYc9",
                     "name": "Afterthought",
+                    "genre": "R&B",
                     "featuredIn": [
                         {
                             "id": "0Cp8WN4V8Tu4QJQwCN5Md4",
@@ -815,16 +988,19 @@
                 {
                     "id": "4OxQ9sBdJCndBzQNuGorr7",
                     "name": "Mr. Hollywood",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "6H167kbd8gY2Eewzf14YjD",
                     "name": "777",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "75sIBYeVmCTdKEsAZdGKqM",
                     "name": "Reanimator (feat. Yves Tumor)",
+                    "genre": "R&B",
                     "featuredIn": [
                         {
                             "id": "0qu422H5MOoQxGjd4IzHbS",
@@ -835,11 +1011,13 @@
                 {
                     "id": "1MONUudxAjEk76FJvzGhuD",
                     "name": "Like You Do",
+                    "genre": "R&B",
                     "featuredIn": []
                 },
                 {
                     "id": "5sbZj8hcae2ebXVBonKQ6g",
                     "name": "Your Man",
+                    "genre": "R&B",
                     "featuredIn": []
                 }
             ]
@@ -851,30 +1029,47 @@
             "artistName": "Machine Gun Kelly",
             "albumDuration": 2169.913,
             "albumReleaseDate": "2020-09-25",
+            "producedBy": [
+                {
+                    "id": "X1LvixQiLrW6Pq4X947SzE",
+                    "name":"Travis Barker"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "UwilKui7VZ7tYxbGsPRHG4",
+                    "name":"Colson Baker"
+                }
+            ],
             "songs": [
                 {
                     "id": "4kDgnKgZTX6puRz9EoNjle",
                     "name": "title track",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "69LvvkHnFFnX3d5eNObtMo",
                     "name": "kiss kiss",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "3k0YJnqMKRZb8swo86vCkq",
                     "name": "drunk face",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6mADjHs6FXdroPzEGW6KVJ",
                     "name": "bloody valentine",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1VSuFS7PahCN3SWbOcQ98m",
                     "name": "forget me too (feat. Halsey)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "26VFTg2z8YR0cCuwLzESi2",
@@ -885,6 +1080,7 @@
                 {
                     "id": "1vuUbnY82fCNjfzqjLmblw",
                     "name": "all I know (feat. Trippie Redd)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "6Xgp2XMz1fhVYe7i6yNAax",
@@ -895,26 +1091,31 @@
                 {
                     "id": "6EPxapAlha7pEyn5kXgW3R",
                     "name": "lonely",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "41ltleYVuvEjnqiygy2rQ3",
                     "name": "WWIII",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7Ct4wK3Fpp8vvZGcWy4NCP",
                     "name": "kevin and barracuda - interlude",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7os53rdrgA0OU6xC5xJruX",
                     "name": "concert for aliens",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7kDUspsoYfLkWnZR7qwHZl",
                     "name": "my ex's best friend (with blackbear)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "2cFrymmkijnjDg9SS92EPM",
@@ -925,11 +1126,13 @@
                 {
                     "id": "2iVsPIS2yjS4xhs5Rdy65O",
                     "name": "jawbreaker",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1eTdTVIxLlhHwwA50vEzZa",
                     "name": "nothing inside (feat. iann dior)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "6ASri4ePR7RlsvIQgWPJpS",
@@ -940,11 +1143,13 @@
                 {
                     "id": "5rGUAs7Oamox7PY4P42Qzv",
                     "name": "banyan tree - interlude",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "0RFgKcpWImLWmK9WSSHAiC",
                     "name": "play this when i'm gone",
+                    "genre": "Rap",
                     "featuredIn": []
                 }
             ]
@@ -956,25 +1161,41 @@
             "artistName": "Bad Bunny",
             "albumDuration": 3958.0299999999997,
             "albumReleaseDate": "2020-02-28",
+            "producedBy": [
+                {
+                    "id": "UAdHBIcqz01SjO621T5GeM",
+                    "name":"Subelo NEO"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "Hwu4EolvXm85gwTsP2Btvf",
+                    "name":"Benito Martinez Ocasio"
+                }
+            ],
             "songs": [
                 {
                     "id": "41wtwzCZkXwpnakmwJ239F",
                     "name": "Si Veo a Tu Mam\u00e1",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6NfrH0ANGmgBXyxgV2PeXt",
                     "name": "La Dif\u00edcil",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "75pQqzwgCjUOSSy5CpmAjy",
                     "name": "Pero Ya No",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "69vlMrzHwATKzupwNcUPyK",
                     "name": "La Santa",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "4VMYDCV2IEDYJArk749S6m",
@@ -985,11 +1206,13 @@
                 {
                     "id": "0SqqAgdovOE24BzxIClpjw",
                     "name": "Yo Perreo Sola",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4j4w4CXm6BSr0s25wAWrrX",
                     "name": "Bichiyal",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0Y30TbA4p8SAfCzy2AFBa8",
@@ -1000,16 +1223,19 @@
                 {
                     "id": "7sOfmPd18RWp3FoCzpa7Kw",
                     "name": "Soli\u00e1",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "5kqNIqFjijuzvVLhuY9B8j",
                     "name": "La Zona",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "53v2u51nq3CxiKUNphRzP1",
                     "name": "Que Malo",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "12vb80Km0Ew53ABfJOepVz",
@@ -1020,11 +1246,13 @@
                 {
                     "id": "2n7ohqg1s68ToAHh4u9mcW",
                     "name": "Vete",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "38RIEav39FGi86jppxO0du",
                     "name": "Ignorantes",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "77ziqFxp5gaInVrF2lj4ht",
@@ -1035,11 +1263,13 @@
                 {
                     "id": "4r9jkMEnArtWGH2rL2FZl0",
                     "name": "A Tu Merced",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "5J7teKIJGtqVypgYI6sqXj",
                     "name": "Una Vez",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "0Q8NcsJwoCbZOHHW63su5S",
@@ -1050,6 +1280,7 @@
                 {
                     "id": "2DEZmgHKAvm41k4J3R2E9Y",
                     "name": "Safaera",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "4IMAo2UQchVFyPH24PAjUs",
@@ -1064,11 +1295,13 @@
                 {
                     "id": "4NqQaovM14WR2hNPMFxgjb",
                     "name": "25/8",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4saHEjXw7O1NXJOzBkUKKG",
                     "name": "Est\u00e1 Cabr\u00f3n Ser Yo",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "2R21vXR83lH98kGeO99Y66",
@@ -1079,6 +1312,7 @@
                 {
                     "id": "5gCg2qMPzKkW4jS4dBKdDs",
                     "name": "Puesto Pa' Guerrial",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "7iK8PXO48WeuP03g8YR51W",
@@ -1089,6 +1323,7 @@
                 {
                     "id": "0fgsKar6uBO08vzHXkTjWi",
                     "name": "P FKN R",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "1WMwuNKzEFtU6pPkdtryYS",
@@ -1103,6 +1338,7 @@
                 {
                     "id": "1V8XneTrX6kKeoxYbk4x6h",
                     "name": "Hablamos Ma\u00f1ana",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "1bAftSH8umNcGZ0uyV7LMg",
@@ -1117,6 +1353,7 @@
                 {
                     "id": "4MZSqgwlE71CWZ6qQ3gkKm",
                     "name": "<3",
+                    "genre": "Rap",
                     "featuredIn": []
                 }
             ]
@@ -1128,75 +1365,101 @@
             "artistName": "The Weeknd",
             "albumDuration": 3377.568,
             "albumReleaseDate": "2020-03-20",
+            "producedBy": [
+                {
+                    "id": "c7kV9z2UrPGKeQ1Epbb4cY",
+                    "name":"Illangelo"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "OwZ8kgj0QIT9Cgd9DAOwoo",
+                    "name":"DaHeala"
+                }
+            ],
             "songs": [
                 {
                     "id": "6b5P51m8xx2XA6U7sdNZ5E",
                     "name": "Alone Again",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2K9Ovn1o2bTGqbsABGC6m3",
                     "name": "Too Late",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6kWxIqQDsKFYCJGbU4AjCX",
                     "name": "Hardest To Love",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "4BGZF4oLbTL0pWm7C18pbv",
                     "name": "Scared To Live",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "3WlbeuhfRSqU7ylK2Ui5U7",
                     "name": "Snowchild",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "1sOW4PuG5X3Ie3EXUhAopJ",
                     "name": "Escape From LA",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "6bnF93Rx87YqUBLSgjiMU8",
                     "name": "Heartless",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "3orEOtd8CPL8GFlpRpKuoE",
                     "name": "Faith",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "0VjIjW4GlUZAMYd2vXMi3b",
                     "name": "Blinding Lights",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "7szuecWAPwGoV1e5vGu8tl",
                     "name": "In Your Eyes",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "5QO79kh1waicV47BqGRL3g",
                     "name": "Save Your Tears",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "40U8d12pC5UHqmHwXjHjjl",
                     "name": "Repeat After Me (Interlude)",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2p8IUWQDrpjuFltbdgLOag",
                     "name": "After Hours",
+                    "genre": "Rap",
                     "featuredIn": []
                 },
                 {
                     "id": "2BcnxwxBuar5wjCaLqm5N3",
                     "name": "Until I Bleed Out",
+                    "genre": "Rap",
                     "featuredIn": []
                 }
             ]
@@ -1208,10 +1471,23 @@
             "artistName": "Cardi B",
             "albumDuration": 187.541,
             "albumReleaseDate": "2020-08-07",
+            "producedBy": [
+                {
+                    "id": "QosfzltY2ROz8mfeMzWwq3",
+                    "name":"Ayo & Keyz"
+                }
+            ],
+            "writtenBy": [
+                {
+                    "id": "tipff5miqCXNZlP16S2Jx5",
+                    "name":"Austin Owens"
+                }
+            ],
             "songs": [
                 {
                     "id": "4Oun2ylbjFKMPTiaSbbCih",
                     "name": "WAP (feat. Megan Thee Stallion)",
+                    "genre": "Rap",
                     "featuredIn": [
                         {
                             "id": "181bsRPaVXVlUKXrxwZfHK",

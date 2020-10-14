@@ -43,8 +43,8 @@ def tableCreation():
          (songUID TEXT NOT NULL,
          albumUID TEXT NOT NULL,
          PRIMARY KEY(songUID),
-         FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
-         FOREIGN KEY(albumUID) REFERENCES album ON DELETE NO ACTION);''')
+         FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+         FOREIGN KEY(albumUID) REFERENCES album ON DELETE CASCADE);''')
 
    # Creating name table
    cur.execute('''CREATE TABLE name
@@ -55,41 +55,41 @@ def tableCreation():
    # Creating producer table
    cur.execute('''CREATE TABLE producer
             (nameUID TEXT PRIMARY KEY NOT NULL,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    # Creating writer table
    cur.execute('''CREATE TABLE writer
             (nameUID TEXT PRIMARY KEY NOT NULL,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    # Creating artist table
    cur.execute('''CREATE TABLE artist
             (nameUID TEXT PRIMARY KEY NOT NULL,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    # Creating featuredIn table
    cur.execute('''CREATE TABLE featuredIn
             (songUID TEXT NOT NULL,
             nameUID TEXT NOT NULL,
             PRIMARY KEY(songUID, nameUID),
-            FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    # Creating writtenBy table
    cur.execute('''CREATE TABLE writtenBy
             (songUID TEXT NOT NULL,
             nameUID TEXT NOT NULL,
             PRIMARY KEY(songUID, nameUID),
-            FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    # Creating producedBy table
    cur.execute('''CREATE TABLE producedBy
             (songUID TEXT NOT NULL,
             nameUID TEXT NOT NULL,
             PRIMARY KEY(songUID, nameUID),
-            FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    # Creating performedBy
    cur.execute('''CREATE TABLE performedBy
@@ -97,9 +97,9 @@ def tableCreation():
             albumUID TEXT NOT NULL,
             nameUID TEXT NOT NULL,
             PRIMARY KEY(songUID, albumUID),
-            FOREIGN KEY(songUID) REFERENCES song ON DELETE NO ACTION,
-            FOREIGN KEY(albumUID) REFERENCES album ON DELETE NO ACTION,
-            FOREIGN KEY(nameUID) REFERENCES name ON DELETE NO ACTION);''')
+            FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+            FOREIGN KEY(albumUID) REFERENCES album ON DELETE CASCADE,
+            FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
    print("Table created successfully")
    conn.commit()
@@ -188,10 +188,7 @@ def dataInsertion():
 tableCreation()
 dataInsertion()
 
-cur.execute("SELECT *  from ALBUM")
-rows = cur.fetchall()
-for row in rows:
-   print (row)
+
 
 cur.close()
 conn.close()

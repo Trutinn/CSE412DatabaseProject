@@ -26,7 +26,7 @@ def tableCreation():
     cur.execute("DROP TABLE producedBy;")
     cur.execute("DROP TABLE performedBy;")
 
-        # CREATING TABLE
+    # CREATING TABLE
     # Creating album table
     cur.execute('''CREATE TABLE album
             (albumUID TEXT PRIMARY KEY NOT NULL,
@@ -164,11 +164,6 @@ tableCreation()
 dataInsertion()
 
 # MISSING GENRE, WRITER, PRODUCER
-
-cur.execute("SELECT *  from ALBUM")
-rows = cur.fetchall()
-for row in rows:
-   print (row)
 
 cur.close()
 conn.close()

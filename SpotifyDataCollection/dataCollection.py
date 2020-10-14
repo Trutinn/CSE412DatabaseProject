@@ -64,7 +64,7 @@ for i in range(0, 10, 1):  # number of albums pulled, second number/third number
         featuredInList = []
         for j in range(1,len(featuredIDs[i])):
             featuredInList.append({"id":featuredIDs[i][j], "name":featuredName[i][j]})
-        songList.append({"id":idList[i],"name":nameList[i],"featuredIn":featuredInList})
+        songList.append({"id":idList[i],"name":nameList[i], "genre":"Rap", "featuredIn":featuredInList})
 
     # Creating JSON object
     albumPackage = {
@@ -74,6 +74,8 @@ for i in range(0, 10, 1):  # number of albums pulled, second number/third number
         "artistName":leadArtistName,
         "albumDuration":albumDuration,
         "albumReleaseDate":albumReleaseDate,
+        "producedBy": [{"id":"", "name":""}],
+        "writtenBy": [],
         "songs":songList
     }
 
