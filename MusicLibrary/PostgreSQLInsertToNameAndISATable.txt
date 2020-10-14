@@ -16,7 +16,7 @@ $$ LANGUAGE plpgsql;
 
 
 /*Probably the best bet:*/
-CREATE FUNCTION iofInArea(TEXT, text, Text, text) RETURNS INTEGER AS $$
+CREATE FUNCTION iofInArea(TEXT, TEXT, TEXT, TEXT) RETURNS INTEGER AS $$
 DECLARE
     nuidFROMUser ALIAS FOR $1;
     nameFROMUser ALIAS FOR $2;
@@ -48,5 +48,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-Used like this:
+/*Used like this:*/
 SELECT iofinarea($$aa$$, $$hello$$, $$hello2$$, $$Artist$$);
+/*maneuid, nameString, knownas, and tableToEnterTo*/
