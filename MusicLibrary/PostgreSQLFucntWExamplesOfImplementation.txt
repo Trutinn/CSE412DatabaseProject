@@ -1,0 +1,48 @@
+/*The below function inserts into the album and song table and the contains table*/
+CREATE FUNCTION INSERTAlbumAndSong(TEXT, TEXT, REAL, DATE, TEXT, TEXT, TEXT) RETURNS INTEGER AS $$ /*Stand alone INSERT INTO name table. Doubt really need the return value*/
+DECLARE
+	auid ALIAS FOR $1;
+    atitle ALIAS FOR $2;
+    aduration ALIAS FOR $3;
+    areleaseDate ALIAS FOR $4;
+    
+    suid ALIAS FOR $5;
+    sgenre ALIAS FOR $6;
+    stitle ALIAS FOR $7;
+BEGIN
+	IF (EXISTS (SELECT album.albumuid FROM album WHERE album.albumuid = auid)) THEN /*Check if exists*/
+    	/*Preexisting so no INSERT*/
+        IF (EXISTS (SELECT album.albumuid FROM album WHERE album.albumuid = auid AND album.albumtitle = atitle)) THEN /*Check if exists*/
+            /*Means it is existing fully fine*/
+        ELSE
+            RETURN 0; /*Means it is not okay. IE wrong album*/
+        END IF;
+    ELSE
+        INSERT INTO album VALUES (auid, atitle, aduration, areleaseDate);
+    END IF;
+    
+    IF (EXISTS (SELECT song.songuid FROM song WHERE song.songuid = suid)) THEN /*Check if exists*/
+    	/*Preexisting so no INSERT*/
+        IF (EXISTS (SELECT song.songuid FROM song WHERE song.songuid = suid AND song.songtitle = stitle)) THEN /*Check if exists*/
+            /*Means it is existing fully fine*/
+        ELSE
+            RETURN 0; /*Means it is not okay. IE wrong album*/
+        END IF;
+    ELSE
+        INSERT INTO song VALUES (suid, sgenre, stitle);
+    END IF;
+    
+    IF (EXISTS (SELECT contains.songuid, contains.albumuid FROM contains WHERE contains.songuid = suid AND contains.albumuid = auid)) THEN /*Check if exists*/
+    	/*Preexisting so no INSERT*/
+    ELSE
+        INSERT INTO contains VALUES (suid, auid);
+    END IF;
+	RETURN 1;
+
+END;
+$$ LANGUAGE plpgsql;
+
+
+/*Example use:*/
+SELECT INSERTAlbumAndSong($$aaa$$, $$madeUpTitle$$, 420.00, $$2020-01-01$$, $$ree$$, $$Rock$$, $$helloMyLove$$);
+/*The input's in order are: albumUID, albumtitle, duration, date, suid, genre, stitle*/
