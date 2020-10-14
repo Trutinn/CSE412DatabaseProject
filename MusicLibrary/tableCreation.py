@@ -79,18 +79,18 @@ def tableCreation():
 
     # Creating writtenBy table
     cur.execute('''CREATE TABLE writtenBy
-                (songUID TEXT NOT NULL,
+                (albumUID TEXT NOT NULL,
                 nameUID TEXT NOT NULL,
-                PRIMARY KEY(songUID, nameUID),
-                FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+                PRIMARY KEY(albumUID, nameUID),
+                FOREIGN KEY(albumUID) REFERENCES song ON DELETE CASCADE,
                 FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
     # Creating producedBy table
     cur.execute('''CREATE TABLE producedBy
-                (songUID TEXT NOT NULL,
+                (albumUID TEXT NOT NULL,
                 nameUID TEXT NOT NULL,
-                PRIMARY KEY(songUID, nameUID),
-                FOREIGN KEY(songUID) REFERENCES song ON DELETE CASCADE,
+                PRIMARY KEY(albumUID, nameUID),
+                FOREIGN KEY(albumUID) REFERENCES song ON DELETE CASCADE,
                 FOREIGN KEY(nameUID) REFERENCES name ON DELETE CASCADE);''')
 
     # Creating performedBy
@@ -116,7 +116,7 @@ def dataInsertion():
         albumData = (t['albumID'], t['albumTitle'], float(t['albumDuration']), t['albumReleaseDate'])
         cur.execute(albumInsert, albumData)
 
-        # Create name
+        # Create name for artist
         nameInsert = """INSERT INTO name (nameUID, nameString, knownAs) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING"""
         nameData = (t['artistID'], t['artistName'], t['artistName'])
         cur.execute(nameInsert, nameData)
@@ -125,6 +125,16 @@ def dataInsertion():
         artistInsert = """INSERT INTO artist (nameUID) VALUES (%s) ON CONFLICT DO NOTHING"""
         artistData = (t['artistID'])
         cur.execute(artistInsert, [artistData])
+
+        # Create name for producer
+        for y, p in enumerate(t['producedBy']):
+            producerNameInsert = """INSERT INTO name (nameUID, nameString, knownAs) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING"""
+            producerNameData = (p['id'], p['name'], p['name'])
+            cur.execute(producerNameInsert, producerNameData)
+
+            producerInsert = """INSERT INTO producer (nameUID) VALUES (%s) ON CONFLICT DO NOTHING"""
+            producerData = (p['id'])
+            cur.execute(producerInsert, producerData)
 
         # Iterate through all songs in the album
         for y, s in enumerate(t['songs']):
