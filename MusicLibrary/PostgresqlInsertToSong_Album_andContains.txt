@@ -43,6 +43,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-/*Example use:*/
+/*Example use: (at least in console, the $$___$$ needs to be there, as strings/text can only be inserted that way in a function apparently.)*/
 SELECT INSERTAlbumAndSong($$aaa$$, $$madeUpTitle$$, 420.00, $$2020-01-01$$, $$ree$$, $$Rock$$, $$helloMyLove$$);
 /*The input's in order are: albumUID, albumtitle, duration, date, suid, genre, stitle*/
