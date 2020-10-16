@@ -166,7 +166,7 @@ def testingSelection():
     cur.execute("""SELECT name.nameString, song.songTitle 
                 FROM name, song, featuredIn
                 WHERE name.nameUID = featuredIn.nameUID AND
-                song.songUID = featuredIn.songUID""")
+                song.songUID = featuredIn.songUID;""")
     for row in cur.fetchall():
         print("Featured in artists: ", row)
 
@@ -175,15 +175,15 @@ def testingSelection2():
                 FROM name, artist, album, performedBy
                 WHERE artist.nameUID = performedBy.nameUID AND
                 album.albumUID = performedBy.albumUID AND
-                name.nameUID = artist.nameUID""")
+                name.nameUID = artist.nameUID;""")
     for row in cur.fetchall():
         print("Featured in artists: ", row)
     
 #testingNameDeletion()
 #testingInsertion()
 #testingUpdate() 
-#testingSelection()
-testingSelection2()
+testingSelection()
+#testingSelection2()
 
 
 

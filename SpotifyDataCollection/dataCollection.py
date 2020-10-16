@@ -8,7 +8,7 @@ client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secr
 sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
 # File object for writing JSON
-f = open("dataSet.json","w")
+f = open("dataSetDemo.json","w")
 
 # Store JSON album objects
 musicDataList = []
@@ -75,7 +75,7 @@ for i in range(0, 10, 1):  # number of albums pulled, second number/third number
         "albumDuration":albumDuration,
         "albumReleaseDate":albumReleaseDate,
         "producedBy": [{"id":"", "name":""}],
-        "writtenBy": [],
+        "writtenBy": [{"id":"", "name":""}],
         "songs":songList
     }
 
