@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<body>
+	<h1>Selections:</h1>
+	<h3>Song selections:</h3>
+	<p><a href="{{ url_for('Search_By_SID') }}" ><button>Search by song ID</button></a></p>
+	<p><a href="{{ url_for('Search_By_STitle') }}" ><button>Search for songs by the title</button></a></p>
+	<p><a href="{{ url_for('Search_By_Genre') }}" ><button>Search for songs by the genre</button></a></p>
+	<h3>Album selections:</h3>
+	<p><a href="{{ url_for('Search_By_AID') }}" ><button>Search by album ID</button></a></p>
+	<p><a href="{{ url_for('Search_By_ATitle') }}" ><button>Search by Album Title</button></a></p>
+	<p><a href="{{ url_for('Search_By_Date') }}" ><button>Search for albums by the date</button></a></p>
+
+	<h3>Artist, Writer, and Producer selections:</h3>
+	<p><a href="{{ url_for('Search_By_ArtID') }}" ><button>Search by Artist, Writer, or Producer ID</button></a></p>
+	<p><a href="{{ url_for('Search_By_ArtName') }}" ><button>Search by the name the Artist, Writer, or Producer is known as</button></a></p>
+
+	<h1>Insertions:</h1>
+	<p><a href="{{ url_for('Insert_Album') }}" ><button>Insert Album</button></a></p>
+	<p><a href="{{ url_for('Insert_Artist') }}" ><button>Insert Artist</button></a></p>
+	<p><a href="{{ url_for('Insert_Song') }}" ><button>Insert Song</button></a></p>
+</body>
+</html>
+
