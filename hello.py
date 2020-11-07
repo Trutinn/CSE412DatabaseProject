@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template('homePage.html')
 
 @app.route('/Search_By_SID', methods=['post', 'get'])
 def Search_By_SID():
@@ -166,3 +166,4 @@ def Search_By_STitle():
             return songTitle # The area that is run after something is submitted.
 
     return render_template('SearchBySongTitle.html') # This is the get area as it is outside of the if area.
+
