@@ -56,7 +56,7 @@ def Insert_Album():
         releaseDate = request.form.get('releaseDate')  # access the data inside
         writerID = request.form.get('writerID')  # access the data inside
         producerID = request.form.get('producerID')  # access the data inside
-        if albumId == '' and albumTitle == '' and duration == 0.0 and releaseDate == '' and writerID == '' and producerID == '':
+        if albumId == '' or albumTitle == '' or duration == 0.0 or releaseDate == '' or writerID == '' or producerID == '':
             return render_template('InsertAlbum.html') # Will likely not actually need here.
         else:
             return albumId + ' ' + albumTitle + ' ' + duration + ' ' + releaseDate + ' ' + writerID + ' ' + producerID # The area that is run after something is submitted.
@@ -72,7 +72,7 @@ def Insert_Artist():
         artistId = request.form.get('artistId')  # access the data inside
         nameString = request.form.get('nameString')  # access the data inside
         knownAS = request.form.get('knownAS')  # access the data inside
-        if artistId == '' and nameString == '' and knownAS == '':
+        if artistId == '' or nameString == '' or knownAS == '':
             return render_template('InsertArtist.html') # Will likely not actually need here.
         else:
             return artistId + ' ' + nameString + ' ' + knownAS # The area that is run after something is submitted.
@@ -96,7 +96,7 @@ def Insert_Song():
         albumId = request.form.get('albumId')  # access the data inside
         artistID = request.form.get('artistID')  # access the data inside
         featArtistIDList = request.form.get('featArtistID')  # access the data inside
-        if songId == '' and songTitle == '' and genre == '' and albumId == '' and artistID == '' and featArtistIDList == '':
+        if songId == '' or songTitle == '' or genre == '' or albumId == '' or artistID == '' or featArtistIDList == '':
             return render_template('InsertSong.html') # Will likely not actually need here.
         else:
             return songId + ' ' + songTitle + ' ' + genre + ' ' + albumId + ' ' + artistID + ' ' + featArtistIDList # The area that is run after something is submitted.
@@ -166,4 +166,3 @@ def Search_By_STitle():
             return songTitle # The area that is run after something is submitted.
 
     return render_template('SearchBySongTitle.html') # This is the get area as it is outside of the if area.
-
