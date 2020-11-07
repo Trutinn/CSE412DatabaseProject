@@ -5,13 +5,13 @@
    <body>
     <h1 title="Insert an Album to the database">Insert Album</h1>
     <h4>Please enter all fields completely before submitting.</h4>
-      <form>
+      <form action="" method="post">
         <label for="albumId">Album ID:</label><br>
         <input type="text" id="albumId" name="albumId" title="Enter the album ID of the album you would like to enter"><br><br>
         <label for="albumTitle">Album Title:</label><br>
         <input type="text" id="albumTitle" name="albumTitle" title="Enter the album title of the album you would like to enter"><br><br>
         <label for="duration">Album Duration: (minutes)</label><br>
-        <input type="number" id="duration" name="duration" title="Enter the duration of the album you would like to enter in terms of minutes"><br><br>
+        <input type="real" id="duration" name="duration" title="Enter the duration of the album you would like to enter in terms of minutes"><br><br>
         <label for="releaseDate">Album Release Date:</label><br>
         <input type="date" id="releaseDate" name="releaseDate" title="Enter the release date of the album you would like to enter"><br><br>
         <br>
@@ -19,6 +19,8 @@
         <input type="text" id="writerID" name="writerID" title="Enter the ID of the writer of the album you would like to enter"><br><br>
         <label for="producerID">Album Producer's ID:</label><br>
         <input type="text" id="producerID" name="producerID" title="Enter the ID of the producer of the album you would like to enter"><br><br>
+	     <br><br>
+	     <input type="submit">
       </form>
    </body>
 </html> 
