@@ -7,19 +7,20 @@ def hello_world():
 
 @app.route('/Search_By_SID', methods=['post', 'get'])
 def Search_By_SID():
-    songID = '';
+    songID = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         songID = request.form.get('songId')  # access the data inside
         if songID == '':
             return render_template('SearchBySongID.html') # Will likely not actually need here.
         else:
+            print(songID)
             return songID # The area that is run after something is submitted.
 
     return render_template('SearchBySongID.html') # This is the get area as it is outside of the if area.
 
 @app.route('/Search_By_AID', methods=['post', 'get'])
 def Search_By_AID():
-    albumId = '';
+    albumId = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         albumId = request.form.get('albumId')  # access the data inside
         if albumId == '':
@@ -31,7 +32,7 @@ def Search_By_AID():
 
 @app.route('/Search_By_ArtID', methods=['post', 'get'])
 def Search_By_ArtID():
-    artistId = '';
+    artistId = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         artistId = request.form.get('artistId')  # access the data inside
         if artistId == '':
@@ -43,12 +44,12 @@ def Search_By_ArtID():
 
 @app.route('/Insert_Album', methods=['post', 'get'])
 def Insert_Album():
-    albumId = '';
-    albumTitle = '';
-    duration = 0.0;
-    releaseDate = '';
-    writerID = '';
-    producerID = '';
+    albumId = ''
+    albumTitle = ''
+    duration = 0.0
+    releaseDate = ''
+    writerID = ''
+    producerID = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         albumId = request.form.get('albumId')  # access the data inside
         albumTitle = request.form.get('albumTitle')  # access the data inside
@@ -65,9 +66,9 @@ def Insert_Album():
 
 @app.route('/Insert_Artist', methods=['post', 'get'])
 def Insert_Artist():
-    artistId = '';
-    nameString = '';
-    knownAS = '';
+    artistId = ''
+    nameString = ''
+    knownAS = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         artistId = request.form.get('artistId')  # access the data inside
         nameString = request.form.get('nameString')  # access the data inside
@@ -83,12 +84,12 @@ def Insert_Artist():
 
 @app.route('/Insert_Song', methods=['post', 'get'])
 def Insert_Song():
-    songId = '';
-    songTitle = '';
-    genre = '';
-    albumId = '';
-    artistID = '';
-    featArtistIDList = '';
+    songId = ''
+    songTitle = ''
+    genre = ''
+    albumId = ''
+    artistID = ''
+    featArtistIDList = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         songId = request.form.get('songId')  # access the data inside
         songTitle = request.form.get('songTitle')  # access the data inside
@@ -106,7 +107,7 @@ def Insert_Song():
 
 @app.route('/Search_By_ATitle', methods=['post', 'get'])
 def Search_By_ATitle():
-    albumTitle = '';
+    albumTitle = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         albumTitle = request.form.get('albumTitle')  # access the data inside
         if albumTitle == '':
@@ -119,7 +120,7 @@ def Search_By_ATitle():
 
 @app.route('/Search_By_ArtName', methods=['post', 'get'])
 def Search_By_ArtName():
-    knownAS = '';
+    knownAS = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         knownAS = request.form.get('knownAS')  # access the data inside
         if knownAS == '':
@@ -132,7 +133,7 @@ def Search_By_ArtName():
 
 @app.route('/Search_By_Date', methods=['post', 'get'])
 def Search_By_Date():
-    date = '';
+    date = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         date = request.form.get('date')  # access the data inside
         if date == '':
@@ -145,7 +146,7 @@ def Search_By_Date():
 
 @app.route('/Search_By_Genre', methods=['post', 'get'])
 def Search_By_Genre():
-    genre = '';
+    genre = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         genre = request.form.get('genre')  # access the data inside
         if genre == '':
@@ -157,7 +158,7 @@ def Search_By_Genre():
 
 @app.route('/Search_By_STitle', methods=['post', 'get'])
 def Search_By_STitle():
-    songTitle = '';
+    songTitle = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
         songTitle = request.form.get('songTitle')  # access the data inside
         if songTitle == '':
@@ -166,3 +167,7 @@ def Search_By_STitle():
             return songTitle # The area that is run after something is submitted.
 
     return render_template('SearchBySongTitle.html') # This is the get area as it is outside of the if area.
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run() #go to http://localhost:5000/ to view the page.
