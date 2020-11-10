@@ -97,7 +97,7 @@ def Insert_Song():
         albumId = request.form.get('albumId')  # access the data inside
         artistID = request.form.get('artistID')  # access the data inside
         featArtistIDList = request.form.get('featArtistID')  # access the data inside
-        if songId == '' or songTitle == '' or genre == '' or albumId == '' or artistID == '' or featArtistIDList == '':
+        if songId == '' or songTitle == '' or genre == '' or albumId == '' or artistID == '':
             return render_template('InsertSong.html') # Will likely not actually need here.
         else:
             return insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList) # The area that is run after something is submitted.

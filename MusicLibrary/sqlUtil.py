@@ -189,15 +189,19 @@ def searchBySongTitle(songTitle):
     if not rows:  # if query returns nothing
         return "ERROR: songTitle does not exist!"
 
-    info = rows[0]
-    songList = {}
-    songList['songID'] = info[0]
-    songList['genre'] = info[1]
-    songList['artist'] = info[2]
-    featured = getFeaturedNames(info[0], "songUID")
-    if featured:
-        songList['featuredIn'] = featured
-    return songList
+    songDict = {}
+    counter = 1
+    for info in rows:
+        songList = {}
+        songList['songID'] = info[0]
+        songList['genre'] = info[1]
+        songList['artist'] = info[2]
+        featured = getFeaturedNames(info[0], "songUID")
+        if featured:
+            songList['featuredIn'] = featured
+        songDict[counter] = songList
+        counter += 1
+    return songDict
 
 def searchBySongGenre(songGenre):
     searchData = ("SELECT * FROM song WHERE song.genre = %s;")
@@ -254,21 +258,25 @@ def searchByAlbumTitle(albumTitle):
     if not rows:  # if query returns nothing  
         return "ERROR: albumTitle does not exist!"
 
-    info = rows[0]
-    albumList = {}
-    albumList['albumID'] = info[0]
-    albumList['albumTitle'] = info[1]
-    albumList['duration'] = info[2]
-    albumList['releaseDate'] = info[3]
+    albumDict = {}
+    counter = 1
+    for info in rows:
+        albumList = {}
+        albumList['albumID'] = info[0]
+        albumList['albumTitle'] = info[1]
+        albumList['duration'] = info[2]
+        albumList['releaseDate'] = info[3]
 
-    produced = albumProducedBy(albumList['albumID'], "albumUID")
-    if produced:
-        albumList['producedBy'] = produced
-    written = albumWrittenBy(albumList['albumID'], "albumUID")
-    if written:
-        albumList['writtenBy'] = written
+        produced = albumProducedBy(albumList['albumID'], "albumUID")
+        if produced:
+            albumList['producedBy'] = produced
+        written = albumWrittenBy(albumList['albumID'], "albumUID")
+        if written:
+            albumList['writtenBy'] = written
+        albumDict[counter] = albumList
+        counter += 1
 
-    return albumList
+    return albumDict
 
 def searchByAlbumDate(albumDate):
     searchData = ("SELECT * FROM album WHERE album.releaseDate = %s;")
@@ -279,21 +287,25 @@ def searchByAlbumDate(albumDate):
     if not rows:  # if query returns nothing  
         return "ERROR: albumDate does not exist!"
 
-    info = rows[0]
-    albumList = {}
-    albumList['albumID'] = info[0]
-    albumList['albumTitle'] = info[1]
-    albumList['duration'] = info[2]
-    albumList['releaseDate'] = info[3]
+    albumDict = {}
+    counter = 1
+    for info in rows:
+        albumList = {}
+        albumList['albumID'] = info[0]
+        albumList['albumTitle'] = info[1]
+        albumList['duration'] = info[2]
+        albumList['releaseDate'] = info[3]
 
-    produced = albumProducedBy(albumList['albumID'], "albumUID")
-    if produced:
-        albumList['producedBy'] = produced
-    written = albumWrittenBy(albumList['albumID'], "albumUID")
-    if written:
-        albumList['writtenBy'] = written
+        produced = albumProducedBy(albumList['albumID'], "albumUID")
+        if produced:
+            albumList['producedBy'] = produced
+        written = albumWrittenBy(albumList['albumID'], "albumUID")
+        if written:
+            albumList['writtenBy'] = written
+        albumDict[counter] = albumList
+        counter += 1
 
-    return albumList   
+    return albumDict 
 
 def searchByNameID(nameID):
     searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
@@ -336,6 +348,7 @@ def searchByName(name):
         return "ERROR: name does not exist!"
 
     namesDict = {}
+    counter = 1
     for info in rows:
         nameList = {}
         nameList['nameUID'] = info[0]
@@ -354,7 +367,8 @@ def searchByName(name):
         if performed:  # if they performed something
             nameList['songsPerformed'] = performed[0]
             nameList['albumsPerformed'] = performed[1]
-        namesDict[nameList['nameUID']] = nameList.copy()
+        namesDict[counter] = nameList
+        counter += 1
     return namesDict 
 
 def insertName(ID, name, knownAs):
@@ -432,15 +446,15 @@ def insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList):
     if not rows:  # if ArtistID does not exist
         return "ERROR: ArtistID does not exist" 
     
-    featIDList = featArtistIDList.split(',')
-    print("FEAT LIST: ", featIDList)
-    for aID in featIDList:
-        searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-        searchVals = (aID,)
-        cur.execute(searchData, searchVals)
-        rows = cur.fetchall()
-        if not rows:  # if a featured artist does not exist
-            return "ERROR: A featured artist ID does not exist" 
+    if featArtistIDList is not '':
+        featIDList = featArtistIDList.split(',')
+        for aID in featIDList:
+            searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+            searchVals = (aID,)
+            cur.execute(searchData, searchVals)
+            rows = cur.fetchall()
+            if not rows:  # if a featured artist does not exist
+                return "ERROR: A featured artist ID does not exist" 
 
     insertData = ("""INSERT INTO song (songUID, genre, songTitle) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
     insertVals = (songId, genre, songTitle)
@@ -456,11 +470,11 @@ def insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList):
     insertVals = (songId, albumId, artistID)
     cur.execute(insertData, insertVals)
     conn.commit()  # insert contains relationship   
-
-    for aID in featIDList:
-        insertData = ("""INSERT INTO featuredIn (songUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
-        insertVals = (songId, aID)
-        cur.execute(insertData, insertVals)
-        conn.commit()  # insert contains relationship     
+    if featArtistIDList is not '':
+        for aID in featIDList:
+            insertData = ("""INSERT INTO featuredIn (songUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
+            insertVals = (songId, aID)
+            cur.execute(insertData, insertVals)
+            conn.commit()  # insert contains relationship     
 
     return "Song Successfully Inserted!" 
