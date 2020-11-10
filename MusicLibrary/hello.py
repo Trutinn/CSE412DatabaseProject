@@ -38,7 +38,7 @@ def Search_By_ArtID():
         if artistId == '':
             return render_template('SearchByArtistID.html') # Will likely not actually need here.
         else:
-            return artistId # The area that is run after something is submitted.
+            return searchByNameID(artistId) # The area that is run after something is submitted.
 
     return render_template('SearchByArtistID.html') # This is the get area as it is outside of the if area.
 
@@ -132,14 +132,15 @@ def Search_By_ArtName():
 
 
 @app.route('/Search_By_Date', methods=['post', 'get'])
-def Search_By_Date():
+def Search_By_Date():  # currently have to search by specific date "YYYY-MM-DD"
     date = ''
     if request.method == 'POST': #This is the area where the submit has been posted?
-        date = request.form.get('date')  # access the data inside
+        date = request.form.get('releaseDate')  # access the data inside
         if date == '':
             return render_template('SearchByDate.html') # Will likely not actually need here.
         else:
-            return date # The area that is run after something is submitted.
+            return searchByAlbumDate(date) # The area that is run after something is submitted.
+            
 
     return render_template('SearchByDate.html') # This is the get area as it is outside of the if area.
 

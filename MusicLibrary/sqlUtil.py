@@ -8,7 +8,7 @@ from psycopg2.extensions import AsIs
 conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
 cur = conn.cursor()
 
-def getFeaturedNames(searchPara, searchCol):  # returns the name of featured artist, input search parameter and the column associated with that search parameter
+def getFeaturedNames(searchPara, searchCol):  # returns the name of featured artist of a song,
     featuredInData = ("SELECT nameUID FROM featuredIn WHERE featuredIn.%s = %s;")
     featuredInVals = (AsIs(searchCol), searchPara,)
     cur.execute(featuredInData, featuredInVals)
@@ -29,6 +29,94 @@ def getFeaturedNames(searchPara, searchCol):  # returns the name of featured art
     else:
         return None
 
+def producedBy(searchPara, searchCol):  # returns the albums the name produced
+    producedByData = ("SELECT albumUID FROM producedBy WHERE producedBy.%s = %s;")
+    producedByVals = (AsIs(searchCol), searchPara,)
+    cur.execute(producedByData, producedByVals)
+    rows = cur.fetchall()
+    if rows:  # if they produced something
+        tempList = []
+        for album in rows:
+            tempList.append(album[0])
+
+        producedByList = []
+        for album in tempList:
+                getAlbumData = ("SELECT albumTitle FROM album WHERE album.albumUID = %s;")  # get album titles
+                getAlbumVal = (album,)
+                cur.execute(getAlbumData, getAlbumVal)
+                producedByList.append(cur.fetchall()[0][0])
+        return producedByList
+    else:
+        return None
+
+def writtenBy(searchPara, searchCol):  # returns the albums the name produced
+    writtenByData = ("SELECT albumUID FROM writtenBy WHERE writtenBy.%s = %s;")
+    writtenByVals = (AsIs(searchCol), searchPara,)
+    cur.execute(writtenByData, writtenByVals)
+    rows = cur.fetchall()
+    if rows:  # if they wrote something
+        tempList = []
+        for album in rows:
+            tempList.append(album[0])
+
+        writtenByList = []
+        for album in tempList:
+                getAlbumData = ("SELECT albumTitle FROM album WHERE album.albumUID = %s;")  # get album titles
+                getAlbumVal = (album,)
+                cur.execute(getAlbumData, getAlbumVal)
+                writtenByList.append(cur.fetchall()[0][0])
+        return writtenByList
+    else:
+        return None
+
+def featuredIn(searchPara, searchCol):  # returns songs arist was featured in
+    featuredInData = ("SELECT songUID FROM featuredIn WHERE featuredIn.%s = %s;")
+    featuredInVals = (AsIs(searchCol), searchPara,)
+    cur.execute(featuredInData, featuredInVals)
+    rows = cur.fetchall()
+    if rows:  # if they wrote something
+        tempList = []
+        for album in rows:
+            tempList.append(album[0])
+
+        featuredInList = []
+        for song in tempList:
+                getsongData = ("SELECT songTitle FROM song WHERE song.songUID = %s;")  # get song names
+                getsongVal = (song,)
+                cur.execute(getsongData, getsongVal)
+                featuredInList.append(cur.fetchall()[0][0])
+        return featuredInList
+    else:
+        return None    
+
+def performedBy(searchPara, searchCol):
+    performedByData = ("SELECT songUID, albumUID FROM performedBy WHERE performedBy.%s = %s;")
+    performedByVals = (AsIs(searchCol), searchPara,)
+    cur.execute(performedByData, performedByVals)
+    rows = cur.fetchall()
+    songIDList = []
+    albumIDList = []
+    if rows:
+        for group in rows:
+            songIDList.append(group[0])
+            if group[1] not in albumIDList:
+                albumIDList.append(group[1])
+        
+        songNameList = []
+        albumNameList = []
+        for song in songIDList:
+                getSongData = ("SELECT songTitle FROM song WHERE song.songUID = %s;")  # get song names
+                getSongVal = (song,)
+                cur.execute(getSongData, getSongVal)
+                songNameList.append(cur.fetchall()[0][0])
+        for album in albumIDList:
+                getAlbumData = ("SELECT albumTitle FROM album WHERE album.albumUID = %s;")  # get album names
+                getAlbumVal = (album,)
+                cur.execute(getAlbumData, getAlbumVal)
+                albumNameList.append(cur.fetchall()[0][0])    
+        return (songNameList, albumNameList)
+    else:
+        return None
 def searchBySongID(songID):
     searchData = ("SELECT * FROM song WHERE song.songUID = %s;")
     searchVals = (songID,)
@@ -76,6 +164,9 @@ def searchBySongGenre(songGenre):
     rows = cur.fetchall()
     songList = []
     
+    if not rows:  # if query returns nothing
+        return "ERROR: songGenre does not exist!"
+    
     for row in rows:
         tempDict = {}
         tempDict['songID'] = row[0]
@@ -95,17 +186,17 @@ def searchByAlbumID(albumID):
    
     rows = cur.fetchall()
     print("ROWS: ", rows)
-    if not rows:  # if song doesn't exist
-        return "ERROR: songID does not exist!"
+    if not rows:  # if query returns nothing
+        return "ERROR: albumID does not exist!"
 
     info = rows[0]
-    songList = {}
-    songList['albumID'] = info[0]
-    songList['albumTitle'] = info[1]
-    songList['duration'] = info[2]
-    songList['releaseDate'] = info[3]
+    albumList = {}
+    albumList['albumID'] = info[0]
+    albumList['albumTitle'] = info[1]
+    albumList['duration'] = info[2]
+    albumList['releaseDate'] = info[3]
 
-    return songList
+    return albumList
 
 def searchByAlbumTitle(albumTitle):
     searchData = ("SELECT * FROM album WHERE album.albumTitle = %s;")
@@ -114,17 +205,17 @@ def searchByAlbumTitle(albumTitle):
    
     rows = cur.fetchall()
     print("ROWS: ", rows)
-    if not rows:  # if song doesn't exist
-        return "ERROR: songID does not exist!"
+    if not rows:  # if query returns nothing  
+        return "ERROR: albumTitle does not exist!"
 
     info = rows[0]
-    songList = {}
-    songList['albumID'] = info[0]
-    songList['albumTitle'] = info[1]
-    songList['duration'] = info[2]
-    songList['releaseDate'] = info[3]
+    albumList = {}
+    albumList['albumID'] = info[0]
+    albumList['albumTitle'] = info[1]
+    albumList['duration'] = info[2]
+    albumList['releaseDate'] = info[3]
 
-    return songList
+    return albumList
 
 def searchByAlbumDate(albumDate):
     searchData = ("SELECT * FROM album WHERE album.releaseDate = %s;")
@@ -133,14 +224,46 @@ def searchByAlbumDate(albumDate):
    
     rows = cur.fetchall()
     print("ROWS: ", rows)
-    if not rows:  # if song doesn't exist
-        return "ERROR: songID does not exist!"
+    if not rows:  # if query returns nothing  
+        return "ERROR: albumDate does not exist!"
 
     info = rows[0]
-    songList = {}
-    songList['albumID'] = info[0]
-    songList['albumTitle'] = info[1]
-    songList['duration'] = info[2]
-    songList['releaseDate'] = info[3]
+    albumList = {}
+    albumList['albumID'] = info[0]
+    albumList['albumTitle'] = info[1]
+    albumList['duration'] = info[2]
+    albumList['releaseDate'] = info[3]
 
-    return songList   
+    return albumList   
+
+def searchByNameID(nameID):
+    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+    searchVals = (nameID,)
+    cur.execute(searchData, searchVals)
+   
+    rows = cur.fetchall()
+    print("ROWS: ", rows)
+    if not rows:  # if query returns nothing  
+        return "ERROR: nameID does not exist!"
+
+    info = rows[0]
+    nameList = {}
+    nameList['nameUID'] = info[0]
+    nameList['nameString'] = info[1]
+    nameList['knownAs'] = info[2]
+
+    produced = producedBy(nameID, "nameUID")
+    if produced:  # if they produced something
+        nameList['produced'] = produced
+    written = writtenBy(nameID, "nameUID")
+    if written:
+        nameList['wrote'] = written
+    featured = featuredIn(nameID, "nameUID")
+    if featured:
+        nameList['featuredIn'] = featured
+    performed = performedBy(nameID, "nameUID")
+    if performed:
+        nameList['songsPerformed'] = performed[0]
+        nameList['albumsPerformed'] = performed[1]
+
+    return nameList    
