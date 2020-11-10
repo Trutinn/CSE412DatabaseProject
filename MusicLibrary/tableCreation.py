@@ -5,7 +5,7 @@
 import psycopg2
 import json
 
-conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "YOURPW", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
@@ -40,7 +40,7 @@ def tableCreation():
             genre TEXT,
             songTitle TEXT NOT NULL);''')
 
-    # Creating contains table MAYBE NEED TO ADD ON DELETE FOR FOREIGN KEYS??
+    # Creating contains table
     cur.execute('''CREATE TABLE contains
             (songUID TEXT NOT NULL,
             albumUID TEXT NOT NULL,
@@ -159,10 +159,9 @@ def dataInsertion():
         # Iterate through all songs in the album
         for y, s in enumerate(t['songs']):
             # Create all songs
-            songInsert = """INSERT INTO song (songUID, genre, songTitle) VALUES (%s, NULL, %s)"""
-            songData = (s['id'], s['name'])
+            songInsert = """INSERT INTO song (songUID, genre, songTitle) VALUES (%s, %s, %s)"""
+            songData = (s['id'], s['genre'], s['name'])
             cur.execute(songInsert, songData)
-            # MUST MANUALLY ADD GENRE
 
             # Create all contains 
             containsInsert = """INSERT INTO contains (songUID, albumUID) VALUES (%s, %s)"""
@@ -193,7 +192,7 @@ def dataInsertion():
 tableCreation()
 dataInsertion()
 
-# MISSING GENRE, WRITER, PRODUCER
+# MISSING WRITER, PRODUCER
 
 cur.close()
 conn.close()

@@ -2,7 +2,7 @@
 
 import psycopg2
 
-conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "YOURPW", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
@@ -182,8 +182,9 @@ def testingSelection2():
 #testingNameDeletion()
 #testingInsertion()
 #testingUpdate() 
-testingSelection()
+#testingSelection()
 #testingSelection2()
+printAllTables()
 
 
 

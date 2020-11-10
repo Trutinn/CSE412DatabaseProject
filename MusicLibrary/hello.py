@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from sqlUtil import *
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,8 +14,7 @@ def Search_By_SID():
         if songID == '':
             return render_template('SearchBySongID.html') # Will likely not actually need here.
         else:
-            print(songID)
-            return songID # The area that is run after something is submitted.
+            return searchBySongID(songID) # The area that is run after something is submitted.
 
     return render_template('SearchBySongID.html') # This is the get area as it is outside of the if area.
 
@@ -152,7 +152,9 @@ def Search_By_Genre():
         if genre == '':
             return render_template('SearchByGenre.html') # Will likely not actually need here.
         else:
-            return genre # The area that is run after something is submitted.
+            tempDict = {}
+            tempDict['songs'] = searchBySongGenre(genre) 
+            return tempDict # The area that is run after something is submitted.
 
     return render_template('SearchByGenre.html') # This is the get area as it is outside of the if area.
 
@@ -164,7 +166,7 @@ def Search_By_STitle():
         if songTitle == '':
             return render_template('SearchBySongTitle.html') # Will likely not actually need here.
         else:
-            return songTitle # The area that is run after something is submitted.
+            return searchBySongTitle(songTitle) # The area that is run after something is submitted.
 
     return render_template('SearchBySongTitle.html') # This is the get area as it is outside of the if area.
 
