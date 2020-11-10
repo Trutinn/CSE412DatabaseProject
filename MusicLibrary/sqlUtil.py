@@ -160,6 +160,7 @@ def performedBy(searchPara, searchCol):
         return (songNameList, albumNameList)
     else:
         return None
+
 def searchBySongID(songID):
     searchData = ("SELECT * FROM song WHERE song.songUID = %s;")
     searchVals = (songID,)
@@ -334,27 +335,27 @@ def searchByName(name):
     if not rows:  # if query returns nothing  
         return "ERROR: name does not exist!"
 
-    info = rows[0]
-    nameList = {}
-    nameList['nameUID'] = info[0]
-    nameList['nameString'] = info[1]
-    nameList['knownAs'] = info[2]
-
-    produced = producedBy(nameList['nameUID'], "nameUID")
-    if produced:  # if they produced something
-        nameList['produced'] = produced
-    written = writtenBy(nameList['nameUID'], "nameUID")
-    if written:  # if they wrote something
-        nameList['wrote'] = written
-    featured = featuredIn(nameList['nameUID'], "nameUID")
-    if featured:  # if they featured in something
-        nameList['featuredIn'] = featured
-    performed = performedBy(nameList['nameUID'], "nameUID")
-    if performed:  # if they performed something
-        nameList['songsPerformed'] = performed[0]
-        nameList['albumsPerformed'] = performed[1]
-
-    return nameList 
+    namesDict = {}
+    for info in rows:
+        nameList = {}
+        nameList['nameUID'] = info[0]
+        nameList['nameString'] = info[1]
+        nameList['knownAs'] = info[2]
+        produced = producedBy(nameList['nameUID'], "nameUID")
+        if produced:  # if they produced something
+            nameList['produced'] = produced
+        written = writtenBy(nameList['nameUID'], "nameUID")
+        if written:  # if they wrote something
+            nameList['wrote'] = written
+        featured = featuredIn(nameList['nameUID'], "nameUID")
+        if featured:  # if they featured in something
+            nameList['featuredIn'] = featured
+        performed = performedBy(nameList['nameUID'], "nameUID")
+        if performed:  # if they performed something
+            nameList['songsPerformed'] = performed[0]
+            nameList['albumsPerformed'] = performed[1]
+        namesDict[nameList['nameUID']] = nameList.copy()
+    return namesDict 
 
 def insertName(ID, name, knownAs):
     searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
