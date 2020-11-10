@@ -256,14 +256,46 @@ def searchByNameID(nameID):
     if produced:  # if they produced something
         nameList['produced'] = produced
     written = writtenBy(nameID, "nameUID")
-    if written:
+    if written:  # if they wrote something
         nameList['wrote'] = written
     featured = featuredIn(nameID, "nameUID")
-    if featured:
+    if featured:  # if they featured in something
         nameList['featuredIn'] = featured
     performed = performedBy(nameID, "nameUID")
-    if performed:
+    if performed:  # if they performed something
         nameList['songsPerformed'] = performed[0]
         nameList['albumsPerformed'] = performed[1]
 
-    return nameList    
+    return nameList   
+
+def searchByName(name):
+    searchData = ("SELECT * FROM name WHERE name.nameString = %s;")
+    searchVals = (name,)
+    cur.execute(searchData, searchVals)
+   
+    rows = cur.fetchall()
+    print("ROWS: ", rows)
+    if not rows:  # if query returns nothing  
+        return "ERROR: name does not exist!"
+
+    info = rows[0]
+    nameList = {}
+    nameList['nameUID'] = info[0]
+    nameList['nameString'] = info[1]
+    nameList['knownAs'] = info[2]
+
+    produced = producedBy(nameList['nameUID'], "nameUID")
+    if produced:  # if they produced something
+        nameList['produced'] = produced
+    written = writtenBy(nameList['nameUID'], "nameUID")
+    if written:  # if they wrote something
+        nameList['wrote'] = written
+    featured = featuredIn(nameList['nameUID'], "nameUID")
+    if featured:  # if they featured in something
+        nameList['featuredIn'] = featured
+    performed = performedBy(nameList['nameUID'], "nameUID")
+    if performed:  # if they performed something
+        nameList['songsPerformed'] = performed[0]
+        nameList['albumsPerformed'] = performed[1]
+
+    return nameList 

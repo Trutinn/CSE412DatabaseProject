@@ -126,7 +126,7 @@ def Search_By_ArtName():
         if knownAS == '':
             return render_template('SearchByArtistName.html') # Will likely not actually need here.
         else:
-            return knownAS # The area that is run after something is submitted.
+            return searchByName(knownAS) # The area that is run after something is submitted.
 
     return render_template('SearchByArtistName.html') # This is the get area as it is outside of the if area.
 
