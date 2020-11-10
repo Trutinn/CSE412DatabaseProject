@@ -13,18 +13,18 @@ cur = conn.cursor()
 
 def tableCreation():
     # Testing recreation of tables
-    cur.execute("DROP TABLE album CASCADE;")
-    cur.execute("DROP TABLE song CASCADE;")
-    cur.execute("DROP TABLE contains;")
+    # cur.execute("DROP TABLE album CASCADE;")
+    # cur.execute("DROP TABLE song CASCADE;")
+    # cur.execute("DROP TABLE contains;")
 
-    cur.execute("DROP TABLE name CASCADE;")
-    cur.execute("DROP TABLE producer;")
-    cur.execute("DROP TABLE writer;")
-    cur.execute("DROP TABLE artist;")
-    cur.execute("DROP TABLE featuredIn;")
-    cur.execute("DROP TABLE writtenBy;")
-    cur.execute("DROP TABLE producedBy;")
-    cur.execute("DROP TABLE performedBy;")
+    # cur.execute("DROP TABLE name CASCADE;")
+    # cur.execute("DROP TABLE producer;")
+    # cur.execute("DROP TABLE writer;")
+    # cur.execute("DROP TABLE artist;")
+    # cur.execute("DROP TABLE featuredIn;")
+    # cur.execute("DROP TABLE writtenBy;")
+    # cur.execute("DROP TABLE producedBy;")
+    # cur.execute("DROP TABLE performedBy;")
 
     # CREATING TABLE
     # Creating album table
