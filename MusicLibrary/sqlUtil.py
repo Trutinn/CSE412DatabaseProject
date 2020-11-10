@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-# Will contain all of the util function for our DB (insertion, deletion, etc.)
-
 import psycopg2
 from psycopg2.extensions import AsIs
 
@@ -56,7 +54,6 @@ def albumProducedBy(searchPara, searchCol):
     rows = cur.fetchall()
     if rows:  # if there is a produced on album
         tempList = []
-        print("TEST: ", rows)
         for album in rows:
             tempList.append(album[0])
 
@@ -77,7 +74,6 @@ def albumWrittenBy(searchPara, searchCol):
     rows = cur.fetchall()
     if rows:  # if there is a produced on album
         tempList = []
-        print("TEST: ", rows)
         for album in rows:
             tempList.append(album[0])
 
