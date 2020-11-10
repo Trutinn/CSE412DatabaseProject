@@ -87,3 +87,60 @@ def searchBySongGenre(songGenre):
         songList.append(tempDict)
     
     return songList
+
+def searchByAlbumID(albumID):
+    searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
+    searchVals = (albumID,)
+    cur.execute(searchData, searchVals)
+   
+    rows = cur.fetchall()
+    print("ROWS: ", rows)
+    if not rows:  # if song doesn't exist
+        return "ERROR: songID does not exist!"
+
+    info = rows[0]
+    songList = {}
+    songList['albumID'] = info[0]
+    songList['albumTitle'] = info[1]
+    songList['duration'] = info[2]
+    songList['releaseDate'] = info[3]
+
+    return songList
+
+def searchByAlbumTitle(albumTitle):
+    searchData = ("SELECT * FROM album WHERE album.albumTitle = %s;")
+    searchVals = (albumTitle,)
+    cur.execute(searchData, searchVals)
+   
+    rows = cur.fetchall()
+    print("ROWS: ", rows)
+    if not rows:  # if song doesn't exist
+        return "ERROR: songID does not exist!"
+
+    info = rows[0]
+    songList = {}
+    songList['albumID'] = info[0]
+    songList['albumTitle'] = info[1]
+    songList['duration'] = info[2]
+    songList['releaseDate'] = info[3]
+
+    return songList
+
+def searchByAlbumDate(albumDate):
+    searchData = ("SELECT * FROM album WHERE album.releaseDate = %s;")
+    searchVals = (albumDate,)
+    cur.execute(searchData, searchVals)
+   
+    rows = cur.fetchall()
+    print("ROWS: ", rows)
+    if not rows:  # if song doesn't exist
+        return "ERROR: songID does not exist!"
+
+    info = rows[0]
+    songList = {}
+    songList['albumID'] = info[0]
+    songList['albumTitle'] = info[1]
+    songList['duration'] = info[2]
+    songList['releaseDate'] = info[3]
+
+    return songList   

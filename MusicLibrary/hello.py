@@ -26,7 +26,7 @@ def Search_By_AID():
         if albumId == '':
             return render_template('SearchByAlbumID.html') # Will likely not actually need here.
         else:
-            return albumId # The area that is run after something is submitted.
+            return searchByAlbumID(albumId) # The area that is run after something is submitted.
 
     return render_template('SearchByAlbumID.html') # This is the get area as it is outside of the if area.
 
@@ -113,7 +113,7 @@ def Search_By_ATitle():
         if albumTitle == '':
             return render_template('SearchByAlbumTitle.html') # Will likely not actually need here.
         else:
-            return albumTitle # The area that is run after something is submitted.
+            return searchByAlbumTitle(albumTitle) # The area that is run after something is submitted.
 
     return render_template('SearchByAlbumTitle.html') # This is the get area as it is outside of the if area.
 
