@@ -60,7 +60,7 @@ def Insert_Album():
         if albumId == '' or albumTitle == '' or duration == 0.0 or releaseDate == '' or writerID == '' or producerID == '':
             return render_template('InsertAlbum.html') # Will likely not actually need here.
         else:
-            return albumId + ' ' + albumTitle + ' ' + duration + ' ' + releaseDate + ' ' + writerID + ' ' + producerID # The area that is run after something is submitted.
+            return insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID) # The area that is run after something is submitted.
 
     return render_template('InsertAlbum.html') # This is the get area as it is outside of the if area.
 
@@ -76,7 +76,7 @@ def Insert_Artist():
         if artistId == '' or nameString == '' or knownAS == '':
             return render_template('InsertArtist.html') # Will likely not actually need here.
         else:
-            return artistId + ' ' + nameString + ' ' + knownAS # The area that is run after something is submitted.
+            return insertName(artistId, nameString, knownAS)  # The area that is run after something is submitted.
 
     return render_template('InsertArtist.html') # This is the get area as it is outside of the if area.
 
@@ -100,7 +100,7 @@ def Insert_Song():
         if songId == '' or songTitle == '' or genre == '' or albumId == '' or artistID == '' or featArtistIDList == '':
             return render_template('InsertSong.html') # Will likely not actually need here.
         else:
-            return songId + ' ' + songTitle + ' ' + genre + ' ' + albumId + ' ' + artistID + ' ' + featArtistIDList # The area that is run after something is submitted.
+            return insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList) # The area that is run after something is submitted.
 
     return render_template('InsertSong.html') # This is the get area as it is outside of the if area.
 

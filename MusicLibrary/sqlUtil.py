@@ -49,6 +49,48 @@ def producedBy(searchPara, searchCol):  # returns the albums the name produced
     else:
         return None
 
+def albumProducedBy(searchPara, searchCol):
+    producedByData = ("SELECT nameUID FROM producedBy WHERE producedBy.%s = %s;")
+    producedByVals = (AsIs(searchCol), searchPara,)
+    cur.execute(producedByData, producedByVals)
+    rows = cur.fetchall()
+    if rows:  # if there is a produced on album
+        tempList = []
+        print("TEST: ", rows)
+        for album in rows:
+            tempList.append(album[0])
+
+        producedByList = []
+        for album in tempList:
+                getAlbumData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")  # get album titles
+                getAlbumVal = (album,)
+                cur.execute(getAlbumData, getAlbumVal)
+                producedByList.append(cur.fetchall()[0][0])
+        return producedByList
+    else:
+        return None
+
+def albumWrittenBy(searchPara, searchCol):
+    writtenByData = ("SELECT nameUID FROM writtenBy WHERE writtenBy.%s = %s;")
+    writtenByVals = (AsIs(searchCol), searchPara,)
+    cur.execute(writtenByData, writtenByVals)
+    rows = cur.fetchall()
+    if rows:  # if there is a produced on album
+        tempList = []
+        print("TEST: ", rows)
+        for album in rows:
+            tempList.append(album[0])
+
+        writtenByList = []
+        for album in tempList:
+                getAlbumData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")  # get album titles
+                getAlbumVal = (album,)
+                cur.execute(getAlbumData, getAlbumVal)
+                writtenByList.append(cur.fetchall()[0][0])
+        return writtenByList
+    else:
+        return None
+
 def writtenBy(searchPara, searchCol):  # returns the albums the name produced
     writtenByData = ("SELECT albumUID FROM writtenBy WHERE writtenBy.%s = %s;")
     writtenByVals = (AsIs(searchCol), searchPara,)
@@ -90,6 +132,7 @@ def featuredIn(searchPara, searchCol):  # returns songs arist was featured in
         return None    
 
 def performedBy(searchPara, searchCol):
+
     performedByData = ("SELECT songUID, albumUID FROM performedBy WHERE performedBy.%s = %s;")
     performedByVals = (AsIs(searchCol), searchPara,)
     cur.execute(performedByData, performedByVals)
@@ -123,7 +166,6 @@ def searchBySongID(songID):
     cur.execute(searchData, searchVals)
    
     rows = cur.fetchall()
-    print("ROWS: ", rows)
     if not rows:  # if song doesn't exist
         return "ERROR: songID does not exist!"
 
@@ -146,7 +188,6 @@ def searchBySongTitle(songTitle):
     if not rows:  # if query returns nothing
         return "ERROR: songTitle does not exist!"
 
-    print("ROWS", rows)
     info = rows[0]
     songList = {}
     songList['songID'] = info[0]
@@ -185,7 +226,6 @@ def searchByAlbumID(albumID):
     cur.execute(searchData, searchVals)
    
     rows = cur.fetchall()
-    print("ROWS: ", rows)
     if not rows:  # if query returns nothing
         return "ERROR: albumID does not exist!"
 
@@ -195,6 +235,12 @@ def searchByAlbumID(albumID):
     albumList['albumTitle'] = info[1]
     albumList['duration'] = info[2]
     albumList['releaseDate'] = info[3]
+    produced = albumProducedBy(albumID, "albumUID")
+    if produced:
+        albumList['producedBy'] = produced
+    written = albumWrittenBy(albumID, "albumUID")
+    if written:
+        albumList['writtenBy'] = written
 
     return albumList
 
@@ -204,7 +250,6 @@ def searchByAlbumTitle(albumTitle):
     cur.execute(searchData, searchVals)
    
     rows = cur.fetchall()
-    print("ROWS: ", rows)
     if not rows:  # if query returns nothing  
         return "ERROR: albumTitle does not exist!"
 
@@ -215,6 +260,13 @@ def searchByAlbumTitle(albumTitle):
     albumList['duration'] = info[2]
     albumList['releaseDate'] = info[3]
 
+    produced = albumProducedBy(albumList['albumID'], "albumUID")
+    if produced:
+        albumList['producedBy'] = produced
+    written = albumWrittenBy(albumList['albumID'], "albumUID")
+    if written:
+        albumList['writtenBy'] = written
+
     return albumList
 
 def searchByAlbumDate(albumDate):
@@ -223,7 +275,6 @@ def searchByAlbumDate(albumDate):
     cur.execute(searchData, searchVals)
    
     rows = cur.fetchall()
-    print("ROWS: ", rows)
     if not rows:  # if query returns nothing  
         return "ERROR: albumDate does not exist!"
 
@@ -234,6 +285,13 @@ def searchByAlbumDate(albumDate):
     albumList['duration'] = info[2]
     albumList['releaseDate'] = info[3]
 
+    produced = albumProducedBy(albumList['albumID'], "albumUID")
+    if produced:
+        albumList['producedBy'] = produced
+    written = albumWrittenBy(albumList['albumID'], "albumUID")
+    if written:
+        albumList['writtenBy'] = written
+
     return albumList   
 
 def searchByNameID(nameID):
@@ -242,7 +300,6 @@ def searchByNameID(nameID):
     cur.execute(searchData, searchVals)
    
     rows = cur.fetchall()
-    print("ROWS: ", rows)
     if not rows:  # if query returns nothing  
         return "ERROR: nameID does not exist!"
 
@@ -274,7 +331,6 @@ def searchByName(name):
     cur.execute(searchData, searchVals)
    
     rows = cur.fetchall()
-    print("ROWS: ", rows)
     if not rows:  # if query returns nothing  
         return "ERROR: name does not exist!"
 
@@ -299,3 +355,111 @@ def searchByName(name):
         nameList['albumsPerformed'] = performed[1]
 
     return nameList 
+
+def insertName(ID, name, knownAs):
+    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+    searchVals = (ID,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if rows:  # if ID is a duplicate
+        return "ERROR: None unique ID"
+
+    insertData = ("""INSERT INTO name (nameUID, nameString, knownAs) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (ID, name, knownAs)
+    cur.execute(insertData, insertVals)
+    conn.commit()
+    return "Successfully inserted!"
+    
+def insertAlbum(albumId, albumTitle, duration, releaseDate, writerID, producerID):
+    searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
+    searchVals = (albumId,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if rows:  # if ID is a duplicate
+        return "ERROR: None unique ID" 
+        
+    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+    searchVals = (writerID,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if not rows:  # if ID does not exist
+        return "ERROR: Writer ID does not exist!"   
+
+    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+    searchVals = (producerID,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if not rows:  # if ID does not exist
+        return "ERROR: Producer ID does not exist!" 
+    
+    insertData = ("""INSERT INTO album (albumUID, albumTitle, duration, releaseDate) VALUES (%s, %s, %s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (albumId, albumTitle, duration, releaseDate)
+    cur.execute(insertData, insertVals)
+    conn.commit()  # insert the album
+
+    insertData = ("""INSERT INTO writtenBy (albumUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (albumId, writerID)
+    cur.execute(insertData, insertVals)
+    conn.commit()  # insert writtenBy relationship
+
+    insertData = ("""INSERT INTO producedBy (albumUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (albumId, producerID)
+    cur.execute(insertData, insertVals)
+    conn.commit()  # insert producedBy relationship
+
+    return "Album Successfully Inserted!"
+
+def insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList):
+    searchData = ("SELECT * FROM song WHERE song.songUID = %s;")
+    searchVals = (songId,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if rows:  # if songID is a duplicate
+        return "ERROR: None unique songID" 
+
+    searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
+    searchVals = (albumId,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if not rows:  # if albumID does not exist
+        return "ERROR: AlbumID does not exist" 
+
+    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+    searchVals = (artistID,)
+    cur.execute(searchData, searchVals)
+    rows = cur.fetchall()
+    if not rows:  # if ArtistID does not exist
+        return "ERROR: ArtistID does not exist" 
+    
+    featIDList = featArtistIDList.split(',')
+    print("FEAT LIST: ", featIDList)
+    for aID in featIDList:
+        searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
+        searchVals = (aID,)
+        cur.execute(searchData, searchVals)
+        rows = cur.fetchall()
+        if not rows:  # if a featured artist does not exist
+            return "ERROR: A featured artist ID does not exist" 
+
+    insertData = ("""INSERT INTO song (songUID, genre, songTitle) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (songId, genre, songTitle)
+    cur.execute(insertData, insertVals)
+    conn.commit()  # insert song
+
+    insertData = ("""INSERT INTO contains (songUID, albumUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (songId, albumId)
+    cur.execute(insertData, insertVals)
+    conn.commit()  # insert contains relationship
+
+    insertData = ("""INSERT INTO performedBy (songUID, albumUID, nameUID) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
+    insertVals = (songId, albumId, artistID)
+    cur.execute(insertData, insertVals)
+    conn.commit()  # insert contains relationship   
+
+    for aID in featIDList:
+        insertData = ("""INSERT INTO featuredIn (songUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
+        insertVals = (songId, aID)
+        cur.execute(insertData, insertVals)
+        conn.commit()  # insert contains relationship     
+
+    return "Song Successfully Inserted!" 
