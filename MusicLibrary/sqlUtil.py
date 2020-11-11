@@ -157,7 +157,7 @@ def performedBy(searchPara, searchCol):
     else:
         return None
 
-Addef getArtistFromSong(songID):
+def getArtistFromSong(songID):
     searchData = ("SELECT nameUID FROM performedBy WHERE performedBy.songUID = %s;")
     searchVals = (songID,)
     cur.execute(searchData, searchVals) 
