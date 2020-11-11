@@ -204,7 +204,7 @@ def searchBySongTitle(songTitle):
         return "ERROR: songTitle does not exist!"
 
     songDict = {}
-    counter = 1
+    counter = 0
     for info in rows:
         songList = {}
         songList['songID'] = info[0]
@@ -275,7 +275,7 @@ def searchByAlbumTitle(albumTitle):
         return "ERROR: albumTitle does not exist!"
 
     albumDict = {}
-    counter = 1
+    counter = 0
     for info in rows:
         albumList = {}
         albumList['albumID'] = info[0]
@@ -304,7 +304,7 @@ def searchByAlbumDate(albumDate):
         return "ERROR: albumDate does not exist!"
 
     albumDict = {}
-    counter = 1
+    counter = 0
     for info in rows:
         albumList = {}
         albumList['albumID'] = info[0]
@@ -364,7 +364,7 @@ def searchByName(name):
         return "ERROR: name does not exist!"
 
     namesDict = {}
-    counter = 1
+    counter = 0
     for info in rows:
         nameList = {}
         nameList['nameUID'] = info[0]

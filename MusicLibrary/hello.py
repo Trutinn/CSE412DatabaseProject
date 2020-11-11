@@ -13,9 +13,9 @@ def Search_By_SID():
         songID = request.form.get('songId')  # access the data inside
         if songID == '':
             return render_template('SearchBySongID.html') # Will likely not actually need here.
-        else:
-            return searchBySongID(songID) # The area that is run after something is submitted.
-
+        else: 
+            return render_template('songIDResults.html', data = searchBySongID(songID)) # The area that is run after something is submitted.
+    
     return render_template('SearchBySongID.html') # This is the get area as it is outside of the if area.
 
 @app.route('/Search_By_AID', methods=['post', 'get'])
@@ -166,8 +166,11 @@ def Search_By_STitle():
         songTitle = request.form.get('songTitle')  # access the data inside
         if songTitle == '':
             return render_template('SearchBySongTitle.html') # Will likely not actually need here.
-        else:
-            return searchBySongTitle(songTitle) # The area that is run after something is submitted.
+        else: 
+            return render_template('songTitleResults.html', songInfo = searchBySongTitle(songTitle)) # The area that is run after something is submitted.
+            
+            
+            
 
     return render_template('SearchBySongTitle.html') # This is the get area as it is outside of the if area.
 
