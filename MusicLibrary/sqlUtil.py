@@ -157,6 +157,21 @@ def performedBy(searchPara, searchCol):
     else:
         return None
 
+Addef getArtistFromSong(songID):
+    searchData = ("SELECT nameUID FROM performedBy WHERE performedBy.songUID = %s;")
+    searchVals = (songID,)
+    cur.execute(searchData, searchVals) 
+
+    rows = cur.fetchall()  
+    nameUID = rows[0][0]
+
+    searchData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")
+    searchVals = (nameUID,)
+    cur.execute(searchData, searchVals)   
+
+    rows = cur.fetchall()
+    return rows[0][0]
+
 def searchBySongID(songID):
     searchData = ("SELECT * FROM song WHERE song.songUID = %s;")
     searchVals = (songID,)
@@ -170,10 +185,13 @@ def searchBySongID(songID):
     songList = {}
     songList['songID'] = info[0]
     songList['genre'] = info[1]
-    songList['artist'] = info[2]
+    songList['songName'] = info[2]
+    songList['artist'] = getArtistFromSong(songList['songID'])
     featured = getFeaturedNames(songID, "songUID")
     if featured:
         songList['featuredIn'] = featured
+    
+    getArtistFromSong(songID)
     
     return songList
 
@@ -191,7 +209,8 @@ def searchBySongTitle(songTitle):
         songList = {}
         songList['songID'] = info[0]
         songList['genre'] = info[1]
-        songList['artist'] = info[2]
+        songList['songName'] = info[2]
+        songList['artist'] = getArtistFromSong(songList['songID'])
         featured = getFeaturedNames(info[0], "songUID")
         if featured:
             songList['featuredIn'] = featured
@@ -213,7 +232,8 @@ def searchBySongGenre(songGenre):
         tempDict = {}
         tempDict['songID'] = row[0]
         tempDict['genre'] = row[1]
-        tempDict['artist'] = row[2]
+        tempDict['songName'] = row[2]
+        songList['artist'] = getArtistFromSong(songList['songID'])
         featured = getFeaturedNames(row[0], "songUID")
         if featured:
             tempDict['featuredIn'] = featured
