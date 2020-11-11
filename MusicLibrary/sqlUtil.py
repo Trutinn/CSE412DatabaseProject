@@ -233,7 +233,7 @@ def searchBySongGenre(songGenre):
         tempDict['songID'] = row[0]
         tempDict['genre'] = row[1]
         tempDict['songName'] = row[2]
-        songList['artist'] = getArtistFromSong(songList['songID'])
+        songList['artist'] = getArtistFromSong(tempDict['songID'])
         featured = getFeaturedNames(row[0], "songUID")
         if featured:
             tempDict['featuredIn'] = featured
