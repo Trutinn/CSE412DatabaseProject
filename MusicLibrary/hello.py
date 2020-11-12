@@ -66,9 +66,9 @@ def Insert_Album():
                 try:
                     int(duration)
                 except:
-                    return "ERROR: Duration is not an integer or decimal value!"
-            return insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID) # The area that is run after something is submitted.
-                
+                    return render_template('insertAlbumMessages.html', message = "Error! A non-numeric value was entered for the duration. Please use the back arrow on your browser to return to the previous page.")
+            return render_template('insertAlbumMessages.html', message = insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID)) # return insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID) # The area that is run after something is submitted.
+
     return render_template('InsertAlbum.html') # This is the get area as it is outside of the if area.
 
 @app.route('/Insert_Artist', methods=['post', 'get'])
@@ -83,7 +83,7 @@ def Insert_Artist():
         if artistId == '' or nameString == '' or knownAS == '':
             return render_template('InsertArtist.html') # Will likely not actually need here.
         else:
-            return insertName(artistId, nameString, knownAS)  # The area that is run after something is submitted.
+            return render_template('insertArtistMessage.html', message = insertName(artistId, nameString, knownAS))  #return insertName(artistId, nameString, knownAS)  # The area that is run after something is submitted.
 
     return render_template('InsertArtist.html') # This is the get area as it is outside of the if area.
 
@@ -107,7 +107,7 @@ def Insert_Song():
         if songId == '' or songTitle == '' or genre == '' or albumId == '' or artistID == '':
             return render_template('InsertSong.html') # Will likely not actually need here.
         else:
-            return insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList) # The area that is run after something is submitted.
+            return render_template('insertSongMessage.html', message = insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList)) #return insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList) # The area that is run after something is submitted.
 
     return render_template('InsertSong.html') # This is the get area as it is outside of the if area.
 
