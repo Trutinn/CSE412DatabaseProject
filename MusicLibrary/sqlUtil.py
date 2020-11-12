@@ -241,6 +241,22 @@ def searchBySongGenre(songGenre):
     
     return songList
 
+def searchSongsInAlbum(albumID):
+    searchData = ("SELECT songUID FROM contains WHERE contains.albumUID = %s;")
+    searchVals = (albumID,)
+    cur.execute(searchData, searchVals)   
+
+    songUIDList = cur.fetchall()
+    songNameList = []
+    for songID in songUIDList:
+        searchData = ("SELECT songTitle FROM song WHERE song.songUID = %s;")
+        searchVals = (songID[0],)
+        cur.execute(searchData, searchVals) 
+        songNameList.append(cur.fetchall()[0][0])
+    return songNameList
+    
+
+
 def searchByAlbumID(albumID):
     searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
     searchVals = (albumID,)
@@ -256,6 +272,8 @@ def searchByAlbumID(albumID):
     albumList['albumTitle'] = info[1]
     albumList['duration'] = info[2]
     albumList['releaseDate'] = info[3]
+    albumList['songsInAlbum'] = searchSongsInAlbum(albumList['albumID'])
+    searchSongsInAlbum(albumList['albumID'])
     produced = albumProducedBy(albumID, "albumUID")
     if produced:
         albumList['producedBy'] = produced
@@ -282,7 +300,7 @@ def searchByAlbumTitle(albumTitle):
         albumList['albumTitle'] = info[1]
         albumList['duration'] = info[2]
         albumList['releaseDate'] = info[3]
-
+        albumList['songsInAlbum'] = searchSongsInAlbum(albumList['albumID'])
         produced = albumProducedBy(albumList['albumID'], "albumUID")
         if produced:
             albumList['producedBy'] = produced
@@ -311,7 +329,7 @@ def searchByAlbumDate(albumDate):
         albumList['albumTitle'] = info[1]
         albumList['duration'] = info[2]
         albumList['releaseDate'] = info[3]
-
+        albumList['songsInAlbum'] = searchSongsInAlbum(albumList['albumID'])
         produced = albumProducedBy(albumList['albumID'], "albumUID")
         if produced:
             albumList['producedBy'] = produced
@@ -462,7 +480,7 @@ def insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList):
     if not rows:  # if ArtistID does not exist
         return "ERROR: ArtistID does not exist" 
     
-    if featArtistIDList is not '':
+    if featArtistIDList != '':
         featIDList = featArtistIDList.split(',')
         for aID in featIDList:
             searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
@@ -486,7 +504,7 @@ def insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList):
     insertVals = (songId, albumId, artistID)
     cur.execute(insertData, insertVals)
     conn.commit()  # insert contains relationship   
-    if featArtistIDList is not '':
+    if featArtistIDList != '':
         for aID in featIDList:
             insertData = ("""INSERT INTO featuredIn (songUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
             insertVals = (songId, aID)
