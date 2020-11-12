@@ -254,8 +254,6 @@ def searchSongsInAlbum(albumID):
         cur.execute(searchData, searchVals) 
         songNameList.append(cur.fetchall()[0][0])
     return songNameList
-    
-
 
 def searchByAlbumID(albumID):
     searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
