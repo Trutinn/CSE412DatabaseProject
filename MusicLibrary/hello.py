@@ -60,8 +60,15 @@ def Insert_Album():
         if albumId == '' or albumTitle == '' or duration == 0.0 or releaseDate == '' or writerID == '' or producerID == '':
             return render_template('InsertAlbum.html') # Will likely not actually need here.
         else:
+            try:
+                float(duration)
+            except:
+                try:
+                    int(duration)
+                except:
+                    return "ERROR: Duration is not an integer or decimal value!"
             return insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID) # The area that is run after something is submitted.
-
+                
     return render_template('InsertAlbum.html') # This is the get area as it is outside of the if area.
 
 @app.route('/Insert_Artist', methods=['post', 'get'])
