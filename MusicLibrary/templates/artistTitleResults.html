@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   </head>
+   <body>
+   <style>
+   td {
+	width: 150px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+      }
+   </style>
+   <h1>Search Results</h1>
+   <table>
+    <thead>
+	<tr>
+		<th>User ID</th>
+		<th>Name</th>
+		<th>Known As</th>
+		<th>Albums Performed</th>
+		<th>Songs Peformed</th>
+		<th>Albums Produced</th>
+		<th>Albums Written</th>
+		<th>Songs Featured In</th>
+	</tr>
+    </thead>
+    	<tbody>
+		{% for i in range(0, songInfo|length) %}
+			<tr>
+		        <td>{{songInfo[i]['nameUID']}}</td>
+			<td>{{songInfo[i]['nameString']}}</td>
+			<td>{{songInfo[i]['knownAs']}}</td>
+		        <td>{{songInfo[i]['albumsPerformed']}}</td>
+		        <td>{{songInfo[i]['songsPerformed']}}</td>
+			<td>{{songInfo[i]['produced']}}</td>
+			<td>{{songInfo[i]['wrote']}}</td>
+			<td>{{songInfo[i]['featuredIn']}}</td>
+			</tr>
+		{% endfor %} 
+    	</tbody>
+   </table>
+   </body>
+</html> 

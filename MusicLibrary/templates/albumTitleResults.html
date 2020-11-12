@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   </head>
+   <body>
+   <style>
+   td {
+	width: 150px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+      }
+   </style>
+   <h1>Search Results</h1>
+   <table>
+    <thead>
+	<tr>
+		<th>Album ID</th>
+		<th>Album Title</th>
+		<th>Duration (minutes)</th>
+		<th>Produced By</th>
+		<th>Release Date (YYYY-MM-DD)</th>
+		<th>Written By</th>
+		<th>Songs in Album</th>
+	</tr>
+    </thead>
+    	<tbody>
+		{% for i in range(0, songInfo|length) %}
+			<tr>
+                <td>{{songInfo[i]['albumID']}}</td>
+		<td>{{songInfo[i]['albumTitle']}}</td>
+		<td>{{songInfo[i]['duration']}}</td>
+                <td>{{songInfo[i]['producedBy']}}</td>
+                <td>{{songInfo[i]['releaseDate']}}</td>
+		<td>{{songInfo[i]['writtenBy']}}</td>
+		<td>{{songInfo[i]['songsInAlbum']}}</td>
+			</tr>
+		{% endfor %} 
+    	</tbody>
+   </table>
+   </body>
+</html> 

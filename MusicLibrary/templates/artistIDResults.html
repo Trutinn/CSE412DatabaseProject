@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   </head>
+   <body>
+   <style>
+   td {
+	width: 150px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+      }
+   </style>
+   <h1>Search Results</h1>
+   <table>
+    <thead>
+	<tr>
+		<th>User ID</th>
+		<th>Name</th>
+		<th>Known As</th>
+		<th>Albums Performed</th>
+		<th>Songs Peformed</th>
+		<th>Albums Produced</th>
+		<th>Albums Written</th>
+		<th>Songs Featured In</th>
+	</tr>
+    </thead>
+    	<tbody>
+		<tr>
+			<td>{{data['nameUID']}}</td>
+			<td>{{data['nameString']}}</td>
+			<td>{{data['knownAs']}}</td>
+			<td>{{data['albumsPerformed']}}</td>
+			<td>{{data['songsPerformed']}}</td>
+			<td>{{data['produced']}}</td>
+			<td>{{data['wrote']}}</td>
+			<td>{{data['featuredIn']}}</td>
+		</tr>
+		<!--</tr>
+		{% for row in data %}
+			<tr>
+				<td>{{row[0]}}</td>
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+			</tr>
+		{% endfor %} -->
+    	</tbody>
+   </table>
+   </body>
+</html> 

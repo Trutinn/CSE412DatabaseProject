@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   </head>
+   <body>
+   <style>
+   td {
+	width: 150px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+      }
+   </style>
+   <h1>Search Results</h1>
+   <table>
+    <thead>
+	<tr>
+		<th>Album ID</th>
+		<th>Album Title</th>
+		<th>Duration (minutes)</th>
+		<th>Produced By</th>
+		<th>Release Date (YYYY-MM-DD)</th>
+		<th>Written By</th>
+		<th>Songs in Album</th>
+	</tr>
+    </thead>
+    	<tbody>
+		<tr>
+			<td>{{data['albumID']}}</td>
+			<td>{{data['albumTitle']}}</td>
+			<td>{{data['duration']}}</td>
+			<td>{{data['producedBy']}}</td>
+			<td>{{data['releaseDate']}}</td>
+			<td>{{data['writtenBy']}}</td>
+			<td>{{data['songsInAlbum']}}</td>
+		</tr>
+		<!--</tr>
+		{% for row in data %}
+			<tr>
+				<td>{{row[0]}}</td>
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+			</tr>
+		{% endfor %} -->
+    	</tbody>
+   </table>
+   </body>
+</html> 
