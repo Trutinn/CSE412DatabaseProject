@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   </head>
+   <body>
+   <h1>Insertion Results</h1>
+	{% if message == 'Album Successfully Inserted!' %}
+	<h2 style="color:green;">{{message}}</h2>
+	{% elif message == 'Error! A non-numeric value was entered for the duration. Please use the back arrow on your browser to return to the previous page.' %}
+	<h2 style="color:red;">{{message}}</h2>
+	{% else %}
+	<h2 style="color:red;">Error! This album ID is already in use. Please return and check if the album already exists or change the album id given earlier.</h2>
+	{% endif %}
+   </body>
+</html> 

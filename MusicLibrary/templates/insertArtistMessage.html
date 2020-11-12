@@ -1,0 +1,14 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+   </head>
+   <body>
+   <h1>Insertion Results</h1>
+	{% if message == 'Successfully Inserted!' %}
+	<h2 style="color:green;">{{message}}</h2>
+	{% else %}
+	<h2 style="color:red;">Error! This ID is already in use for one writer, producer, or artist. Please return and check if the artist, producer, or writer already exists or change the id given earlier.</h2>
+	{% endif %}
+   </body>
+</html> 
