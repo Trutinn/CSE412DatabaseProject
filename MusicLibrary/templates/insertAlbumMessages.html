@@ -9,8 +9,12 @@
 	<h2 style="color:green;">{{message}}</h2>
 	{% elif message == 'Error! A non-numeric value was entered for the duration. Please use the back arrow on your browser to return to the previous page.' %}
 	<h2 style="color:red;">{{message}}</h2>
+	{% elif message == 'ERROR: Writer ID does not exist!' %}
+	<h2 style="color:red;">Error! The entered writer ID does not exist yet. Please return and check if the writer already exists or change the writer ID given earlier.</h2>
+	{% elif message == 'ERROR: Producer ID does not exist!' %}
+	<h2 style="color:red;">Error! The entered producer ID does not exist yet. Please return and check if the producer already exists or change the writer ID given earlier.</h2>
 	{% else %}
-	<h2 style="color:red;">Error! This album ID is already in use. Please return and check if the album already exists or change the album id given earlier.</h2>
-	{% endif %}
+	<h2 style="color:red;">Error! This album ID is already in use. Please return and check if the album already exists or change the album ID given earlier.</h2>
+	{% endif %} 
    </body>
 </html> 
