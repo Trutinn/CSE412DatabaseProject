@@ -1,11 +1,9 @@
 #!/usr/bin/python
 
-# Will create and relate all tables in our database (should only need to be run once per DB)
-
 import psycopg2
 import json
 
-conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="YOURDB", user = "YOURUSER", password = "YOURPW", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
@@ -13,18 +11,18 @@ cur = conn.cursor()
 
 def tableCreation():
     # Testing recreation of tables
-    cur.execute("DROP TABLE album CASCADE;")
-    cur.execute("DROP TABLE song CASCADE;")
-    cur.execute("DROP TABLE contains;")
+    # cur.execute("DROP TABLE album CASCADE;")
+    # cur.execute("DROP TABLE song CASCADE;")
+    # cur.execute("DROP TABLE contains;")
 
-    cur.execute("DROP TABLE name CASCADE;")
-    cur.execute("DROP TABLE producer;")
-    cur.execute("DROP TABLE writer;")
-    cur.execute("DROP TABLE artist;")
-    cur.execute("DROP TABLE featuredIn;")
-    cur.execute("DROP TABLE writtenBy;")
-    cur.execute("DROP TABLE producedBy;")
-    cur.execute("DROP TABLE performedBy;")
+    # cur.execute("DROP TABLE name CASCADE;")
+    # cur.execute("DROP TABLE producer;")
+    # cur.execute("DROP TABLE writer;")
+    # cur.execute("DROP TABLE artist;")
+    # cur.execute("DROP TABLE featuredIn;")
+    # cur.execute("DROP TABLE writtenBy;")
+    # cur.execute("DROP TABLE producedBy;")
+    # cur.execute("DROP TABLE performedBy;")
 
     # CREATING TABLE
     # Creating album table
