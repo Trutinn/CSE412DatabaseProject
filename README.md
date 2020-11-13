@@ -10,8 +10,6 @@ Create a user role with admin: https://stackoverflow.com/questions/15008204/how-
 
 Test database locally: https://www.tutorialspoint.com/postgresql/postgresql_python.htm
 
-To check tables in DB run: sudo su postgres, psql, \c nameOfYourDB, \dt
-
 # Required Setup In Code
 In tableCreation line 6 database="YOURDBNAME", user="YOURUSER", password="YOURPW"
 In sqlUtil.py line 6 database="YOURDBNAME", user="YOURUSER", password="YOURPW"
