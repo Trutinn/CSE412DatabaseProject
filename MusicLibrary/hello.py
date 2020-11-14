@@ -14,7 +14,11 @@ def Search_By_SID():
         if songID == '':
             return render_template('SearchBySongID.html') # Will likely not actually need here.
         else: 
-            return render_template('songIDResults.html', data = searchBySongID(songID)) # The area that is run after something is submitted.
+            data = searchBySongID(songID)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchBySongID(songID))
+            else:
+                return render_template('songIDResults.html', data = searchBySongID(songID)) # The area that is run after something is submitted.
     
     return render_template('SearchBySongID.html') # This is the get area as it is outside of the if area.
 
@@ -26,7 +30,11 @@ def Search_By_AID():
         if albumId == '':
             return render_template('SearchByAlbumID.html') # Will likely not actually need here.
         else:
-            return render_template('albumIDResults.html', data = searchByAlbumID(albumId))  #return searchByAlbumID(albumId) # The area that is run after something is submitted.
+            data = searchByAlbumID(albumId)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByAlbumID(albumId))
+            else:
+                return render_template('albumIDResults.html', data = searchByAlbumID(albumId))  #return searchByAlbumID(albumId) # The area that is run after something is submitted.
 
     return render_template('SearchByAlbumID.html') # This is the get area as it is outside of the if area.
 
@@ -38,7 +46,11 @@ def Search_By_ArtID():
         if artistId == '':
             return render_template('SearchByArtistID.html') # Will likely not actually need here.
         else:
-            return render_template('artistIDResults.html', data = searchByNameID(artistId))   #return searchByNameID(artistId) # The area that is run after something is submitted.
+            data = searchByNameID(artistId)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByNameID(artistId))
+            else:
+                return render_template('artistIDResults.html', data = searchByNameID(artistId))   #return searchByNameID(artistId) # The area that is run after something is submitted.
 
     return render_template('SearchByArtistID.html') # This is the get area as it is outside of the if area.
 
@@ -120,7 +132,11 @@ def Search_By_ATitle():
         if albumTitle == '':
             return render_template('SearchByAlbumTitle.html') # Will likely not actually need here.
         else:
-            return render_template('albumTitleResults.html', songInfo = searchByAlbumTitle(albumTitle)) # return searchByAlbumTitle(albumTitle) # The area that is run after something is submitted.
+            data = searchByAlbumTitle(albumTitle)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByAlbumTitle(albumTitle))
+            else:
+                return render_template('albumTitleResults.html', songInfo = searchByAlbumTitle(albumTitle)) # return searchByAlbumTitle(albumTitle) # The area that is run after something is submitted.
 
     return render_template('SearchByAlbumTitle.html') # This is the get area as it is outside of the if area.
 
@@ -133,7 +149,11 @@ def Search_By_ArtName():
         if knownAS == '':
             return render_template('SearchByArtistName.html') # Will likely not actually need here.
         else:
-            return render_template('artistTitleResults.html', songInfo = searchByName(knownAS)) #return searchByName(knownAS) # The area that is run after something is submitted.
+            data = searchByName(knownAS)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByName(knownAS))
+            else:
+                return render_template('artistTitleResults.html', songInfo = searchByName(knownAS)) #return searchByName(knownAS) # The area that is run after something is submitted.
 
     return render_template('SearchByArtistName.html') # This is the get area as it is outside of the if area.
 
@@ -146,7 +166,11 @@ def Search_By_Date():  # currently have to search by specific date "YYYY-MM-DD"
         if date == '':
             return render_template('SearchByDate.html') # Will likely not actually need here.
         else:
-            return render_template('albumTitleResults.html', songInfo = searchByAlbumDate(date)) # return searchByAlbumDate(date) # The area that is run after something is submitted.
+            data = searchByAlbumDate(date)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByAlbumDate(date))
+            else:
+                return render_template('albumTitleResults.html', songInfo = searchByAlbumDate(date)) # return searchByAlbumDate(date) # The area that is run after something is submitted.
             
 
     return render_template('SearchByDate.html') # This is the get area as it is outside of the if area.
@@ -160,9 +184,11 @@ def Search_By_Genre():
         if genre == '':
             return render_template('SearchByGenre.html') # Will likely not actually need here.
         else:
-            #tempDict = {}
-            #tempDict['songs'] = searchBySongGenre(genre) 
-            return render_template('songGenreResults.html', songInfo = searchBySongGenre(genre)) # The area that is run after something is submitted.
+            data = searchBySongGenre(genre)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchBySongGenre(genre))
+            else:
+                return render_template('songGenreResults.html', songInfo = searchBySongGenre(genre)) # The area that is run after something is submitted.
 
     return render_template('SearchByGenre.html') # This is the get area as it is outside of the if area.
 
@@ -174,7 +200,12 @@ def Search_By_STitle():
         if songTitle == '':
             return render_template('SearchBySongTitle.html') # Will likely not actually need here.
         else: 
-            return render_template('songTitleResults.html', songInfo = searchBySongTitle(songTitle)) # The area that is run after something is submitted.
+            data = searchBySongTitle(songTitle)
+            print(data)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchBySongTitle(songTitle))
+            else:
+                return render_template('songTitleResults.html', songInfo = searchBySongTitle(songTitle)) # The area that is run after something is submitted.
             
             
             
