@@ -1,504 +1,221 @@
-def getFeaturedNames(searchPara, searchCol):  # returns the name of featured artist of a song,
-    featuredInData = ("SELECT nameUID FROM featuredIn WHERE featuredIn.%s = %s;")
-    featuredInVals = (AsIs(searchCol), searchPara,)
-    cur.execute(featuredInData, featuredInVals)
-    rows = cur.fetchall()
+from flask import Flask, render_template, request, redirect, url_for
+from sqlUtil import *
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return render_template('homePage.html')
+
+@app.route('/Search_By_SID', methods=['post', 'get'])
+def Search_By_SID():
+    songID = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        songID = request.form.get('songId')  # access the data inside
+        if songID == '':
+            return render_template('SearchBySongID.html') # Will likely not actually need here.
+        else: 
+            data = searchBySongID(songID)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchBySongID(songID))
+            else:
+                return render_template('songIDResults.html', data = searchBySongID(songID)) # The area that is run after something is submitted.
     
-    if rows:  # if there are featured artists
-        tempList = []
-        for featuredIn in rows:
-            tempList.append(featuredIn[0])
-        
-        featuredInList = []
-        for artist in tempList:
-                getNameData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")  # get names of featuredIDs fetched
-                getNameVal = (artist,)
-                cur.execute(getNameData, getNameVal)
-                featuredInList.append(cur.fetchall()[0][0])
-        return featuredInList
-    else:
-        return None
+    return render_template('SearchBySongID.html') # This is the get area as it is outside of the if area.
 
-def producedBy(searchPara, searchCol):  # returns the albums the name produced
-    producedByData = ("SELECT albumUID FROM producedBy WHERE producedBy.%s = %s;")
-    producedByVals = (AsIs(searchCol), searchPara,)
-    cur.execute(producedByData, producedByVals)
-    rows = cur.fetchall()
-    if rows:  # if they produced something
-        tempList = []
-        for album in rows:
-            tempList.append(album[0])
+@app.route('/Search_By_AID', methods=['post', 'get'])
+def Search_By_AID():
+    albumId = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        albumId = request.form.get('albumId')  # access the data inside
+        if albumId == '':
+            return render_template('SearchByAlbumID.html') # Will likely not actually need here.
+        else:
+            data = searchByAlbumID(albumId)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByAlbumID(albumId))
+            else:
+                return render_template('albumIDResults.html', data = searchByAlbumID(albumId))  #return searchByAlbumID(albumId) # The area that is run after something is submitted.
 
-        producedByList = []
-        for album in tempList:
-                getAlbumData = ("SELECT albumTitle FROM album WHERE album.albumUID = %s;")  # get album titles
-                getAlbumVal = (album,)
-                cur.execute(getAlbumData, getAlbumVal)
-                producedByList.append(cur.fetchall()[0][0])
-        return producedByList
-    else:
-        return None
+    return render_template('SearchByAlbumID.html') # This is the get area as it is outside of the if area.
 
-def albumProducedBy(searchPara, searchCol):
-    producedByData = ("SELECT nameUID FROM producedBy WHERE producedBy.%s = %s;")
-    producedByVals = (AsIs(searchCol), searchPara,)
-    cur.execute(producedByData, producedByVals)
-    rows = cur.fetchall()
-    if rows:  # if there is a produced on album
-        tempList = []
-        for album in rows:
-            tempList.append(album[0])
+@app.route('/Search_By_ArtID', methods=['post', 'get'])
+def Search_By_ArtID():
+    artistId = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        artistId = request.form.get('artistId')  # access the data inside
+        if artistId == '':
+            return render_template('SearchByArtistID.html') # Will likely not actually need here.
+        else:
+            data = searchByNameID(artistId)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByNameID(artistId))
+            else:
+                return render_template('artistIDResults.html', data = searchByNameID(artistId))   #return searchByNameID(artistId) # The area that is run after something is submitted.
 
-        producedByList = []
-        for album in tempList:
-                getAlbumData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")  # get album titles
-                getAlbumVal = (album,)
-                cur.execute(getAlbumData, getAlbumVal)
-                producedByList.append(cur.fetchall()[0][0])
-        return producedByList
-    else:
-        return None
+    return render_template('SearchByArtistID.html') # This is the get area as it is outside of the if area.
 
-def albumWrittenBy(searchPara, searchCol):
-    writtenByData = ("SELECT nameUID FROM writtenBy WHERE writtenBy.%s = %s;")
-    writtenByVals = (AsIs(searchCol), searchPara,)
-    cur.execute(writtenByData, writtenByVals)
-    rows = cur.fetchall()
-    if rows:  # if there is a produced on album
-        tempList = []
-        for album in rows:
-            tempList.append(album[0])
+@app.route('/Insert_Album', methods=['post', 'get'])
+def Insert_Album():
+    albumId = ''
+    albumTitle = ''
+    duration = 0.0
+    releaseDate = ''
+    writerID = ''
+    producerID = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        albumId = request.form.get('albumId')  # access the data inside
+        albumTitle = request.form.get('albumTitle')  # access the data inside
+        duration = request.form.get('duration')  # access the data inside
+        releaseDate = request.form.get('releaseDate')  # access the data inside
+        writerID = request.form.get('writerID')  # access the data inside
+        producerID = request.form.get('producerID')  # access the data inside
+        if albumId == '' or albumTitle == '' or duration == 0.0 or releaseDate == '' or writerID == '' or producerID == '':
+            return render_template('InsertAlbum.html') # Will likely not actually need here.
+        else:
+            try:
+                float(duration)
+            except:
+                try:
+                    int(duration)
+                except:
+                    return render_template('insertAlbumMessages.html', message = "Error! A non-numeric value was entered for the duration. Please use the back arrow on your browser to return to the previous page.")
+            return render_template('insertAlbumMessages.html', message = insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID)) # return insertAlbum(albumId,albumTitle,duration,releaseDate,writerID,producerID) # The area that is run after something is submitted.
 
-        writtenByList = []
-        for album in tempList:
-                getAlbumData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")  # get album titles
-                getAlbumVal = (album,)
-                cur.execute(getAlbumData, getAlbumVal)
-                writtenByList.append(cur.fetchall()[0][0])
-        return writtenByList
-    else:
-        return None
+    return render_template('InsertAlbum.html') # This is the get area as it is outside of the if area.
 
-def writtenBy(searchPara, searchCol):  # returns the albums the name produced
-    writtenByData = ("SELECT albumUID FROM writtenBy WHERE writtenBy.%s = %s;")
-    writtenByVals = (AsIs(searchCol), searchPara,)
-    cur.execute(writtenByData, writtenByVals)
-    rows = cur.fetchall()
-    if rows:  # if they wrote something
-        tempList = []
-        for album in rows:
-            tempList.append(album[0])
+@app.route('/Insert_Artist', methods=['post', 'get'])
+def Insert_Artist():
+    artistId = ''
+    nameString = ''
+    knownAS = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        artistId = request.form.get('artistId')  # access the data inside
+        nameString = request.form.get('nameString')  # access the data inside
+        knownAS = request.form.get('knownAS')  # access the data inside
+        if artistId == '' or nameString == '' or knownAS == '':
+            return render_template('InsertArtist.html') # Will likely not actually need here.
+        else:
+            return render_template('insertArtistMessage.html', message = insertName(artistId, nameString, knownAS))  #return insertName(artistId, nameString, knownAS)  # The area that is run after something is submitted.
 
-        writtenByList = []
-        for album in tempList:
-                getAlbumData = ("SELECT albumTitle FROM album WHERE album.albumUID = %s;")  # get album titles
-                getAlbumVal = (album,)
-                cur.execute(getAlbumData, getAlbumVal)
-                writtenByList.append(cur.fetchall()[0][0])
-        return writtenByList
-    else:
-        return None
+    return render_template('InsertArtist.html') # This is the get area as it is outside of the if area.
 
-def featuredIn(searchPara, searchCol):  # returns songs arist was featured in
-    featuredInData = ("SELECT songUID FROM featuredIn WHERE featuredIn.%s = %s;")
-    featuredInVals = (AsIs(searchCol), searchPara,)
-    cur.execute(featuredInData, featuredInVals)
-    rows = cur.fetchall()
-    if rows:  # if they wrote something
-        tempList = []
-        for album in rows:
-            tempList.append(album[0])
 
-        featuredInList = []
-        for song in tempList:
-                getsongData = ("SELECT songTitle FROM song WHERE song.songUID = %s;")  # get song names
-                getsongVal = (song,)
-                cur.execute(getsongData, getsongVal)
-                featuredInList.append(cur.fetchall()[0][0])
-        return featuredInList
-    else:
-        return None    
 
-def performedBy(searchPara, searchCol):
+@app.route('/Insert_Song', methods=['post', 'get'])
+def Insert_Song():
+    songId = ''
+    songTitle = ''
+    genre = ''
+    albumId = ''
+    artistID = ''
+    featArtistIDList = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        songId = request.form.get('songId')  # access the data inside
+        songTitle = request.form.get('songTitle')  # access the data inside
+        genre = request.form.get('genre')  # access the data inside
+        albumId = request.form.get('albumId')  # access the data inside
+        artistID = request.form.get('artistID')  # access the data inside
+        featArtistIDList = request.form.get('featArtistID')  # access the data inside
+        if songId == '' or songTitle == '' or genre == '' or albumId == '' or artistID == '':
+            return render_template('InsertSong.html') # Will likely not actually need here.
+        else:
+            return render_template('insertSongMessage.html', message = insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList)) #return insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList) # The area that is run after something is submitted.
 
-    performedByData = ("SELECT songUID, albumUID FROM performedBy WHERE performedBy.%s = %s;")
-    performedByVals = (AsIs(searchCol), searchPara,)
-    cur.execute(performedByData, performedByVals)
-    rows = cur.fetchall()
-    songIDList = []
-    albumIDList = []
-    if rows:
-        for group in rows:
-            songIDList.append(group[0])
-            if group[1] not in albumIDList:
-                albumIDList.append(group[1])
-        
-        songNameList = []
-        albumNameList = []
-        for song in songIDList:
-                getSongData = ("SELECT songTitle FROM song WHERE song.songUID = %s;")  # get song names
-                getSongVal = (song,)
-                cur.execute(getSongData, getSongVal)
-                songNameList.append(cur.fetchall()[0][0])
-        for album in albumIDList:
-                getAlbumData = ("SELECT albumTitle FROM album WHERE album.albumUID = %s;")  # get album names
-                getAlbumVal = (album,)
-                cur.execute(getAlbumData, getAlbumVal)
-                albumNameList.append(cur.fetchall()[0][0])    
-        return (songNameList, albumNameList)
-    else:
-        return None
+    return render_template('InsertSong.html') # This is the get area as it is outside of the if area.
 
-def getArtistFromSong(songID):
-    searchData = ("SELECT nameUID FROM performedBy WHERE performedBy.songUID = %s;")
-    searchVals = (songID,)
-    cur.execute(searchData, searchVals) 
 
-    rows = cur.fetchall()  
-    nameUID = rows[0][0]
+@app.route('/Search_By_ATitle', methods=['post', 'get'])
+def Search_By_ATitle():
+    albumTitle = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        albumTitle = request.form.get('albumTitle')  # access the data inside
+        if albumTitle == '':
+            return render_template('SearchByAlbumTitle.html') # Will likely not actually need here.
+        else:
+            data = searchByAlbumTitle(albumTitle)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByAlbumTitle(albumTitle))
+            else:
+                return render_template('albumTitleResults.html', songInfo = searchByAlbumTitle(albumTitle)) # return searchByAlbumTitle(albumTitle) # The area that is run after something is submitted.
 
-    searchData = ("SELECT nameString FROM name WHERE name.nameUID = %s;")
-    searchVals = (nameUID,)
-    cur.execute(searchData, searchVals)   
+    return render_template('SearchByAlbumTitle.html') # This is the get area as it is outside of the if area.
 
-    rows = cur.fetchall()
-    return rows[0][0]
 
-def searchBySongID(songID):
-    searchData = ("SELECT * FROM song WHERE song.songUID = %s;")
-    searchVals = (songID,)
-    cur.execute(searchData, searchVals)
-   
-    rows = cur.fetchall()
-    if not rows:  # if song doesn't exist
-        return "ERROR: songID does not exist!"
+@app.route('/Search_By_ArtName', methods=['post', 'get'])
+def Search_By_ArtName():
+    knownAS = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        knownAS = request.form.get('knownAS')  # access the data inside
+        if knownAS == '':
+            return render_template('SearchByArtistName.html') # Will likely not actually need here.
+        else:
+            data = searchByName(knownAS)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByName(knownAS))
+            else:
+                return render_template('artistTitleResults.html', songInfo = searchByName(knownAS)) #return searchByName(knownAS) # The area that is run after something is submitted.
 
-    info = rows[0]
-    songList = {}
-    songList['songID'] = info[0]
-    songList['genre'] = info[1]
-    songList['songName'] = info[2]
-    songList['artist'] = getArtistFromSong(songList['songID'])
-    featured = getFeaturedNames(songID, "songUID")
-    if featured:
-        songList['featuredIn'] = featured
-    
-    getArtistFromSong(songID)
-    
-    return songList
+    return render_template('SearchByArtistName.html') # This is the get area as it is outside of the if area.
 
-def searchBySongTitle(songTitle):
-    searchData = ("SELECT * FROM song WHERE song.songTitle = %s;")
-    searchVals = (songTitle,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if not rows:  # if query returns nothing
-        return "ERROR: Song Title does not exist!"
 
-    songDict = {}
-    counter = 0
-    for info in rows:
-        songList = {}
-        songList['songID'] = info[0]
-        songList['genre'] = info[1]
-        songList['songName'] = info[2]
-        songList['artist'] = getArtistFromSong(songList['songID'])
-        featured = getFeaturedNames(info[0], "songUID")
-        if featured:
-            songList['featuredIn'] = featured
-        songDict[counter] = songList
-        counter += 1
-    return songDict
+@app.route('/Search_By_Date', methods=['post', 'get'])
+def Search_By_Date():  # currently have to search by specific date "YYYY-MM-DD"
+    date = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        date = request.form.get('releaseDate')  # access the data inside
+        if date == '':
+            return render_template('SearchByDate.html') # Will likely not actually need here.
+        else:
+            data = searchByAlbumDate(date)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchByAlbumDate(date))
+            else:
+                return render_template('albumTitleResults.html', songInfo = searchByAlbumDate(date)) # return searchByAlbumDate(date) # The area that is run after something is submitted.
+            
 
-def searchBySongGenre(songGenre):
-    searchData = ("SELECT * FROM song WHERE song.genre = %s;")
-    searchVals = (songGenre,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    songList = []
-    
-    if not rows:  # if query returns nothing
-        return "ERROR: Song Genre does not exist!"
-    
-    for row in rows:
-        tempDict = {}
-        tempDict['songID'] = row[0]
-        tempDict['genre'] = row[1]
-        tempDict['songName'] = row[2]
-        tempDict['artist'] = getArtistFromSong(tempDict['songID'])
-        featured = getFeaturedNames(row[0], "songUID")
-        if featured:
-            tempDict['featuredIn'] = featured
-        songList.append(tempDict)
-    
-    return songList
+    return render_template('SearchByDate.html') # This is the get area as it is outside of the if area.
 
-def searchSongsInAlbum(albumID):
-    searchData = ("SELECT songUID FROM contains WHERE contains.albumUID = %s;")
-    searchVals = (albumID,)
-    cur.execute(searchData, searchVals)   
 
-    songUIDList = cur.fetchall()
-    songNameList = []
-    for songID in songUIDList:
-        searchData = ("SELECT songTitle FROM song WHERE song.songUID = %s;")
-        searchVals = (songID[0],)
-        cur.execute(searchData, searchVals) 
-        songNameList.append(cur.fetchall()[0][0])
-    return songNameList
+@app.route('/Search_By_Genre', methods=['post', 'get'])
+def Search_By_Genre():
+    genre = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        genre = request.form.get('genre')  # access the data inside
+        if genre == '':
+            return render_template('SearchByGenre.html') # Will likely not actually need here.
+        else:
+            #tempDict = {}
+            #tempDict['songs'] = searchBySongGenre(genre) 
+            data = searchBySongGenre(genre)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchBySongGenre(genre))
+            else:
+                return render_template('songGenreResults.html', songInfo = searchBySongGenre(genre)) # The area that is run after something is submitted.
 
-def searchByAlbumID(albumID):
-    searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
-    searchVals = (albumID,)
-    cur.execute(searchData, searchVals)
-   
-    rows = cur.fetchall()
-    if not rows:  # if query returns nothing
-        return "ERROR: albumID does not exist!"
+    return render_template('SearchByGenre.html') # This is the get area as it is outside of the if area.
 
-    info = rows[0]
-    albumList = {}
-    albumList['albumID'] = info[0]
-    albumList['albumTitle'] = info[1]
-    albumList['duration'] = info[2]
-    albumList['releaseDate'] = info[3]
-    albumList['songsInAlbum'] = searchSongsInAlbum(albumList['albumID'])
-    searchSongsInAlbum(albumList['albumID'])
-    produced = albumProducedBy(albumID, "albumUID")
-    if produced:
-        albumList['producedBy'] = produced
-    written = albumWrittenBy(albumID, "albumUID")
-    if written:
-        albumList['writtenBy'] = written
+@app.route('/Search_By_STitle', methods=['post', 'get'])
+def Search_By_STitle():
+    songTitle = ''
+    if request.method == 'POST': #This is the area where the submit has been posted?
+        songTitle = request.form.get('songTitle')  # access the data inside
+        if songTitle == '':
+            return render_template('SearchBySongTitle.html') # Will likely not actually need here.
+        else: 
+            data = searchBySongTitle(songTitle)
+            print(data)
+            if isinstance(data, str):
+                return render_template('searchError.html', data = searchBySongTitle(songTitle))
+            else:
+                return render_template('songTitleResults.html', songInfo = searchBySongTitle(songTitle)) # The area that is run after something is submitted.
 
-    return albumList
 
-def searchByAlbumTitle(albumTitle):
-    searchData = ("SELECT * FROM album WHERE album.albumTitle = %s;")
-    searchVals = (albumTitle,)
-    cur.execute(searchData, searchVals)
-   
-    rows = cur.fetchall()
-    if not rows:  # if query returns nothing  
-        return "ERROR: albumTitle does not exist!"
+            
+            
+            
 
-    albumDict = {}
-    counter = 0
-    for info in rows:
-        albumList = {}
-        albumList['albumID'] = info[0]
-        albumList['albumTitle'] = info[1]
-        albumList['duration'] = info[2]
-        albumList['releaseDate'] = info[3]
-        albumList['songsInAlbum'] = searchSongsInAlbum(albumList['albumID'])
-        produced = albumProducedBy(albumList['albumID'], "albumUID")
-        if produced:
-            albumList['producedBy'] = produced
-        written = albumWrittenBy(albumList['albumID'], "albumUID")
-        if written:
-            albumList['writtenBy'] = written
-        albumDict[counter] = albumList
-        counter += 1
+    return render_template('SearchBySongTitle.html') # This is the get area as it is outside of the if area.
 
-    return albumDict
-
-def searchByAlbumDate(albumDate):
-    searchData = ("SELECT * FROM album WHERE album.releaseDate = %s;")
-    searchVals = (albumDate,)
-    cur.execute(searchData, searchVals)
-   
-    rows = cur.fetchall()
-    if not rows:  # if query returns nothing  
-        return "ERROR: albumDate does not exist!"
-
-    albumDict = {}
-    counter = 0
-    for info in rows:
-        albumList = {}
-        albumList['albumID'] = info[0]
-        albumList['albumTitle'] = info[1]
-        albumList['duration'] = info[2]
-        albumList['releaseDate'] = info[3]
-        albumList['songsInAlbum'] = searchSongsInAlbum(albumList['albumID'])
-        produced = albumProducedBy(albumList['albumID'], "albumUID")
-        if produced:
-            albumList['producedBy'] = produced
-        written = albumWrittenBy(albumList['albumID'], "albumUID")
-        if written:
-            albumList['writtenBy'] = written
-        albumDict[counter] = albumList
-        counter += 1
-
-    return albumDict 
-
-def searchByNameID(nameID):
-    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-    searchVals = (nameID,)
-    cur.execute(searchData, searchVals)
-   
-    rows = cur.fetchall()
-    if not rows:  # if query returns nothing  
-        return "ERROR: nameID does not exist!"
-
-    info = rows[0]
-    nameList = {}
-    nameList['nameUID'] = info[0]
-    nameList['nameString'] = info[1]
-    nameList['knownAs'] = info[2]
-
-    produced = producedBy(nameID, "nameUID")
-    if produced:  # if they produced something
-        nameList['produced'] = produced
-    written = writtenBy(nameID, "nameUID")
-    if written:  # if they wrote something
-        nameList['wrote'] = written
-    featured = featuredIn(nameID, "nameUID")
-    if featured:  # if they featured in something
-        nameList['featuredIn'] = featured
-    performed = performedBy(nameID, "nameUID")
-    if performed:  # if they performed something
-        nameList['songsPerformed'] = performed[0]
-        nameList['albumsPerformed'] = performed[1]
-
-    return nameList   
-
-def searchByName(name):
-    searchData = ("SELECT * FROM name WHERE name.nameString = %s;")
-    searchVals = (name,)
-    cur.execute(searchData, searchVals)
-   
-    rows = cur.fetchall()
-    if not rows:  # if query returns nothing  
-        return "ERROR: name does not exist!"
-
-    namesDict = {}
-    counter = 0
-    for info in rows:
-        nameList = {}
-        nameList['nameUID'] = info[0]
-        nameList['nameString'] = info[1]
-        nameList['knownAs'] = info[2]
-        produced = producedBy(nameList['nameUID'], "nameUID")
-        if produced:  # if they produced something
-            nameList['produced'] = produced
-        written = writtenBy(nameList['nameUID'], "nameUID")
-        if written:  # if they wrote something
-            nameList['wrote'] = written
-        featured = featuredIn(nameList['nameUID'], "nameUID")
-        if featured:  # if they featured in something
-            nameList['featuredIn'] = featured
-        performed = performedBy(nameList['nameUID'], "nameUID")
-        if performed:  # if they performed something
-            nameList['songsPerformed'] = performed[0]
-            nameList['albumsPerformed'] = performed[1]
-        namesDict[counter] = nameList
-        counter += 1
-    return namesDict 
-
-def insertName(ID, name, knownAs):
-    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-    searchVals = (ID,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if rows:  # if ID is a duplicate
-        return "ERROR: None unique ID"
-
-    insertData = ("""INSERT INTO name (nameUID, nameString, knownAs) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (ID, name, knownAs)
-    cur.execute(insertData, insertVals)
-    conn.commit()
-    return "Successfully inserted!"
-    
-def insertAlbum(albumId, albumTitle, duration, releaseDate, writerID, producerID):
-    searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
-    searchVals = (albumId,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if rows:  # if ID is a duplicate
-        return "ERROR: None unique ID" 
-        
-    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-    searchVals = (writerID,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if not rows:  # if ID does not exist
-        return "ERROR: Writer ID does not exist!"   
-
-    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-    searchVals = (producerID,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if not rows:  # if ID does not exist
-        return "ERROR: Producer ID does not exist!" 
-    
-    insertData = ("""INSERT INTO album (albumUID, albumTitle, duration, releaseDate) VALUES (%s, %s, %s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (albumId, albumTitle, duration, releaseDate)
-    cur.execute(insertData, insertVals)
-    conn.commit()  # insert the album
-
-    insertData = ("""INSERT INTO writtenBy (albumUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (albumId, writerID)
-    cur.execute(insertData, insertVals)
-    conn.commit()  # insert writtenBy relationship
-
-    insertData = ("""INSERT INTO producedBy (albumUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (albumId, producerID)
-    cur.execute(insertData, insertVals)
-    conn.commit()  # insert producedBy relationship
-
-    return "Album Successfully Inserted!"
-
-def insertSong(songId, songTitle, genre, albumId, artistID, featArtistIDList):
-    searchData = ("SELECT * FROM song WHERE song.songUID = %s;")
-    searchVals = (songId,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if rows:  # if songID is a duplicate
-        return "ERROR: None unique songID" 
-
-    searchData = ("SELECT * FROM album WHERE album.albumUID = %s;")
-    searchVals = (albumId,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if not rows:  # if albumID does not exist
-        return "ERROR: AlbumID does not exist" 
-
-    searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-    searchVals = (artistID,)
-    cur.execute(searchData, searchVals)
-    rows = cur.fetchall()
-    if not rows:  # if ArtistID does not exist
-        return "ERROR: ArtistID does not exist" 
-    
-    if featArtistIDList != '':
-        featIDList = featArtistIDList.split(',')
-        for aID in featIDList:
-            searchData = ("SELECT * FROM name WHERE name.nameUID = %s;")
-            searchVals = (aID,)
-            cur.execute(searchData, searchVals)
-            rows = cur.fetchall()
-            if not rows:  # if a featured artist does not exist
-                return "ERROR: A featured artist ID does not exist" 
-
-    insertData = ("""INSERT INTO song (songUID, genre, songTitle) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (songId, genre, songTitle)
-    cur.execute(insertData, insertVals)
-    conn.commit()  # insert song
-
-    insertData = ("""INSERT INTO contains (songUID, albumUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (songId, albumId)
-    cur.execute(insertData, insertVals)
-    conn.commit()  # insert contains relationship
-
-    insertData = ("""INSERT INTO performedBy (songUID, albumUID, nameUID) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING""")
-    insertVals = (songId, albumId, artistID)
-    cur.execute(insertData, insertVals)
-    conn.commit()  # insert contains relationship   
-    if featArtistIDList != '':
-        for aID in featIDList:
-            insertData = ("""INSERT INTO featuredIn (songUID, nameUID) VALUES (%s, %s) ON CONFLICT DO NOTHING""")
-            insertVals = (songId, aID)
-            cur.execute(insertData, insertVals)
-            conn.commit()  # insert contains relationship     
-
-    return "Song Successfully Inserted!"
+if __name__ == '__main__':
+    app.debug = True
+    app.run() #go to http://localhost:5000/ to view the page.
