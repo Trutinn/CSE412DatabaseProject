@@ -179,7 +179,7 @@ def searchBySongID(songID):
    
     rows = cur.fetchall()
     if not rows:  # if song doesn't exist
-        return "ERROR: songID does not exist!"
+        return "ERROR: Song ID does not exist!"
 
     info = rows[0]
     songList = {}
@@ -201,7 +201,7 @@ def searchBySongTitle(songTitle):
     cur.execute(searchData, searchVals)
     rows = cur.fetchall()
     if not rows:  # if query returns nothing
-        return "ERROR: Song Title does not exist!"
+        return "ERROR: This song title does not exist!"
 
     songDict = {}
     counter = 0
@@ -226,7 +226,7 @@ def searchBySongGenre(songGenre):
     songList = []
     
     if not rows:  # if query returns nothing
-        return "ERROR: Song Genre does not exist!"
+        return "ERROR: Song genre does not exist!"
     
     for row in rows:
         tempDict = {}
@@ -262,7 +262,7 @@ def searchByAlbumID(albumID):
    
     rows = cur.fetchall()
     if not rows:  # if query returns nothing
-        return "ERROR: albumID does not exist!"
+        return "ERROR: Album ID does not exist!"
 
     info = rows[0]
     albumList = {}
@@ -288,7 +288,7 @@ def searchByAlbumTitle(albumTitle):
    
     rows = cur.fetchall()
     if not rows:  # if query returns nothing  
-        return "ERROR: albumTitle does not exist!"
+        return "ERROR: No album has this title!"
 
     albumDict = {}
     counter = 0
@@ -317,7 +317,7 @@ def searchByAlbumDate(albumDate):
    
     rows = cur.fetchall()
     if not rows:  # if query returns nothing  
-        return "ERROR: albumDate does not exist!"
+        return "ERROR: No album has this date!"
 
     albumDict = {}
     counter = 0
@@ -346,7 +346,7 @@ def searchByNameID(nameID):
    
     rows = cur.fetchall()
     if not rows:  # if query returns nothing  
-        return "ERROR: nameID does not exist!"
+        return "ERROR: This name ID does not exist!"
 
     info = rows[0]
     nameList = {}
@@ -377,7 +377,7 @@ def searchByName(name):
    
     rows = cur.fetchall()
     if not rows:  # if query returns nothing  
-        return "ERROR: name does not exist!"
+        return "ERROR: This name does not exist!"
 
     namesDict = {}
     counter = 0
