@@ -201,7 +201,7 @@ def searchBySongTitle(songTitle):
     cur.execute(searchData, searchVals)
     rows = cur.fetchall()
     if not rows:  # if query returns nothing
-        return "ERROR: songTitle does not exist!"
+        return "ERROR: Song Title does not exist!"
 
     songDict = {}
     counter = 0
@@ -226,7 +226,7 @@ def searchBySongGenre(songGenre):
     songList = []
     
     if not rows:  # if query returns nothing
-        return "ERROR: songGenre does not exist!"
+        return "ERROR: Song Genre does not exist!"
     
     for row in rows:
         tempDict = {}

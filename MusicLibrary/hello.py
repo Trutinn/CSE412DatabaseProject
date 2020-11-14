@@ -184,6 +184,8 @@ def Search_By_Genre():
         if genre == '':
             return render_template('SearchByGenre.html') # Will likely not actually need here.
         else:
+            #tempDict = {}
+            #tempDict['songs'] = searchBySongGenre(genre) 
             data = searchBySongGenre(genre)
             if isinstance(data, str):
                 return render_template('searchError.html', data = searchBySongGenre(genre))
@@ -206,6 +208,8 @@ def Search_By_STitle():
                 return render_template('searchError.html', data = searchBySongTitle(songTitle))
             else:
                 return render_template('songTitleResults.html', songInfo = searchBySongTitle(songTitle)) # The area that is run after something is submitted.
+
+
             
             
             
