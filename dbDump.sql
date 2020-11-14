@@ -1,0 +1,1190 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.0
+-- Dumped by pg_dump version 13.0 (Ubuntu 13.0-1.pgdg20.04+1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: album; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.album (
+    albumuid text NOT NULL,
+    albumtitle text NOT NULL,
+    duration real NOT NULL,
+    releasedate date
+);
+
+
+ALTER TABLE public.album OWNER TO trutin;
+
+--
+-- Name: artist; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.artist (
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.artist OWNER TO trutin;
+
+--
+-- Name: contains; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.contains (
+    songuid text NOT NULL,
+    albumuid text NOT NULL
+);
+
+
+ALTER TABLE public.contains OWNER TO trutin;
+
+--
+-- Name: featuredin; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.featuredin (
+    songuid text NOT NULL,
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.featuredin OWNER TO trutin;
+
+--
+-- Name: name; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.name (
+    nameuid text NOT NULL,
+    namestring text NOT NULL,
+    knownas text
+);
+
+
+ALTER TABLE public.name OWNER TO trutin;
+
+--
+-- Name: performedby; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.performedby (
+    songuid text NOT NULL,
+    albumuid text NOT NULL,
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.performedby OWNER TO trutin;
+
+--
+-- Name: producedby; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.producedby (
+    albumuid text NOT NULL,
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.producedby OWNER TO trutin;
+
+--
+-- Name: producer; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.producer (
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.producer OWNER TO trutin;
+
+--
+-- Name: song; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.song (
+    songuid text NOT NULL,
+    genre text,
+    songtitle text NOT NULL
+);
+
+
+ALTER TABLE public.song OWNER TO trutin;
+
+--
+-- Name: writer; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.writer (
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.writer OWNER TO trutin;
+
+--
+-- Name: writtenby; Type: TABLE; Schema: public; Owner: trutin
+--
+
+CREATE TABLE public.writtenby (
+    albumuid text NOT NULL,
+    nameuid text NOT NULL
+);
+
+
+ALTER TABLE public.writtenby OWNER TO trutin;
+
+--
+-- Data for Name: album; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.album (albumuid, albumtitle, duration, releasedate) FROM stdin;
+6n9DKpOxwifT5hOXtgLZSL	Legends Never Die	3528.04	2020-07-10
+7e7t0MCrNDcJZsPwUKjmOc	Shoot For The Stars Aim For The Moon	3401.218	2020-07-03
+6wTyGUWGCilBFZ837k5aRi	SAVAGE MODE II	2640.651	2020-10-02
+2fenSS68JI1h4Fo296JfGr	folklore	3816.587	2020-07-24
+39xhYyNNDatQtgKw2KdXMz	THE GOAT	2830.134	2020-05-15
+5EzDhyNZuO7kuaABHwbBKX	Nectar	3194.37	2020-09-25
+57lgFncHBYu5E3igZnuCJK	Tickets To My Downfall	2169.913	2020-09-25
+5lJqux7orBlA1QzyiBGti1	YHLQMDLG	3958.03	2020-02-28
+4yP0hdKOZPNshxUOjY0cZj	After Hours	3377.568	2020-03-20
+2ogiazbrNEx0kQHGl5ZBTQ	WAP (feat. Megan Thee Stallion)	187.541	2020-08-07
+1234	TestingAlbum	100	2020-11-13
+1234dawda	TestingAlbum	100	2020-11-04
+\.
+
+
+--
+-- Data for Name: artist; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.artist (nameuid) FROM stdin;
+4MCBfE4596Uoi2O4DtmEMz
+1Xyo4u8uXC1ZmMpatF05PJ
+6Xgp2XMz1fhVYe7i6yNAax
+64KEffDW9EtZ1y2vBYgq8T
+2tIP7SsRs7vjIcLrU85W8J
+6AgTAQt8XS6jRWi4sX7w49
+26VFTg2z8YR0cCuwLzESi2
+0eDvMgVFoNV3TpwtrVCoTj
+0VRj0yCOv2FXJNP47XQnx5
+5f7VJjfbwm532GiveGC0ZK
+4r63FhuTkUYltbVAg5TQnk
+1zNqQNIdeOUZHb8zbZRFMX
+1RyvyyTE3xzB2ZywiAwp0i
+6LXRvV2OAtXF7685fzh3mj
+3q7HBObVc0L8jNeTe5Gofh
+757aE44tKEUQEqRuT6GnEB
+5LHRHt1k9lMyONurDHEdrp
+790FomKkXshlbRYZFtlgla
+6jGMq4yGs7aQzuGsMgVgZR
+41I5xI04kixwmonDBl0Sda
+1URnnhqYAYcrqrcwql10ft
+0iEtIxbK0KxaSlF7G42ZOp
+3TVXtAsR1Inumwj472S9r4
+50co4Is1HCEo8bhOyUWKpn
+5yPzzu25VzEk8qrGTLIrE1
+06HL4z0CvFAxyc27GXpf02
+4LEiUm1SRbFMgfqnQTwUbQ
+0YinUQ50QDB7ZxSCLyQ40k
+44IvvHRk2XF243QLA2VOa8
+0ErzCpIMyLcjPiwT4elrtZ
+0NWbwDZY1VkRqFafuQm6wk
+07d5etnpjriczFBB8pxmRe
+3MZsBdqDrRTJihTHQrO6Dq
+5fMUXHkw8R8eOP2RNVYEZX
+5FxD8fkQZ6KcsSYupDVoSO
+6icQOAFXDZKsumw3YXyusw
+4N7IToHBlPXqlrXiv1Nij6
+0Cp8WN4V8Tu4QJQwCN5Md4
+0qu422H5MOoQxGjd4IzHbS
+6TIYQ3jFPwQSRmorSezPxX
+2cFrymmkijnjDg9SS92EPM
+6ASri4ePR7RlsvIQgWPJpS
+4q3ewBCX7sLwd24euuV69X
+4VMYDCV2IEDYJArk749S6m
+0Y30TbA4p8SAfCzy2AFBa8
+12vb80Km0Ew53ABfJOepVz
+77ziqFxp5gaInVrF2lj4ht
+0Q8NcsJwoCbZOHHW63su5S
+4IMAo2UQchVFyPH24PAjUs
+2R21vXR83lH98kGeO99Y66
+7iK8PXO48WeuP03g8YR51W
+1WMwuNKzEFtU6pPkdtryYS
+4SsVbpTthjScTS7U2hmr1X
+1bAftSH8umNcGZ0uyV7LMg
+2XcZshqzPKm3iZcmt73R8D
+4kYSro6naA4h99UJvo89HB
+181bsRPaVXVlUKXrxwZfHK
+\.
+
+
+--
+-- Data for Name: contains; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.contains (songuid, albumuid) FROM stdin;
+02XcRGWPkvomFvzTamEKHg	6n9DKpOxwifT5hOXtgLZSL
+4K06PO78fW4mnBVenxGNob	6n9DKpOxwifT5hOXtgLZSL
+1YM6c2sxbf2Jacl9IFgn4I	6n9DKpOxwifT5hOXtgLZSL
+7d94IqWX2UmSKMGUYSGFJG	6n9DKpOxwifT5hOXtgLZSL
+5dOxHHMOFAbG3VH23t0xNm	6n9DKpOxwifT5hOXtgLZSL
+0fCwrjKfWxF3xQhZrYUw4T	6n9DKpOxwifT5hOXtgLZSL
+6wQlQrTY5mVS8EGaFZVwVF	6n9DKpOxwifT5hOXtgLZSL
+5JAYDuLRkODlVt6dgoalKk	6n9DKpOxwifT5hOXtgLZSL
+0ada5XsQGLPUVbmTCkAP49	6n9DKpOxwifT5hOXtgLZSL
+2wg81gBz6PZSwbZrXObeW4	6n9DKpOxwifT5hOXtgLZSL
+5wWAwzGp2OaaoIkwcz6wZs	6n9DKpOxwifT5hOXtgLZSL
+2Y0wPrPQBrGhoLn14xRYCG	6n9DKpOxwifT5hOXtgLZSL
+2SVx3uds6jTWALFxevIWMA	6n9DKpOxwifT5hOXtgLZSL
+0440JCJyIAmINA8KcYgFb5	6n9DKpOxwifT5hOXtgLZSL
+2U5WueTLIK5WJLD7mvDODv	6n9DKpOxwifT5hOXtgLZSL
+4F6YLjakjqWFTgC5qfEwPQ	6n9DKpOxwifT5hOXtgLZSL
+7pbg3ABlAZv2NiIdKbBBFm	6n9DKpOxwifT5hOXtgLZSL
+4sjdZEEQvR1sXrRNSuBfbA	6n9DKpOxwifT5hOXtgLZSL
+21CkzgKCBCq5V4XKjiGSIj	6n9DKpOxwifT5hOXtgLZSL
+4PPLJAEYBSOcnzr9TZoqf9	6n9DKpOxwifT5hOXtgLZSL
+7AvprzMsRJpybaalckaT8c	6n9DKpOxwifT5hOXtgLZSL
+1OjiYjgPZyxS0AiXiSnuYI	6n9DKpOxwifT5hOXtgLZSL
+4OGIeHtYhRTJ8iW21UUyZW	7e7t0MCrNDcJZsPwUKjmOc
+6O7fPYTsb2mY0PiFt2ymDB	7e7t0MCrNDcJZsPwUKjmOc
+0PvFJmanyNQMseIFrU708S	7e7t0MCrNDcJZsPwUKjmOc
+7sjFIZ1g5QLJLGja3k592K	7e7t0MCrNDcJZsPwUKjmOc
+1hg3RlqFZXJb5YgRoK9qmF	7e7t0MCrNDcJZsPwUKjmOc
+0bjgQ24UZGwKikldIyEOgf	7e7t0MCrNDcJZsPwUKjmOc
+3eV2WT9YhfzkxbufnBF8wK	7e7t0MCrNDcJZsPwUKjmOc
+2FhEj9lvEIaJihjFprRrGt	7e7t0MCrNDcJZsPwUKjmOc
+71d7LaAgPcNcUopu3OzmP7	7e7t0MCrNDcJZsPwUKjmOc
+1H7KnK26kc1YyellpbINEn	7e7t0MCrNDcJZsPwUKjmOc
+1JDhNQ0oOT7XpclZn3aQ8F	7e7t0MCrNDcJZsPwUKjmOc
+3NWrHCwvyII4fTx05PN3IO	7e7t0MCrNDcJZsPwUKjmOc
+5rZlwNFl01HqLWBQGryKSm	7e7t0MCrNDcJZsPwUKjmOc
+5kkaSMcf4BFlhRRICCKZb6	7e7t0MCrNDcJZsPwUKjmOc
+1tkg4EHVoqnhR6iFEXb60y	7e7t0MCrNDcJZsPwUKjmOc
+4Tc9PHEoeP17PQj3OOKXPu	7e7t0MCrNDcJZsPwUKjmOc
+25zlnOAzbVoOzIeXSvQFf1	7e7t0MCrNDcJZsPwUKjmOc
+2SxR5RitJdsG6wINvJLBSD	7e7t0MCrNDcJZsPwUKjmOc
+6PnTgx9lyvLGIcPnroCvc2	7e7t0MCrNDcJZsPwUKjmOc
+5UpXJ75CXod4PCoBQP6MAP	6wTyGUWGCilBFZ837k5aRi
+5SWnsxjhdcEDc7LJjq9UHk	6wTyGUWGCilBFZ837k5aRi
+6pcywuOeGGWeOQzdUyti6k	6wTyGUWGCilBFZ837k5aRi
+4Q34FP1AT7GEl9oLgNtiWj	6wTyGUWGCilBFZ837k5aRi
+3ruoIF2UnoXdzK8mR61ebq	6wTyGUWGCilBFZ837k5aRi
+7fxSLnklnayJNBIKntXedZ	6wTyGUWGCilBFZ837k5aRi
+3CDVMejYHnB1SkEEx0T1N4	6wTyGUWGCilBFZ837k5aRi
+2y3mrzWEWaAFqb2jf5fED8	6wTyGUWGCilBFZ837k5aRi
+3WaDoMDQRqDdgtCDLxanpN	6wTyGUWGCilBFZ837k5aRi
+42Tohunwlh34o0mgxYx5iq	6wTyGUWGCilBFZ837k5aRi
+7FtZFla3ZH6PqsAJ9MvVCM	6wTyGUWGCilBFZ837k5aRi
+4V9ynsDPwHtdItksqjuRu0	6wTyGUWGCilBFZ837k5aRi
+50I7FNN2rl2rWiNwGxS146	6wTyGUWGCilBFZ837k5aRi
+1wGnp7ejkCuXRsehXx0PNP	6wTyGUWGCilBFZ837k5aRi
+11XegnWeJHBDtj9IsNwngu	6wTyGUWGCilBFZ837k5aRi
+0Jlcvv8IykzHaSmj49uNW8	2fenSS68JI1h4Fo296JfGr
+4R2kfaDFhslZEMJqAFNpdd	2fenSS68JI1h4Fo296JfGr
+2Eeur20xVqfUoM3Q7EFPFt	2fenSS68JI1h4Fo296JfGr
+4pvb0WLRcMtbPGmtejJJ6y	2fenSS68JI1h4Fo296JfGr
+1MgV7FIyNxIG7WzMRJV5HC	2fenSS68JI1h4Fo296JfGr
+0ZNU020wNYvgW84iljPkPP	2fenSS68JI1h4Fo296JfGr
+6KJqZcs9XDgVck7Lg9QOTC	2fenSS68JI1h4Fo296JfGr
+3hUxzQpSfdDqwM3ZTFQY0K	2fenSS68JI1h4Fo296JfGr
+7kt9e9LFSpN1zQtYEl19o1	2fenSS68JI1h4Fo296JfGr
+2NmsngXHeC1GQ9wWrzhOMf	2fenSS68JI1h4Fo296JfGr
+6VsvKPJ4xjVNKpI8VVZ3SV	2fenSS68JI1h4Fo296JfGr
+2QDyYdZyhlP2fp79KZX8Bi	2fenSS68JI1h4Fo296JfGr
+08fa9LFcFBTcilB3iq2e2A	2fenSS68JI1h4Fo296JfGr
+5kI4eCXXzyuIUXjQra0Cxi	2fenSS68JI1h4Fo296JfGr
+7MbT4I8qGntX4fMdqMQgke	2fenSS68JI1h4Fo296JfGr
+6MWoRt97mnSTXZhu3ggi9C	2fenSS68JI1h4Fo296JfGr
+3TciLI5wo7RddPtAFhiU9V	39xhYyNNDatQtgKw2KdXMz
+2iP3unJbxZvRuqyrS0ocZy	39xhYyNNDatQtgKw2KdXMz
+1VLtjHwRWOVJiE5Py7JxoQ	39xhYyNNDatQtgKw2KdXMz
+2QqJTIlGKRLJC3onkavYEz	39xhYyNNDatQtgKw2KdXMz
+4PklAHGXT5ityno3IA8SKd	39xhYyNNDatQtgKw2KdXMz
+3JKgcAa7r07ocVWcV8bS0H	39xhYyNNDatQtgKw2KdXMz
+2iW6Hb6kfrz2K7EhPibFiq	39xhYyNNDatQtgKw2KdXMz
+40j4RoqmLiivqzRObbQ4BF	39xhYyNNDatQtgKw2KdXMz
+4SIB2yxKoFOrbkjA4zfQbB	39xhYyNNDatQtgKw2KdXMz
+4dKe8YJZg545pXqWBksYIe	39xhYyNNDatQtgKw2KdXMz
+65jw6GhwQW3Db55PxlPEpS	39xhYyNNDatQtgKw2KdXMz
+1F8yKtk5CQBptos4kM7aO7	39xhYyNNDatQtgKw2KdXMz
+58GJNfq2m0Qr5nIUCDbXVQ	39xhYyNNDatQtgKw2KdXMz
+4XLCFFvRG1qQ8kT4uzwYZC	39xhYyNNDatQtgKw2KdXMz
+6V1Jx3o0S2MtBI9yIDXsJS	39xhYyNNDatQtgKw2KdXMz
+192RjH0gN6en7nE6ElN96T	39xhYyNNDatQtgKw2KdXMz
+7xcUWyLh6fIMsYjoVI7NnZ	5EzDhyNZuO7kuaABHwbBKX
+5SjtAe7xzUgHDtNTmt8zS7	5EzDhyNZuO7kuaABHwbBKX
+5E7p95xh9Ul4vZp4LEoJwi	5EzDhyNZuO7kuaABHwbBKX
+6Ww8GHdPCl8MqZBhPn4LKd	5EzDhyNZuO7kuaABHwbBKX
+5xNNJKrjobta5ksOpMLYd1	5EzDhyNZuO7kuaABHwbBKX
+0HItcI6qN6Dr4MC3CZryQh	5EzDhyNZuO7kuaABHwbBKX
+3AkdSFo7quCZ781KCqNK0T	5EzDhyNZuO7kuaABHwbBKX
+0rOLFkjY5DSIViVBNnzOuK	5EzDhyNZuO7kuaABHwbBKX
+5dl8x4xLEzZC0f927WBTUG	5EzDhyNZuO7kuaABHwbBKX
+1RTYj0DKungYDHtgFQRtmx	5EzDhyNZuO7kuaABHwbBKX
+0f1G5SHFoFC9lO03gHCGVS	5EzDhyNZuO7kuaABHwbBKX
+4UiogCfzKQW98U1GTCivsn	5EzDhyNZuO7kuaABHwbBKX
+6zvqq50PL7io0rprbkrYc9	5EzDhyNZuO7kuaABHwbBKX
+4OxQ9sBdJCndBzQNuGorr7	5EzDhyNZuO7kuaABHwbBKX
+6H167kbd8gY2Eewzf14YjD	5EzDhyNZuO7kuaABHwbBKX
+75sIBYeVmCTdKEsAZdGKqM	5EzDhyNZuO7kuaABHwbBKX
+1MONUudxAjEk76FJvzGhuD	5EzDhyNZuO7kuaABHwbBKX
+5sbZj8hcae2ebXVBonKQ6g	5EzDhyNZuO7kuaABHwbBKX
+4kDgnKgZTX6puRz9EoNjle	57lgFncHBYu5E3igZnuCJK
+69LvvkHnFFnX3d5eNObtMo	57lgFncHBYu5E3igZnuCJK
+3k0YJnqMKRZb8swo86vCkq	57lgFncHBYu5E3igZnuCJK
+6mADjHs6FXdroPzEGW6KVJ	57lgFncHBYu5E3igZnuCJK
+1VSuFS7PahCN3SWbOcQ98m	57lgFncHBYu5E3igZnuCJK
+1vuUbnY82fCNjfzqjLmblw	57lgFncHBYu5E3igZnuCJK
+6EPxapAlha7pEyn5kXgW3R	57lgFncHBYu5E3igZnuCJK
+41ltleYVuvEjnqiygy2rQ3	57lgFncHBYu5E3igZnuCJK
+7Ct4wK3Fpp8vvZGcWy4NCP	57lgFncHBYu5E3igZnuCJK
+7os53rdrgA0OU6xC5xJruX	57lgFncHBYu5E3igZnuCJK
+7kDUspsoYfLkWnZR7qwHZl	57lgFncHBYu5E3igZnuCJK
+2iVsPIS2yjS4xhs5Rdy65O	57lgFncHBYu5E3igZnuCJK
+1eTdTVIxLlhHwwA50vEzZa	57lgFncHBYu5E3igZnuCJK
+5rGUAs7Oamox7PY4P42Qzv	57lgFncHBYu5E3igZnuCJK
+0RFgKcpWImLWmK9WSSHAiC	57lgFncHBYu5E3igZnuCJK
+41wtwzCZkXwpnakmwJ239F	5lJqux7orBlA1QzyiBGti1
+6NfrH0ANGmgBXyxgV2PeXt	5lJqux7orBlA1QzyiBGti1
+75pQqzwgCjUOSSy5CpmAjy	5lJqux7orBlA1QzyiBGti1
+69vlMrzHwATKzupwNcUPyK	5lJqux7orBlA1QzyiBGti1
+0SqqAgdovOE24BzxIClpjw	5lJqux7orBlA1QzyiBGti1
+4j4w4CXm6BSr0s25wAWrrX	5lJqux7orBlA1QzyiBGti1
+7sOfmPd18RWp3FoCzpa7Kw	5lJqux7orBlA1QzyiBGti1
+5kqNIqFjijuzvVLhuY9B8j	5lJqux7orBlA1QzyiBGti1
+53v2u51nq3CxiKUNphRzP1	5lJqux7orBlA1QzyiBGti1
+2n7ohqg1s68ToAHh4u9mcW	5lJqux7orBlA1QzyiBGti1
+38RIEav39FGi86jppxO0du	5lJqux7orBlA1QzyiBGti1
+4r9jkMEnArtWGH2rL2FZl0	5lJqux7orBlA1QzyiBGti1
+5J7teKIJGtqVypgYI6sqXj	5lJqux7orBlA1QzyiBGti1
+2DEZmgHKAvm41k4J3R2E9Y	5lJqux7orBlA1QzyiBGti1
+4NqQaovM14WR2hNPMFxgjb	5lJqux7orBlA1QzyiBGti1
+4saHEjXw7O1NXJOzBkUKKG	5lJqux7orBlA1QzyiBGti1
+5gCg2qMPzKkW4jS4dBKdDs	5lJqux7orBlA1QzyiBGti1
+0fgsKar6uBO08vzHXkTjWi	5lJqux7orBlA1QzyiBGti1
+1V8XneTrX6kKeoxYbk4x6h	5lJqux7orBlA1QzyiBGti1
+4MZSqgwlE71CWZ6qQ3gkKm	5lJqux7orBlA1QzyiBGti1
+6b5P51m8xx2XA6U7sdNZ5E	4yP0hdKOZPNshxUOjY0cZj
+2K9Ovn1o2bTGqbsABGC6m3	4yP0hdKOZPNshxUOjY0cZj
+6kWxIqQDsKFYCJGbU4AjCX	4yP0hdKOZPNshxUOjY0cZj
+4BGZF4oLbTL0pWm7C18pbv	4yP0hdKOZPNshxUOjY0cZj
+3WlbeuhfRSqU7ylK2Ui5U7	4yP0hdKOZPNshxUOjY0cZj
+1sOW4PuG5X3Ie3EXUhAopJ	4yP0hdKOZPNshxUOjY0cZj
+6bnF93Rx87YqUBLSgjiMU8	4yP0hdKOZPNshxUOjY0cZj
+3orEOtd8CPL8GFlpRpKuoE	4yP0hdKOZPNshxUOjY0cZj
+0VjIjW4GlUZAMYd2vXMi3b	4yP0hdKOZPNshxUOjY0cZj
+7szuecWAPwGoV1e5vGu8tl	4yP0hdKOZPNshxUOjY0cZj
+5QO79kh1waicV47BqGRL3g	4yP0hdKOZPNshxUOjY0cZj
+40U8d12pC5UHqmHwXjHjjl	4yP0hdKOZPNshxUOjY0cZj
+2p8IUWQDrpjuFltbdgLOag	4yP0hdKOZPNshxUOjY0cZj
+2BcnxwxBuar5wjCaLqm5N3	4yP0hdKOZPNshxUOjY0cZj
+4Oun2ylbjFKMPTiaSbbCih	2ogiazbrNEx0kQHGl5ZBTQ
+12345	6n9DKpOxwifT5hOXtgLZSL
+1	6n9DKpOxwifT5hOXtgLZSL
+\.
+
+
+--
+-- Data for Name: featuredin; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.featuredin (songuid, nameuid) FROM stdin;
+6wQlQrTY5mVS8EGaFZVwVF	1Xyo4u8uXC1ZmMpatF05PJ
+5JAYDuLRkODlVt6dgoalKk	6Xgp2XMz1fhVYe7i6yNAax
+0ada5XsQGLPUVbmTCkAP49	64KEffDW9EtZ1y2vBYgq8T
+0ada5XsQGLPUVbmTCkAP49	2tIP7SsRs7vjIcLrU85W8J
+0ada5XsQGLPUVbmTCkAP49	6AgTAQt8XS6jRWi4sX7w49
+5wWAwzGp2OaaoIkwcz6wZs	26VFTg2z8YR0cCuwLzESi2
+2Y0wPrPQBrGhoLn14xRYCG	64KEffDW9EtZ1y2vBYgq8T
+6O7fPYTsb2mY0PiFt2ymDB	0VRj0yCOv2FXJNP47XQnx5
+0PvFJmanyNQMseIFrU708S	5f7VJjfbwm532GiveGC0ZK
+0PvFJmanyNQMseIFrU708S	4r63FhuTkUYltbVAg5TQnk
+3eV2WT9YhfzkxbufnBF8wK	1zNqQNIdeOUZHb8zbZRFMX
+2FhEj9lvEIaJihjFprRrGt	0VRj0yCOv2FXJNP47XQnx5
+2FhEj9lvEIaJihjFprRrGt	1RyvyyTE3xzB2ZywiAwp0i
+71d7LaAgPcNcUopu3OzmP7	6LXRvV2OAtXF7685fzh3mj
+1H7KnK26kc1YyellpbINEn	3q7HBObVc0L8jNeTe5Gofh
+1H7KnK26kc1YyellpbINEn	757aE44tKEUQEqRuT6GnEB
+1JDhNQ0oOT7XpclZn3aQ8F	5LHRHt1k9lMyONurDHEdrp
+1JDhNQ0oOT7XpclZn3aQ8F	0VRj0yCOv2FXJNP47XQnx5
+3NWrHCwvyII4fTx05PN3IO	790FomKkXshlbRYZFtlgla
+5rZlwNFl01HqLWBQGryKSm	6jGMq4yGs7aQzuGsMgVgZR
+4Tc9PHEoeP17PQj3OOKXPu	41I5xI04kixwmonDBl0Sda
+5UpXJ75CXod4PCoBQP6MAP	0iEtIxbK0KxaSlF7G42ZOp
+5SWnsxjhdcEDc7LJjq9UHk	0iEtIxbK0KxaSlF7G42ZOp
+6pcywuOeGGWeOQzdUyti6k	0iEtIxbK0KxaSlF7G42ZOp
+4Q34FP1AT7GEl9oLgNtiWj	0iEtIxbK0KxaSlF7G42ZOp
+4Q34FP1AT7GEl9oLgNtiWj	3TVXtAsR1Inumwj472S9r4
+3ruoIF2UnoXdzK8mR61ebq	0iEtIxbK0KxaSlF7G42ZOp
+3ruoIF2UnoXdzK8mR61ebq	50co4Is1HCEo8bhOyUWKpn
+7fxSLnklnayJNBIKntXedZ	0iEtIxbK0KxaSlF7G42ZOp
+3CDVMejYHnB1SkEEx0T1N4	0iEtIxbK0KxaSlF7G42ZOp
+2y3mrzWEWaAFqb2jf5fED8	0iEtIxbK0KxaSlF7G42ZOp
+3WaDoMDQRqDdgtCDLxanpN	0iEtIxbK0KxaSlF7G42ZOp
+3WaDoMDQRqDdgtCDLxanpN	5yPzzu25VzEk8qrGTLIrE1
+42Tohunwlh34o0mgxYx5iq	0iEtIxbK0KxaSlF7G42ZOp
+7FtZFla3ZH6PqsAJ9MvVCM	0iEtIxbK0KxaSlF7G42ZOp
+4V9ynsDPwHtdItksqjuRu0	0iEtIxbK0KxaSlF7G42ZOp
+50I7FNN2rl2rWiNwGxS146	0iEtIxbK0KxaSlF7G42ZOp
+1wGnp7ejkCuXRsehXx0PNP	0iEtIxbK0KxaSlF7G42ZOp
+11XegnWeJHBDtj9IsNwngu	0iEtIxbK0KxaSlF7G42ZOp
+4pvb0WLRcMtbPGmtejJJ6y	4LEiUm1SRbFMgfqnQTwUbQ
+2iP3unJbxZvRuqyrS0ocZy	0YinUQ50QDB7ZxSCLyQ40k
+2QqJTIlGKRLJC3onkavYEz	4MCBfE4596Uoi2O4DtmEMz
+4PklAHGXT5ityno3IA8SKd	44IvvHRk2XF243QLA2VOa8
+4PklAHGXT5ityno3IA8SKd	0ErzCpIMyLcjPiwT4elrtZ
+4PklAHGXT5ityno3IA8SKd	0NWbwDZY1VkRqFafuQm6wk
+65jw6GhwQW3Db55PxlPEpS	5f7VJjfbwm532GiveGC0ZK
+192RjH0gN6en7nE6ElN96T	07d5etnpjriczFBB8pxmRe
+6Ww8GHdPCl8MqZBhPn4LKd	5fMUXHkw8R8eOP2RNVYEZX
+5dl8x4xLEzZC0f927WBTUG	5FxD8fkQZ6KcsSYupDVoSO
+0f1G5SHFoFC9lO03gHCGVS	6icQOAFXDZKsumw3YXyusw
+4UiogCfzKQW98U1GTCivsn	4N7IToHBlPXqlrXiv1Nij6
+6zvqq50PL7io0rprbkrYc9	0Cp8WN4V8Tu4QJQwCN5Md4
+75sIBYeVmCTdKEsAZdGKqM	0qu422H5MOoQxGjd4IzHbS
+1VSuFS7PahCN3SWbOcQ98m	26VFTg2z8YR0cCuwLzESi2
+1vuUbnY82fCNjfzqjLmblw	6Xgp2XMz1fhVYe7i6yNAax
+7kDUspsoYfLkWnZR7qwHZl	2cFrymmkijnjDg9SS92EPM
+1eTdTVIxLlhHwwA50vEzZa	6ASri4ePR7RlsvIQgWPJpS
+69vlMrzHwATKzupwNcUPyK	4VMYDCV2IEDYJArk749S6m
+4j4w4CXm6BSr0s25wAWrrX	0Y30TbA4p8SAfCzy2AFBa8
+53v2u51nq3CxiKUNphRzP1	12vb80Km0Ew53ABfJOepVz
+38RIEav39FGi86jppxO0du	77ziqFxp5gaInVrF2lj4ht
+5J7teKIJGtqVypgYI6sqXj	0Q8NcsJwoCbZOHHW63su5S
+2DEZmgHKAvm41k4J3R2E9Y	4IMAo2UQchVFyPH24PAjUs
+2DEZmgHKAvm41k4J3R2E9Y	12vb80Km0Ew53ABfJOepVz
+4saHEjXw7O1NXJOzBkUKKG	2R21vXR83lH98kGeO99Y66
+5gCg2qMPzKkW4jS4dBKdDs	7iK8PXO48WeuP03g8YR51W
+0fgsKar6uBO08vzHXkTjWi	1WMwuNKzEFtU6pPkdtryYS
+0fgsKar6uBO08vzHXkTjWi	4SsVbpTthjScTS7U2hmr1X
+1V8XneTrX6kKeoxYbk4x6h	1bAftSH8umNcGZ0uyV7LMg
+1V8XneTrX6kKeoxYbk4x6h	2XcZshqzPKm3iZcmt73R8D
+4Oun2ylbjFKMPTiaSbbCih	181bsRPaVXVlUKXrxwZfHK
+12345	3VRFuvKNWqUMGFalqsFt7k
+12345	AMcHTd4MrNF0vyc3RffyYI
+1	3VRFuvKNWqUMGFalqsFt7k
+1	AMcHTd4MrNF0vyc3RffyYI
+\.
+
+
+--
+-- Data for Name: name; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.name (nameuid, namestring, knownas) FROM stdin;
+4MCBfE4596Uoi2O4DtmEMz	Juice WRLD	Juice WRLD
+3VRFuvKNWqUMGFalqsFt7k	Ronny J	Ronny J
+AMcHTd4MrNF0vyc3RffyYI	Jarad Higgins	Jarad Higgins
+1Xyo4u8uXC1ZmMpatF05PJ	The Weeknd	The Weeknd
+6Xgp2XMz1fhVYe7i6yNAax	Trippie Redd	Trippie Redd
+64KEffDW9EtZ1y2vBYgq8T	Marshmello	Marshmello
+2tIP7SsRs7vjIcLrU85W8J	The Kid LAROI	The Kid LAROI
+6AgTAQt8XS6jRWi4sX7w49	Polo G	Polo G
+26VFTg2z8YR0cCuwLzESi2	Halsey	Halsey
+0eDvMgVFoNV3TpwtrVCoTj	Pop Smoke	Pop Smoke
+iOlxdkmniWoAzln6CD9ozp	Andre Loblack	Andre Loblack
+ZMXJyOZAJIAZUXNUVA0Pdw	808Melo	808Melo
+0VRj0yCOv2FXJNP47XQnx5	Quavo	Quavo
+5f7VJjfbwm532GiveGC0ZK	Lil Baby	Lil Baby
+4r63FhuTkUYltbVAg5TQnk	DaBaby	DaBaby
+1zNqQNIdeOUZHb8zbZRFMX	Swae Lee	Swae Lee
+1RyvyyTE3xzB2ZywiAwp0i	Future	Future
+6LXRvV2OAtXF7685fzh3mj	Rowdy Rebel	Rowdy Rebel
+3q7HBObVc0L8jNeTe5Gofh	50 Cent	50 Cent
+757aE44tKEUQEqRuT6GnEB	Roddy Ricch	Roddy Ricch
+5LHRHt1k9lMyONurDHEdrp	Tyga	Tyga
+790FomKkXshlbRYZFtlgla	KAROL G	KAROL G
+6jGMq4yGs7aQzuGsMgVgZR	Lil Tjay	Lil Tjay
+41I5xI04kixwmonDBl0Sda	King Combs	King Combs
+1URnnhqYAYcrqrcwql10ft	21 Savage	21 Savage
+8fXzeTCQsZUuVjvcKazgmi	Metro Boomin	Metro Boomin
+lzB9Z60NwbmP3G4babQJnM	D. Mackay	D. Mackay
+0iEtIxbK0KxaSlF7G42ZOp	Metro Boomin	Metro Boomin
+3TVXtAsR1Inumwj472S9r4	Drake	Drake
+50co4Is1HCEo8bhOyUWKpn	Young Thug	Young Thug
+5yPzzu25VzEk8qrGTLIrE1	Young Nudy	Young Nudy
+06HL4z0CvFAxyc27GXpf02	Taylor Swift	Taylor Swift
+kC4rYMrHsQB5szaSVHhPxc	Aaron Dessner	Aaron Dessner
+xn4SZFiGBYpsxpf3J8d6oN	Aaron Dessner	Aaron Dessner
+4LEiUm1SRbFMgfqnQTwUbQ	Bon Iver	Bon Iver
+HyMuXdG585Q3I0QhtiHl9t	1040 Beats	1040 Beats
+oJn8QYdMy7IB3svkuHbmIV	Angelo Callari	Angelo Callari
+0YinUQ50QDB7ZxSCLyQ40k	Mustard	Mustard
+44IvvHRk2XF243QLA2VOa8	Stunna 4 Vegas	Stunna 4 Vegas
+0ErzCpIMyLcjPiwT4elrtZ	NLE Choppa	NLE Choppa
+0NWbwDZY1VkRqFafuQm6wk	Mike WiLL Made-It	Mike WiLL Made-It
+07d5etnpjriczFBB8pxmRe	BJ The Chicago Kid	BJ The Chicago Kid
+3MZsBdqDrRTJihTHQrO6Dq	Joji	Joji
+T5O3KB8ai3YgRtoIFfdciS	Bekon	Bekon
+bIdFfiDAF7uRZlfdT8bJ3P	Antoine Norwood	Antoine Norwood
+5fMUXHkw8R8eOP2RNVYEZX	Diplo	Diplo
+5FxD8fkQZ6KcsSYupDVoSO	Omar Apollo	Omar Apollo
+6icQOAFXDZKsumw3YXyusw	Lil Yachty	Lil Yachty
+4N7IToHBlPXqlrXiv1Nij6	rei brown	rei brown
+0Cp8WN4V8Tu4QJQwCN5Md4	BENEE	BENEE
+0qu422H5MOoQxGjd4IzHbS	Yves Tumor	Yves Tumor
+6TIYQ3jFPwQSRmorSezPxX	Machine Gun Kelly	Machine Gun Kelly
+X1LvixQiLrW6Pq4X947SzE	Travis Barker	Travis Barker
+UwilKui7VZ7tYxbGsPRHG4	Colson Baker	Colson Baker
+2cFrymmkijnjDg9SS92EPM	blackbear	blackbear
+6ASri4ePR7RlsvIQgWPJpS	iann dior	iann dior
+4q3ewBCX7sLwd24euuV69X	Bad Bunny	Bad Bunny
+UAdHBIcqz01SjO621T5GeM	Subelo NEO	Subelo NEO
+Hwu4EolvXm85gwTsP2Btvf	Benito Martinez Ocasio	Benito Martinez Ocasio
+4VMYDCV2IEDYJArk749S6m	Daddy Yankee	Daddy Yankee
+0Y30TbA4p8SAfCzy2AFBa8	Yaviah	Yaviah
+12vb80Km0Ew53ABfJOepVz	Ñengo Flow	Ñengo Flow
+77ziqFxp5gaInVrF2lj4ht	Sech	Sech
+0Q8NcsJwoCbZOHHW63su5S	Mora	Mora
+4IMAo2UQchVFyPH24PAjUs	Jowell & Randy	Jowell & Randy
+2R21vXR83lH98kGeO99Y66	Anuel AA	Anuel AA
+7iK8PXO48WeuP03g8YR51W	Myke Towers	Myke Towers
+1WMwuNKzEFtU6pPkdtryYS	Kendo Kaponi	Kendo Kaponi
+4SsVbpTthjScTS7U2hmr1X	Arcangel	Arcangel
+1bAftSH8umNcGZ0uyV7LMg	Duki	Duki
+2XcZshqzPKm3iZcmt73R8D	Pablo Chill-E	Pablo Chill-E
+c7kV9z2UrPGKeQ1Epbb4cY	Illangelo	Illangelo
+OwZ8kgj0QIT9Cgd9DAOwoo	DaHeala	DaHeala
+4kYSro6naA4h99UJvo89HB	Cardi B	Cardi B
+QosfzltY2ROz8mfeMzWwq3	Ayo & Keyz	Ayo & Keyz
+tipff5miqCXNZlP16S2Jx5	Austin Owens	Austin Owens
+181bsRPaVXVlUKXrxwZfHK	Megan Thee Stallion	Megan Thee Stallion
+dawd	awdaw	adw
+123	Test	Test
+123dadas	Test	Test
+\.
+
+
+--
+-- Data for Name: performedby; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.performedby (songuid, albumuid, nameuid) FROM stdin;
+02XcRGWPkvomFvzTamEKHg	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+4K06PO78fW4mnBVenxGNob	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+1YM6c2sxbf2Jacl9IFgn4I	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+7d94IqWX2UmSKMGUYSGFJG	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+5dOxHHMOFAbG3VH23t0xNm	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+0fCwrjKfWxF3xQhZrYUw4T	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+6wQlQrTY5mVS8EGaFZVwVF	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+5JAYDuLRkODlVt6dgoalKk	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+0ada5XsQGLPUVbmTCkAP49	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+2wg81gBz6PZSwbZrXObeW4	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+5wWAwzGp2OaaoIkwcz6wZs	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+2Y0wPrPQBrGhoLn14xRYCG	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+2SVx3uds6jTWALFxevIWMA	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+0440JCJyIAmINA8KcYgFb5	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+2U5WueTLIK5WJLD7mvDODv	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+4F6YLjakjqWFTgC5qfEwPQ	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+7pbg3ABlAZv2NiIdKbBBFm	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+4sjdZEEQvR1sXrRNSuBfbA	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+21CkzgKCBCq5V4XKjiGSIj	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+4PPLJAEYBSOcnzr9TZoqf9	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+7AvprzMsRJpybaalckaT8c	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+1OjiYjgPZyxS0AiXiSnuYI	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+4OGIeHtYhRTJ8iW21UUyZW	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+6O7fPYTsb2mY0PiFt2ymDB	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+0PvFJmanyNQMseIFrU708S	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+7sjFIZ1g5QLJLGja3k592K	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+1hg3RlqFZXJb5YgRoK9qmF	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+0bjgQ24UZGwKikldIyEOgf	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+3eV2WT9YhfzkxbufnBF8wK	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+2FhEj9lvEIaJihjFprRrGt	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+71d7LaAgPcNcUopu3OzmP7	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+1H7KnK26kc1YyellpbINEn	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+1JDhNQ0oOT7XpclZn3aQ8F	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+3NWrHCwvyII4fTx05PN3IO	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+5rZlwNFl01HqLWBQGryKSm	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+5kkaSMcf4BFlhRRICCKZb6	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+1tkg4EHVoqnhR6iFEXb60y	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+4Tc9PHEoeP17PQj3OOKXPu	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+25zlnOAzbVoOzIeXSvQFf1	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+2SxR5RitJdsG6wINvJLBSD	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+6PnTgx9lyvLGIcPnroCvc2	7e7t0MCrNDcJZsPwUKjmOc	0eDvMgVFoNV3TpwtrVCoTj
+5UpXJ75CXod4PCoBQP6MAP	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+5SWnsxjhdcEDc7LJjq9UHk	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+6pcywuOeGGWeOQzdUyti6k	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+4Q34FP1AT7GEl9oLgNtiWj	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+3ruoIF2UnoXdzK8mR61ebq	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+7fxSLnklnayJNBIKntXedZ	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+3CDVMejYHnB1SkEEx0T1N4	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+2y3mrzWEWaAFqb2jf5fED8	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+3WaDoMDQRqDdgtCDLxanpN	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+42Tohunwlh34o0mgxYx5iq	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+7FtZFla3ZH6PqsAJ9MvVCM	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+4V9ynsDPwHtdItksqjuRu0	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+50I7FNN2rl2rWiNwGxS146	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+1wGnp7ejkCuXRsehXx0PNP	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+11XegnWeJHBDtj9IsNwngu	6wTyGUWGCilBFZ837k5aRi	1URnnhqYAYcrqrcwql10ft
+0Jlcvv8IykzHaSmj49uNW8	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+4R2kfaDFhslZEMJqAFNpdd	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+2Eeur20xVqfUoM3Q7EFPFt	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+4pvb0WLRcMtbPGmtejJJ6y	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+1MgV7FIyNxIG7WzMRJV5HC	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+0ZNU020wNYvgW84iljPkPP	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+6KJqZcs9XDgVck7Lg9QOTC	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+3hUxzQpSfdDqwM3ZTFQY0K	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+7kt9e9LFSpN1zQtYEl19o1	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+2NmsngXHeC1GQ9wWrzhOMf	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+6VsvKPJ4xjVNKpI8VVZ3SV	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+2QDyYdZyhlP2fp79KZX8Bi	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+08fa9LFcFBTcilB3iq2e2A	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+5kI4eCXXzyuIUXjQra0Cxi	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+7MbT4I8qGntX4fMdqMQgke	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+6MWoRt97mnSTXZhu3ggi9C	2fenSS68JI1h4Fo296JfGr	06HL4z0CvFAxyc27GXpf02
+3TciLI5wo7RddPtAFhiU9V	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+2iP3unJbxZvRuqyrS0ocZy	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+1VLtjHwRWOVJiE5Py7JxoQ	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+2QqJTIlGKRLJC3onkavYEz	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+4PklAHGXT5ityno3IA8SKd	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+3JKgcAa7r07ocVWcV8bS0H	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+2iW6Hb6kfrz2K7EhPibFiq	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+40j4RoqmLiivqzRObbQ4BF	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+4SIB2yxKoFOrbkjA4zfQbB	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+4dKe8YJZg545pXqWBksYIe	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+65jw6GhwQW3Db55PxlPEpS	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+1F8yKtk5CQBptos4kM7aO7	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+58GJNfq2m0Qr5nIUCDbXVQ	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+4XLCFFvRG1qQ8kT4uzwYZC	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+6V1Jx3o0S2MtBI9yIDXsJS	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+192RjH0gN6en7nE6ElN96T	39xhYyNNDatQtgKw2KdXMz	6AgTAQt8XS6jRWi4sX7w49
+7xcUWyLh6fIMsYjoVI7NnZ	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+5SjtAe7xzUgHDtNTmt8zS7	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+5E7p95xh9Ul4vZp4LEoJwi	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+6Ww8GHdPCl8MqZBhPn4LKd	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+5xNNJKrjobta5ksOpMLYd1	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+0HItcI6qN6Dr4MC3CZryQh	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+3AkdSFo7quCZ781KCqNK0T	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+0rOLFkjY5DSIViVBNnzOuK	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+5dl8x4xLEzZC0f927WBTUG	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+1RTYj0DKungYDHtgFQRtmx	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+0f1G5SHFoFC9lO03gHCGVS	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+4UiogCfzKQW98U1GTCivsn	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+6zvqq50PL7io0rprbkrYc9	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+4OxQ9sBdJCndBzQNuGorr7	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+6H167kbd8gY2Eewzf14YjD	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+75sIBYeVmCTdKEsAZdGKqM	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+1MONUudxAjEk76FJvzGhuD	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+5sbZj8hcae2ebXVBonKQ6g	5EzDhyNZuO7kuaABHwbBKX	3MZsBdqDrRTJihTHQrO6Dq
+4kDgnKgZTX6puRz9EoNjle	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+69LvvkHnFFnX3d5eNObtMo	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+3k0YJnqMKRZb8swo86vCkq	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+6mADjHs6FXdroPzEGW6KVJ	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+1VSuFS7PahCN3SWbOcQ98m	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+1vuUbnY82fCNjfzqjLmblw	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+6EPxapAlha7pEyn5kXgW3R	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+41ltleYVuvEjnqiygy2rQ3	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+7Ct4wK3Fpp8vvZGcWy4NCP	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+7os53rdrgA0OU6xC5xJruX	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+7kDUspsoYfLkWnZR7qwHZl	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+2iVsPIS2yjS4xhs5Rdy65O	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+1eTdTVIxLlhHwwA50vEzZa	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+5rGUAs7Oamox7PY4P42Qzv	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+0RFgKcpWImLWmK9WSSHAiC	57lgFncHBYu5E3igZnuCJK	6TIYQ3jFPwQSRmorSezPxX
+41wtwzCZkXwpnakmwJ239F	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+6NfrH0ANGmgBXyxgV2PeXt	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+75pQqzwgCjUOSSy5CpmAjy	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+69vlMrzHwATKzupwNcUPyK	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+0SqqAgdovOE24BzxIClpjw	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+4j4w4CXm6BSr0s25wAWrrX	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+7sOfmPd18RWp3FoCzpa7Kw	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+5kqNIqFjijuzvVLhuY9B8j	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+53v2u51nq3CxiKUNphRzP1	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+2n7ohqg1s68ToAHh4u9mcW	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+38RIEav39FGi86jppxO0du	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+4r9jkMEnArtWGH2rL2FZl0	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+5J7teKIJGtqVypgYI6sqXj	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+2DEZmgHKAvm41k4J3R2E9Y	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+4NqQaovM14WR2hNPMFxgjb	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+4saHEjXw7O1NXJOzBkUKKG	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+5gCg2qMPzKkW4jS4dBKdDs	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+0fgsKar6uBO08vzHXkTjWi	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+1V8XneTrX6kKeoxYbk4x6h	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+4MZSqgwlE71CWZ6qQ3gkKm	5lJqux7orBlA1QzyiBGti1	4q3ewBCX7sLwd24euuV69X
+6b5P51m8xx2XA6U7sdNZ5E	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+2K9Ovn1o2bTGqbsABGC6m3	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+6kWxIqQDsKFYCJGbU4AjCX	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+4BGZF4oLbTL0pWm7C18pbv	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+3WlbeuhfRSqU7ylK2Ui5U7	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+1sOW4PuG5X3Ie3EXUhAopJ	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+6bnF93Rx87YqUBLSgjiMU8	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+3orEOtd8CPL8GFlpRpKuoE	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+0VjIjW4GlUZAMYd2vXMi3b	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+7szuecWAPwGoV1e5vGu8tl	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+5QO79kh1waicV47BqGRL3g	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+40U8d12pC5UHqmHwXjHjjl	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+2p8IUWQDrpjuFltbdgLOag	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+2BcnxwxBuar5wjCaLqm5N3	4yP0hdKOZPNshxUOjY0cZj	1Xyo4u8uXC1ZmMpatF05PJ
+4Oun2ylbjFKMPTiaSbbCih	2ogiazbrNEx0kQHGl5ZBTQ	4kYSro6naA4h99UJvo89HB
+12345	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+1	6n9DKpOxwifT5hOXtgLZSL	4MCBfE4596Uoi2O4DtmEMz
+\.
+
+
+--
+-- Data for Name: producedby; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.producedby (albumuid, nameuid) FROM stdin;
+6n9DKpOxwifT5hOXtgLZSL	3VRFuvKNWqUMGFalqsFt7k
+7e7t0MCrNDcJZsPwUKjmOc	iOlxdkmniWoAzln6CD9ozp
+6wTyGUWGCilBFZ837k5aRi	8fXzeTCQsZUuVjvcKazgmi
+2fenSS68JI1h4Fo296JfGr	kC4rYMrHsQB5szaSVHhPxc
+39xhYyNNDatQtgKw2KdXMz	HyMuXdG585Q3I0QhtiHl9t
+5EzDhyNZuO7kuaABHwbBKX	T5O3KB8ai3YgRtoIFfdciS
+57lgFncHBYu5E3igZnuCJK	X1LvixQiLrW6Pq4X947SzE
+5lJqux7orBlA1QzyiBGti1	UAdHBIcqz01SjO621T5GeM
+4yP0hdKOZPNshxUOjY0cZj	c7kV9z2UrPGKeQ1Epbb4cY
+2ogiazbrNEx0kQHGl5ZBTQ	QosfzltY2ROz8mfeMzWwq3
+1234	757aE44tKEUQEqRuT6GnEB
+1234dawda	3VRFuvKNWqUMGFalqsFt7k
+\.
+
+
+--
+-- Data for Name: producer; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.producer (nameuid) FROM stdin;
+3VRFuvKNWqUMGFalqsFt7k
+iOlxdkmniWoAzln6CD9ozp
+8fXzeTCQsZUuVjvcKazgmi
+kC4rYMrHsQB5szaSVHhPxc
+HyMuXdG585Q3I0QhtiHl9t
+T5O3KB8ai3YgRtoIFfdciS
+X1LvixQiLrW6Pq4X947SzE
+UAdHBIcqz01SjO621T5GeM
+c7kV9z2UrPGKeQ1Epbb4cY
+QosfzltY2ROz8mfeMzWwq3
+\.
+
+
+--
+-- Data for Name: song; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.song (songuid, genre, songtitle) FROM stdin;
+02XcRGWPkvomFvzTamEKHg	Rap	Anxiety - Intro
+4K06PO78fW4mnBVenxGNob	Rap	Conversations
+1YM6c2sxbf2Jacl9IFgn4I	Rap	Titanic
+7d94IqWX2UmSKMGUYSGFJG	Rap	Bad Energy
+5dOxHHMOFAbG3VH23t0xNm	Rap	Righteous
+0fCwrjKfWxF3xQhZrYUw4T	Rap	Blood On My Jeans
+6wQlQrTY5mVS8EGaFZVwVF	Rap	Smile (with The Weeknd)
+5JAYDuLRkODlVt6dgoalKk	Rap	Tell Me U Luv Me (with Trippie Redd)
+0ada5XsQGLPUVbmTCkAP49	Rap	Hate The Other Side (with Marshmello & The Kid Laroi)
+2wg81gBz6PZSwbZrXObeW4	Rap	Get Through It - Interlude
+5wWAwzGp2OaaoIkwcz6wZs	Rap	Life's A Mess (feat. Halsey)
+2Y0wPrPQBrGhoLn14xRYCG	Rap	Come & Go (with Marshmello)
+2SVx3uds6jTWALFxevIWMA	Rap	I Want It
+0440JCJyIAmINA8KcYgFb5	Rap	Fighting Demons
+2U5WueTLIK5WJLD7mvDODv	Rap	Wishing Well
+4F6YLjakjqWFTgC5qfEwPQ	Rap	Screw Juice
+7pbg3ABlAZv2NiIdKbBBFm	Rap	Up Up And Away
+4sjdZEEQvR1sXrRNSuBfbA	Rap	The Man, The Myth, The Legend - Interlude
+21CkzgKCBCq5V4XKjiGSIj	Rap	Stay High
+4PPLJAEYBSOcnzr9TZoqf9	Rap	Can't Die
+7AvprzMsRJpybaalckaT8c	Rap	Man Of The Year
+1OjiYjgPZyxS0AiXiSnuYI	Rap	Juice WRLD Speaks From Heaven - Outro
+4OGIeHtYhRTJ8iW21UUyZW	Rap	Bad Bitch From Tokyo (Intro)
+6O7fPYTsb2mY0PiFt2ymDB	Rap	Aim For The Moon (feat. Quavo)
+0PvFJmanyNQMseIFrU708S	Rap	For The Night (feat. Lil Baby & DaBaby)
+7sjFIZ1g5QLJLGja3k592K	Rap	44 BullDog
+1hg3RlqFZXJb5YgRoK9qmF	Rap	Gangstas
+0bjgQ24UZGwKikldIyEOgf	Rap	Yea Yea
+3eV2WT9YhfzkxbufnBF8wK	Rap	Creature (feat. Swae Lee)
+2FhEj9lvEIaJihjFprRrGt	Rap	Snitching (feat. Quavo & Future)
+71d7LaAgPcNcUopu3OzmP7	Rap	Make It Rain (feat. Rowdy Rebel)
+1H7KnK26kc1YyellpbINEn	Rap	The Woo (feat. 50 Cent & Roddy Ricch)
+1JDhNQ0oOT7XpclZn3aQ8F	Rap	West Coast Shit (feat. Tyga & Quavo)
+3NWrHCwvyII4fTx05PN3IO	Rap	Enjoy Yourself (feat. Karol G)
+5rZlwNFl01HqLWBQGryKSm	Rap	Mood Swings (feat. Lil Tjay)
+5kkaSMcf4BFlhRRICCKZb6	Rap	Something Special
+1tkg4EHVoqnhR6iFEXb60y	Rap	What You Know Bout Love
+4Tc9PHEoeP17PQj3OOKXPu	Rap	Diana (feat. King Combs)
+25zlnOAzbVoOzIeXSvQFf1	Rap	Got It On Me
+2SxR5RitJdsG6wINvJLBSD	Rap	Tunnel Vision (Outro)
+6PnTgx9lyvLGIcPnroCvc2	Rap	Dior - Bonus
+5UpXJ75CXod4PCoBQP6MAP	Rap	Intro
+5SWnsxjhdcEDc7LJjq9UHk	Rap	Runnin
+6pcywuOeGGWeOQzdUyti6k	Rap	Glock In My Lap
+4Q34FP1AT7GEl9oLgNtiWj	Rap	Mr. Right Now (feat. Drake)
+3ruoIF2UnoXdzK8mR61ebq	Rap	Rich N**** Shit (feat. Young Thug)
+7fxSLnklnayJNBIKntXedZ	Rap	Slidin
+3CDVMejYHnB1SkEEx0T1N4	Rap	Many Men
+2y3mrzWEWaAFqb2jf5fED8	Rap	Snitches & Rats (Interlude)
+3WaDoMDQRqDdgtCDLxanpN	Rap	Snitches & Rats (feat. Young Nudy)
+42Tohunwlh34o0mgxYx5iq	Rap	My Dawg
+7FtZFla3ZH6PqsAJ9MvVCM	Rap	Steppin On N****s
+4V9ynsDPwHtdItksqjuRu0	Rap	Brand New Draco
+50I7FNN2rl2rWiNwGxS146	Rap	No Opp Left Behind
+1wGnp7ejkCuXRsehXx0PNP	Rap	RIP Luv
+11XegnWeJHBDtj9IsNwngu	Rap	Said N Done
+0Jlcvv8IykzHaSmj49uNW8	Alternative	the 1
+4R2kfaDFhslZEMJqAFNpdd	Alternative	cardigan
+2Eeur20xVqfUoM3Q7EFPFt	Alternative	the last great american dynasty
+4pvb0WLRcMtbPGmtejJJ6y	Alternative	exile (feat. Bon Iver)
+1MgV7FIyNxIG7WzMRJV5HC	Alternative	my tears ricochet
+0ZNU020wNYvgW84iljPkPP	Alternative	mirrorball
+6KJqZcs9XDgVck7Lg9QOTC	Alternative	seven
+3hUxzQpSfdDqwM3ZTFQY0K	Alternative	august
+7kt9e9LFSpN1zQtYEl19o1	Alternative	this is me trying
+2NmsngXHeC1GQ9wWrzhOMf	Alternative	illicit affairs
+6VsvKPJ4xjVNKpI8VVZ3SV	Alternative	invisible string
+2QDyYdZyhlP2fp79KZX8Bi	Alternative	mad woman
+08fa9LFcFBTcilB3iq2e2A	Alternative	epiphany
+5kI4eCXXzyuIUXjQra0Cxi	Alternative	betty
+7MbT4I8qGntX4fMdqMQgke	Alternative	peace
+6MWoRt97mnSTXZhu3ggi9C	Alternative	hoax
+3TciLI5wo7RddPtAFhiU9V	Rap	Don't Believe The Hype
+2iP3unJbxZvRuqyrS0ocZy	Rap	Heartless (feat. Mustard)
+1VLtjHwRWOVJiE5Py7JxoQ	Rap	Martin & Gina
+2QqJTIlGKRLJC3onkavYEz	Rap	Flex (feat. Juice WRLD)
+4PklAHGXT5ityno3IA8SKd	Rap	Go Stupid
+3JKgcAa7r07ocVWcV8bS0H	Rap	21
+2iW6Hb6kfrz2K7EhPibFiq	Rap	33
+40j4RoqmLiivqzRObbQ4BF	Rap	I Know
+4SIB2yxKoFOrbkjA4zfQbB	Rap	Beautiful Pain (Losin My Mind)
+4dKe8YJZg545pXqWBksYIe	Rap	No Matter What
+65jw6GhwQW3Db55PxlPEpS	Rap	Be Something (feat. Lil Baby)
+1F8yKtk5CQBptos4kM7aO7	Rap	Relentless
+58GJNfq2m0Qr5nIUCDbXVQ	Rap	DND
+4XLCFFvRG1qQ8kT4uzwYZC	Rap	Chinatown
+6V1Jx3o0S2MtBI9yIDXsJS	Rap	Trials & Tribulations
+192RjH0gN6en7nE6ElN96T	Rap	Wishing For A Hero (feat. BJ The Chicago Kid)
+7xcUWyLh6fIMsYjoVI7NnZ	R&B	Ew
+5SjtAe7xzUgHDtNTmt8zS7	R&B	MODUS
+5E7p95xh9Ul4vZp4LEoJwi	R&B	Tick Tock
+6Ww8GHdPCl8MqZBhPn4LKd	R&B	Daylight
+5xNNJKrjobta5ksOpMLYd1	R&B	Upgrade
+0HItcI6qN6Dr4MC3CZryQh	R&B	Gimme Love
+3AkdSFo7quCZ781KCqNK0T	R&B	Run
+0rOLFkjY5DSIViVBNnzOuK	R&B	Sanctuary
+5dl8x4xLEzZC0f927WBTUG	R&B	High Hopes (feat. Omar Apollo)
+1RTYj0DKungYDHtgFQRtmx	R&B	NITROUS
+0f1G5SHFoFC9lO03gHCGVS	R&B	Pretty Boy (feat. Lil Yachty)
+4UiogCfzKQW98U1GTCivsn	R&B	Normal People (feat. rei brown)
+6zvqq50PL7io0rprbkrYc9	R&B	Afterthought
+4OxQ9sBdJCndBzQNuGorr7	R&B	Mr. Hollywood
+6H167kbd8gY2Eewzf14YjD	R&B	777
+75sIBYeVmCTdKEsAZdGKqM	R&B	Reanimator (feat. Yves Tumor)
+1MONUudxAjEk76FJvzGhuD	R&B	Like You Do
+5sbZj8hcae2ebXVBonKQ6g	R&B	Your Man
+4kDgnKgZTX6puRz9EoNjle	Rap	title track
+69LvvkHnFFnX3d5eNObtMo	Rap	kiss kiss
+3k0YJnqMKRZb8swo86vCkq	Rap	drunk face
+6mADjHs6FXdroPzEGW6KVJ	Rap	bloody valentine
+1VSuFS7PahCN3SWbOcQ98m	Rap	forget me too (feat. Halsey)
+1vuUbnY82fCNjfzqjLmblw	Rap	all I know (feat. Trippie Redd)
+6EPxapAlha7pEyn5kXgW3R	Rap	lonely
+41ltleYVuvEjnqiygy2rQ3	Rap	WWIII
+7Ct4wK3Fpp8vvZGcWy4NCP	Rap	kevin and barracuda - interlude
+7os53rdrgA0OU6xC5xJruX	Rap	concert for aliens
+7kDUspsoYfLkWnZR7qwHZl	Rap	my ex's best friend (with blackbear)
+2iVsPIS2yjS4xhs5Rdy65O	Rap	jawbreaker
+1eTdTVIxLlhHwwA50vEzZa	Rap	nothing inside (feat. iann dior)
+5rGUAs7Oamox7PY4P42Qzv	Rap	banyan tree - interlude
+0RFgKcpWImLWmK9WSSHAiC	Rap	play this when i'm gone
+41wtwzCZkXwpnakmwJ239F	Rap	Si Veo a Tu Mamá
+6NfrH0ANGmgBXyxgV2PeXt	Rap	La Difícil
+75pQqzwgCjUOSSy5CpmAjy	Rap	Pero Ya No
+69vlMrzHwATKzupwNcUPyK	Rap	La Santa
+0SqqAgdovOE24BzxIClpjw	Rap	Yo Perreo Sola
+4j4w4CXm6BSr0s25wAWrrX	Rap	Bichiyal
+7sOfmPd18RWp3FoCzpa7Kw	Rap	Soliá
+5kqNIqFjijuzvVLhuY9B8j	Rap	La Zona
+53v2u51nq3CxiKUNphRzP1	Rap	Que Malo
+2n7ohqg1s68ToAHh4u9mcW	Rap	Vete
+38RIEav39FGi86jppxO0du	Rap	Ignorantes
+4r9jkMEnArtWGH2rL2FZl0	Rap	A Tu Merced
+5J7teKIJGtqVypgYI6sqXj	Rap	Una Vez
+2DEZmgHKAvm41k4J3R2E9Y	Rap	Safaera
+4NqQaovM14WR2hNPMFxgjb	Rap	25/8
+4saHEjXw7O1NXJOzBkUKKG	Rap	Está Cabrón Ser Yo
+5gCg2qMPzKkW4jS4dBKdDs	Rap	Puesto Pa' Guerrial
+0fgsKar6uBO08vzHXkTjWi	Rap	P FKN R
+1V8XneTrX6kKeoxYbk4x6h	Rap	Hablamos Mañana
+4MZSqgwlE71CWZ6qQ3gkKm	Rap	<3
+6b5P51m8xx2XA6U7sdNZ5E	Rap	Alone Again
+2K9Ovn1o2bTGqbsABGC6m3	Rap	Too Late
+6kWxIqQDsKFYCJGbU4AjCX	Rap	Hardest To Love
+4BGZF4oLbTL0pWm7C18pbv	Rap	Scared To Live
+3WlbeuhfRSqU7ylK2Ui5U7	Rap	Snowchild
+1sOW4PuG5X3Ie3EXUhAopJ	Rap	Escape From LA
+6bnF93Rx87YqUBLSgjiMU8	Rap	Heartless
+3orEOtd8CPL8GFlpRpKuoE	Rap	Faith
+0VjIjW4GlUZAMYd2vXMi3b	Rap	Blinding Lights
+7szuecWAPwGoV1e5vGu8tl	Rap	In Your Eyes
+5QO79kh1waicV47BqGRL3g	Rap	Save Your Tears
+40U8d12pC5UHqmHwXjHjjl	Rap	Repeat After Me (Interlude)
+2p8IUWQDrpjuFltbdgLOag	Rap	After Hours
+2BcnxwxBuar5wjCaLqm5N3	Rap	Until I Bleed Out
+4Oun2ylbjFKMPTiaSbbCih	Rap	WAP (feat. Megan Thee Stallion)
+12345	TestingGenre	Test
+1	Rap	Conversations
+\.
+
+
+--
+-- Data for Name: writer; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.writer (nameuid) FROM stdin;
+AMcHTd4MrNF0vyc3RffyYI
+ZMXJyOZAJIAZUXNUVA0Pdw
+lzB9Z60NwbmP3G4babQJnM
+xn4SZFiGBYpsxpf3J8d6oN
+oJn8QYdMy7IB3svkuHbmIV
+bIdFfiDAF7uRZlfdT8bJ3P
+UwilKui7VZ7tYxbGsPRHG4
+Hwu4EolvXm85gwTsP2Btvf
+OwZ8kgj0QIT9Cgd9DAOwoo
+tipff5miqCXNZlP16S2Jx5
+\.
+
+
+--
+-- Data for Name: writtenby; Type: TABLE DATA; Schema: public; Owner: trutin
+--
+
+COPY public.writtenby (albumuid, nameuid) FROM stdin;
+6n9DKpOxwifT5hOXtgLZSL	AMcHTd4MrNF0vyc3RffyYI
+7e7t0MCrNDcJZsPwUKjmOc	ZMXJyOZAJIAZUXNUVA0Pdw
+6wTyGUWGCilBFZ837k5aRi	lzB9Z60NwbmP3G4babQJnM
+2fenSS68JI1h4Fo296JfGr	xn4SZFiGBYpsxpf3J8d6oN
+39xhYyNNDatQtgKw2KdXMz	oJn8QYdMy7IB3svkuHbmIV
+5EzDhyNZuO7kuaABHwbBKX	bIdFfiDAF7uRZlfdT8bJ3P
+57lgFncHBYu5E3igZnuCJK	UwilKui7VZ7tYxbGsPRHG4
+5lJqux7orBlA1QzyiBGti1	Hwu4EolvXm85gwTsP2Btvf
+4yP0hdKOZPNshxUOjY0cZj	OwZ8kgj0QIT9Cgd9DAOwoo
+2ogiazbrNEx0kQHGl5ZBTQ	tipff5miqCXNZlP16S2Jx5
+1234	AMcHTd4MrNF0vyc3RffyYI
+1234dawda	AMcHTd4MrNF0vyc3RffyYI
+\.
+
+
+--
+-- Name: album album_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.album
+    ADD CONSTRAINT album_pkey PRIMARY KEY (albumuid);
+
+
+--
+-- Name: artist artist_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.artist
+    ADD CONSTRAINT artist_pkey PRIMARY KEY (nameuid);
+
+
+--
+-- Name: contains contains_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.contains
+    ADD CONSTRAINT contains_pkey PRIMARY KEY (songuid);
+
+
+--
+-- Name: featuredin featuredin_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.featuredin
+    ADD CONSTRAINT featuredin_pkey PRIMARY KEY (songuid, nameuid);
+
+
+--
+-- Name: name name_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.name
+    ADD CONSTRAINT name_pkey PRIMARY KEY (nameuid);
+
+
+--
+-- Name: performedby performedby_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.performedby
+    ADD CONSTRAINT performedby_pkey PRIMARY KEY (songuid, albumuid);
+
+
+--
+-- Name: producedby producedby_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.producedby
+    ADD CONSTRAINT producedby_pkey PRIMARY KEY (albumuid, nameuid);
+
+
+--
+-- Name: producer producer_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.producer
+    ADD CONSTRAINT producer_pkey PRIMARY KEY (nameuid);
+
+
+--
+-- Name: song song_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.song
+    ADD CONSTRAINT song_pkey PRIMARY KEY (songuid);
+
+
+--
+-- Name: writer writer_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.writer
+    ADD CONSTRAINT writer_pkey PRIMARY KEY (nameuid);
+
+
+--
+-- Name: writtenby writtenby_pkey; Type: CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.writtenby
+    ADD CONSTRAINT writtenby_pkey PRIMARY KEY (albumuid, nameuid);
+
+
+--
+-- Name: artist artist_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.artist
+    ADD CONSTRAINT artist_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- Name: contains contains_albumuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.contains
+    ADD CONSTRAINT contains_albumuid_fkey FOREIGN KEY (albumuid) REFERENCES public.album(albumuid) ON DELETE CASCADE;
+
+
+--
+-- Name: contains contains_songuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.contains
+    ADD CONSTRAINT contains_songuid_fkey FOREIGN KEY (songuid) REFERENCES public.song(songuid) ON DELETE CASCADE;
+
+
+--
+-- Name: featuredin featuredin_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.featuredin
+    ADD CONSTRAINT featuredin_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- Name: featuredin featuredin_songuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.featuredin
+    ADD CONSTRAINT featuredin_songuid_fkey FOREIGN KEY (songuid) REFERENCES public.song(songuid) ON DELETE CASCADE;
+
+
+--
+-- Name: performedby performedby_albumuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.performedby
+    ADD CONSTRAINT performedby_albumuid_fkey FOREIGN KEY (albumuid) REFERENCES public.album(albumuid) ON DELETE CASCADE;
+
+
+--
+-- Name: performedby performedby_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.performedby
+    ADD CONSTRAINT performedby_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- Name: performedby performedby_songuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.performedby
+    ADD CONSTRAINT performedby_songuid_fkey FOREIGN KEY (songuid) REFERENCES public.song(songuid) ON DELETE CASCADE;
+
+
+--
+-- Name: producedby producedby_albumuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.producedby
+    ADD CONSTRAINT producedby_albumuid_fkey FOREIGN KEY (albumuid) REFERENCES public.album(albumuid) ON DELETE CASCADE;
+
+
+--
+-- Name: producedby producedby_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.producedby
+    ADD CONSTRAINT producedby_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- Name: producer producer_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.producer
+    ADD CONSTRAINT producer_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- Name: writer writer_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.writer
+    ADD CONSTRAINT writer_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- Name: writtenby writtenby_albumuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.writtenby
+    ADD CONSTRAINT writtenby_albumuid_fkey FOREIGN KEY (albumuid) REFERENCES public.album(albumuid) ON DELETE CASCADE;
+
+
+--
+-- Name: writtenby writtenby_nameuid_fkey; Type: FK CONSTRAINT; Schema: public; Owner: trutin
+--
+
+ALTER TABLE ONLY public.writtenby
+    ADD CONSTRAINT writtenby_nameuid_fkey FOREIGN KEY (nameuid) REFERENCES public.name(nameuid) ON DELETE CASCADE;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
