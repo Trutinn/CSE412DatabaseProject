@@ -18,4 +18,4 @@ Change YOURUSER to the name of your local user that has superuser in your databa
 Change YOURPASSWORD to the password of your local user from the last step
 
 # Set up venv:
-https://realpython.com/kickstarting-flask-on-ubuntu-setup-and-deployment/
+https://linuxize.com/post/how-to-install-flask-on-ubuntu-18-04/
