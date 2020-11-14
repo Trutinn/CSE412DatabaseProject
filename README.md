@@ -4,6 +4,8 @@ Creating a music library database
 # Setup Process
 Install Python3: https://docs.python-guide.org/starting/install3/linux/
 
+Install psycopg2: https://pypi.org/project/psycopg2/
+
 Install Flask: https://flask.palletsprojects.com/en/1.1.x/installation/
 
 Install PostgreSQL: https://www.postgresql.org/download/
