@@ -16,3 +16,6 @@ In sqlUtil.py line 6 database="YOURDBNAME", user="YOURUSER", password="YOURPW"
 Change YOURDBNAME to the name of your local database
 Change YOURUSER to the name of your local user that has superuser in your database
 Change YOURPASSWORD to the password of your local user from the last step
+
+# Set up venv:
+https://realpython.com/kickstarting-flask-on-ubuntu-setup-and-deployment/
