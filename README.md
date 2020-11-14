@@ -1,5 +1,5 @@
 # CSE412DatabaseProject
-Creating a music library using PostgreSQL and Python3. We created the frontend with Flask and interacted with the database with psycopg2. All of the initial data that is stored into the database is scraped from the SpotifyAPI.
+Creating a music library using PostgreSQL and Python3. We created the frontend with Flask and interacted with the database through psycopg2. All of the initial data that is stored into the database is scraped from the SpotifyAPI.
 
 MusicLibary contains the application. 
 
