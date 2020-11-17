@@ -30,3 +30,12 @@ Change YOURDBNAME to the name of your local database
 Change YOURUSER to the name of your local user that has superuser in your database
 
 Change YOURPASSWORD to the password of your local user from the last step
+
+# Member Contributions
+Preston Mott: Scraped the SpotifyAPI for initial data. Created the database tables and inserted scraped data into them. Created backend functionality of website interface by performing SQL queries with given user input. Connected the backend to the front end. 
+
+YOUR NAME:
+
+YOUR NAME:
+
+YOUR NAME:
