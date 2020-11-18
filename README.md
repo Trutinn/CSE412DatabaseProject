@@ -34,7 +34,7 @@ Change YOURPASSWORD to the password of your local user from the last step
 # Member Contributions
 Preston Mott: Scraped the SpotifyAPI for initial data. Created the database tables and inserted scraped data into them. Created backend functionality of website interface by performing SQL queries with given user input. Connected the backend to the front end. 
 
-YOUR NAME:
+Daniel Waltman: Drafted SQL functions in PostgreSQL that ended up not being used in the final product. Created the front end templates and a draft of the connection between the front end and backend so Preston could have all input data accessible before he integrated the SQL queries. Also worked with Preston Mott to connect the backend to the front end through the transfer of data from queries to result templates. Error checked and style/consistency checked with Preston as well.
 
 YOUR NAME:
 
