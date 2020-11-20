@@ -20,16 +20,16 @@ Create a user role with admin: https://stackoverflow.com/questions/15008204/how-
 
 Test database locally: https://www.tutorialspoint.com/postgresql/postgresql_python.htm
 
-# Required Setup In Code
-In tableCreation line 6 database="YOURDBNAME", user="YOURUSER", password="YOURPW"
+# If You Did Not Follow User Guide Credentials
+In tableCreation line 6 database=database="musicLibrary", user = "musicLib", password = "musicPass"
 
-In sqlUtil.py line 6 database="YOURDBNAME", user="YOURUSER", password="YOURPW"
+In sqlUtil.py line 6 database=database="musicLibrary", user = "musicLib" password = "musicPass"
 
-Change YOURDBNAME to the name of your local database
+Change musicLibrary to the name of your local database
 
-Change YOURUSER to the name of your local user that has superuser in your database
+Change musicLib to the name of your local user that has superuser in your database
 
-Change YOURPASSWORD to the password of your local user from the last step
+Change musicPass to the password of your local user from the last step
 
 # Member Contributions
 Preston Mott: Scraped the SpotifyAPI for initial data. Created the database tables and inserted scraped data into them. Created backend functionality of website interface by performing SQL queries with given user input. Connected the backend to the front end. 
