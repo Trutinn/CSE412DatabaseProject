@@ -30,3 +30,12 @@ Change YOURDBNAME to the name of your local database
 Change YOURUSER to the name of your local user that has superuser in your database
 
 Change YOURPASSWORD to the password of your local user from the last step
+
+# Member Contributions
+Preston Mott: Scraped the SpotifyAPI for initial data. Created the database tables and inserted scraped data into them. Created backend functionality of website interface by performing SQL queries with given user input. Connected the backend to the front end. 
+
+Daniel Waltman: Drafted SQL functions in PostgreSQL that ended up not being used in the final product. Created the front end templates and a draft of the connection between the front end and backend so Preston could have all input data accessible before he integrated the SQL queries. Also worked with Preston Mott to connect the backend to the front end through the transfer of data from queries to result templates. Error checked and style/consistency checked with Preston as well.
+
+Andrew Coughlin: Helped with scraping the Spotify API for data to fill the database with. Also helped with front/backend connection.
+
+YOUR NAME:
