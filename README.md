@@ -40,4 +40,4 @@ Daniel Waltman: Drafted SQL functions in PostgreSQL that ended up not being used
 
 Andrew Coughlin: Helped with scraping the Spotify API for data to fill the database with. Also helped with front/backend connection.
 
-Kristian Avila:Helped write the User Guide and wrote the User manual on how to use the website.
+Kristian Avila: Helped write the User Guide and wrote the User manual on how to use the website.
