@@ -3,7 +3,7 @@
 import psycopg2
 from psycopg2.extensions import AsIs
 
-conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="musicLibrary", user = "musicLib ", password = "musicPass", host = "127.0.0.1", port = "5432")
 cur = conn.cursor()
 
 def getFeaturedNames(searchPara, searchCol):  # returns the name of featured artist of a song,

@@ -3,7 +3,7 @@
 import psycopg2
 import json
 
-conn = psycopg2.connect(database="musiclibrary", user = "trutin", password = "Baseball324!", host = "127.0.0.1", port = "5432")
+conn = psycopg2.connect(database="musicLibrary", user = "musicLib ", password = "musicPass", host = "127.0.0.1", port = "5432")
 
 print("Opened database successfully")
 
