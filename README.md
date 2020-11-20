@@ -6,6 +6,8 @@ MusicLibary contains the application.
 SpotifyDataCollection contains the code for scraping the SpotifyAPI.
 
 # Setup Process
+User Guide: https://drive.google.com/file/d/1zNDRlyCN6J_tJXnEk0biRH2NSESajnkH/view?usp=sharing
+
 Install Python3: https://docs.python-guide.org/starting/install3/linux/
 
 Install psycopg2: https://pypi.org/project/psycopg2/
