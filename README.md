@@ -5,6 +5,10 @@ MusicLibary contains the application.
 
 SpotifyDataCollection contains the code for scraping the SpotifyAPI.
 
+The dbDump.sql is a dump exporting the tables and their relations.
+
+MusicLibrary/dataSet.json contains all of the data that pre-populates the tables when tableCreation.py is run. 
+
 # Setup Process
 User Guide: https://drive.google.com/file/d/1zNDRlyCN6J_tJXnEk0biRH2NSESajnkH/view?usp=sharing
 
